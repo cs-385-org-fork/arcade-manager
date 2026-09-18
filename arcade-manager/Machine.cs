@@ -33,7 +33,15 @@ namespace arcade_manager
         }
         public void ChangeStatus(string machineName)
         {
-
+            //method to change machine status
+        }
+        public void applySale(string machineName)
+        { 
+            //method to apply a discount if onSale bool == true
+        }
+        public void changePrice(string machineName)
+        {
+            //method to update price per play of a machine
         }
     }
 }
