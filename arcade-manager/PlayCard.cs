@@ -17,6 +17,21 @@ namespace arcade_manager
             get { return vip; }
             set { vip = value; }
         }
+        public int CardID
+        {
+            get { return cardID; }
+            set { cardID = value; }
+        }
+        public string CustomerName
+        {
+            get { return customerName; }
+            set {  customerName = value; }
+        }
+        public decimal MoneyOnCard
+        {
+            get { return moneyOnCard; }
+            set {  moneyOnCard = value; }
+        }
 
         //Initializes the card
         public void newCard(int ID, decimal money, string Name, bool VIPass)
