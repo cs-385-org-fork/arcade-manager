@@ -9,7 +9,14 @@ namespace arcade_manager
         int cardID;
         decimal moneyOnCard;
         string customerName;
-        bool VIP;
+        bool vip;
+
+        //VIP status might change after a customer owns a card.
+        public bool VIP
+        {
+            get { return vip; }
+            set { vip = value; }
+        }
 
         //Initializes the card
         public void newCard(int ID, decimal money, string Name, bool VIPass)
@@ -17,7 +24,7 @@ namespace arcade_manager
             cardID = ID;
             moneyOnCard = money;
             customerName = Name;
-            VIP = VIPass;
+            vip = VIPass;
         }
 
         //Adds money paid to the card
@@ -26,10 +33,11 @@ namespace arcade_manager
             moneyOnCard += payment;
         }
 
+        
         //Returns a bool based on if the customer is able to actually pay for the game or not.
         public bool gamePaidFor(decimal machinePrice)
         {
-            if (VIP) { machinePrice *= 0.75m; }
+            if (vip) { machinePrice *= 0.75m; }
             if (moneyOnCard < machinePrice) { Console.WriteLine("Invalid Amount On Card"); return false; }
             else { moneyOnCard -= machinePrice; return true; }
         }
