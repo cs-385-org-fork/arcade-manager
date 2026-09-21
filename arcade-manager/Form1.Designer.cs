@@ -1,4 +1,4 @@
-﻿namespace arcade_manager {
+namespace arcade_manager {
     partial class Form1 {
         /// <summary>
         ///  Required designer variable.
@@ -25,6 +25,12 @@
         private void InitializeComponent() {
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
+            saveCustomersToolStripMenuItem = new ToolStripMenuItem();
+            saveMachinesToolStripMenuItem = new ToolStripMenuItem();
+            loadCustomersToolStripMenuItem = new ToolStripMenuItem();
+            loadMachinesToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            exitToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             gbxArcadeFloor = new GroupBox();
@@ -44,10 +50,15 @@
             rbtnStatusOutOfOrder = new RadioButton();
             rbtnStatusAvailable = new RadioButton();
             machineName = new Label();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
             menuStrip1.SuspendLayout();
             gbxArcadeFloor.SuspendLayout();
             gbxMachineInfo.SuspendLayout();
             gbxStatus.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -55,15 +66,53 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(794, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveCustomersToolStripMenuItem, saveMachinesToolStripMenuItem, loadCustomersToolStripMenuItem, loadMachinesToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
+            // 
+            // saveCustomersToolStripMenuItem
+            // 
+            saveCustomersToolStripMenuItem.Name = "saveCustomersToolStripMenuItem";
+            saveCustomersToolStripMenuItem.Size = new Size(180, 22);
+            saveCustomersToolStripMenuItem.Text = "Save Customers";
+            saveCustomersToolStripMenuItem.Click += saveCustomersToolStripMenuItem_Click;
+            // 
+            // saveMachinesToolStripMenuItem
+            // 
+            saveMachinesToolStripMenuItem.Name = "saveMachinesToolStripMenuItem";
+            saveMachinesToolStripMenuItem.Size = new Size(180, 22);
+            saveMachinesToolStripMenuItem.Text = "Save Machines";
+            saveMachinesToolStripMenuItem.Click += saveMachinesToolStripMenuItem_Click;
+            // 
+            // loadCustomersToolStripMenuItem
+            // 
+            loadCustomersToolStripMenuItem.Name = "loadCustomersToolStripMenuItem";
+            loadCustomersToolStripMenuItem.Size = new Size(180, 22);
+            loadCustomersToolStripMenuItem.Text = "Load Customers";
+            // 
+            // loadMachinesToolStripMenuItem
+            // 
+            loadMachinesToolStripMenuItem.Name = "loadMachinesToolStripMenuItem";
+            loadMachinesToolStripMenuItem.Size = new Size(180, 22);
+            loadMachinesToolStripMenuItem.Text = "Load Machines";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
             // 
@@ -87,9 +136,9 @@
             gbxArcadeFloor.Controls.Add(btnMachine1);
             gbxArcadeFloor.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gbxArcadeFloor.ForeColor = Color.White;
-            gbxArcadeFloor.Location = new Point(12, 27);
+            gbxArcadeFloor.Location = new Point(6, 6);
             gbxArcadeFloor.Name = "gbxArcadeFloor";
-            gbxArcadeFloor.Size = new Size(776, 341);
+            gbxArcadeFloor.Size = new Size(750, 341);
             gbxArcadeFloor.TabIndex = 1;
             gbxArcadeFloor.TabStop = false;
             gbxArcadeFloor.Text = "Arcade Floor";
@@ -97,7 +146,7 @@
             // btnMachine4
             // 
             btnMachine4.ForeColor = Color.Black;
-            btnMachine4.Location = new Point(267, 191);
+            btnMachine4.Location = new Point(254, 191);
             btnMachine4.Name = "btnMachine4";
             btnMachine4.Size = new Size(242, 144);
             btnMachine4.TabIndex = 5;
@@ -107,7 +156,7 @@
             // btnMachine3
             // 
             btnMachine3.ForeColor = Color.Black;
-            btnMachine3.Location = new Point(267, 34);
+            btnMachine3.Location = new Point(254, 34);
             btnMachine3.Name = "btnMachine3";
             btnMachine3.Size = new Size(242, 144);
             btnMachine3.TabIndex = 4;
@@ -117,7 +166,7 @@
             // btnMachine6
             // 
             btnMachine6.ForeColor = Color.Black;
-            btnMachine6.Location = new Point(528, 191);
+            btnMachine6.Location = new Point(502, 191);
             btnMachine6.Name = "btnMachine6";
             btnMachine6.Size = new Size(242, 144);
             btnMachine6.TabIndex = 3;
@@ -127,7 +176,7 @@
             // btnMachine5
             // 
             btnMachine5.ForeColor = Color.Black;
-            btnMachine5.Location = new Point(528, 34);
+            btnMachine5.Location = new Point(502, 34);
             btnMachine5.Name = "btnMachine5";
             btnMachine5.Size = new Size(242, 144);
             btnMachine5.TabIndex = 2;
@@ -164,9 +213,9 @@
             gbxMachineInfo.Controls.Add(machineName);
             gbxMachineInfo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gbxMachineInfo.ForeColor = Color.White;
-            gbxMachineInfo.Location = new Point(12, 374);
+            gbxMachineInfo.Location = new Point(6, 353);
             gbxMachineInfo.Name = "gbxMachineInfo";
-            gbxMachineInfo.Size = new Size(776, 176);
+            gbxMachineInfo.Size = new Size(750, 159);
             gbxMachineInfo.TabIndex = 2;
             gbxMachineInfo.TabStop = false;
             gbxMachineInfo.Text = "Machine Information";
@@ -194,7 +243,7 @@
             // txtbxPlayCost
             // 
             txtbxPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxPlayCost.Location = new Point(565, 37);
+            txtbxPlayCost.Location = new Point(539, 37);
             txtbxPlayCost.Name = "txtbxPlayCost";
             txtbxPlayCost.Size = new Size(205, 33);
             txtbxPlayCost.TabIndex = 3;
@@ -203,7 +252,7 @@
             // 
             lblPlayCost.AutoSize = true;
             lblPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPlayCost.Location = new Point(460, 40);
+            lblPlayCost.Location = new Point(409, 37);
             lblPlayCost.Name = "lblPlayCost";
             lblPlayCost.Size = new Size(108, 25);
             lblPlayCost.TabIndex = 2;
@@ -272,14 +321,45 @@
             machineName.TabIndex = 0;
             machineName.Text = "machineName";
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(12, 27);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(771, 553);
+            tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.MidnightBlue;
+            tabPage1.Controls.Add(gbxArcadeFloor);
+            tabPage1.Controls.Add(gbxMachineInfo);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(763, 525);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(803, 255);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MidnightBlue;
-            ClientSize = new Size(800, 562);
-            Controls.Add(gbxMachineInfo);
-            Controls.Add(gbxArcadeFloor);
+            BackColor = Color.Black;
+            ClientSize = new Size(794, 592);
+            Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -291,6 +371,8 @@
             gbxMachineInfo.PerformLayout();
             gbxStatus.ResumeLayout(false);
             gbxStatus.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +400,14 @@
         private TextBox txtbxPlayCost;
         private Label lblPlayCost;
         private Label lblAmntEarned;
+        private ToolStripMenuItem saveCustomersToolStripMenuItem;
+        private ToolStripMenuItem saveMachinesToolStripMenuItem;
+        private ToolStripMenuItem loadCustomersToolStripMenuItem;
+        private ToolStripMenuItem loadMachinesToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }
