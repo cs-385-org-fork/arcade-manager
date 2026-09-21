@@ -7,19 +7,31 @@ namespace arcade_manager
     internal class Machine
     {
         private string machineName = "";
-        private double machinePrice = 0;
+        private decimal baseMachinePrice = 0;
+        private decimal currentMachinePrice = 0;
         private string machineStatus = "";
         private bool onSale = false;
+        private double discount = 0.85;
 
         public string MachineName
         {
             get { return machineName; }
             set { machineName = value; }
         }
-        public double MachinePrice
+        public decimal BaseMachinePrice
         {
-            get { return machinePrice; }
-            set { machinePrice = value; }
+            get { return baseMachinePrice; }
+            set { baseMachinePrice = value; }
+        }
+        public decimal CurrentMachinePrice
+        {
+            get { return currentMachinePrice; }
+            set
+            {
+                currentMachinePrice = baseMachinePrice;
+                applySale();
+            }
+        }
         }
         public string MachineStatus
         {
@@ -31,17 +43,13 @@ namespace arcade_manager
             get { return onSale; }
             set { onSale = value; }
         }
-        public void ChangeStatus(string machineName)
+        public void applySale()
         {
-            //method to change machine status
-        }
-        public void applySale(string machineName)
-        { 
-            //method to apply a discount if onSale bool == true
-        }
-        public void changePrice(string machineName)
-        {
-            //method to update price per play of a machine
+            if (onSale)
+            {
+                baseMachinePrice = baseMachinePrice * Convert.ToDecimal(discount);
+            }
+
         }
     }
 }
