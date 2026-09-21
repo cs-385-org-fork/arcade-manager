@@ -11,12 +11,15 @@ namespace arcade_manager
         string customerName;
         bool VIP;
 
-        private void newCard()
+        public void newCard(int ID, decimal money, string Name, bool VIPass)
         {
-
+            cardID = ID;
+            moneyOnCard = money;
+            customerName = Name;
+            VIP = VIPass;
         }
 
-        private void topUpCard(decimal payment)
+        public void topUpCard(decimal payment)
         {
             moneyOnCard += payment;
         }
@@ -26,6 +29,6 @@ namespace arcade_manager
             if (VIP) { machinePrice *= 0.75m; }
             if (moneyOnCard < machinePrice) { Console.WriteLine("Invalid Amount On Card"); }
             else { moneyOnCard -= machinePrice; }
-        } 
+        }
     }
 }
