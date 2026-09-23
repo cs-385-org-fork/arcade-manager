@@ -51,14 +51,21 @@ namespace arcade_manager {
             rbtnStatusAvailable = new RadioButton();
             machineName = new Label();
             tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            tabMachines = new TabPage();
+            tabCustomers = new TabPage();
+            gbxPlayCards = new GroupBox();
+            lbxPlayCards = new ListBox();
+            button1 = new Button();
+            button2 = new Button();
+            gbxCustomerInfo = new GroupBox();
             menuStrip1.SuspendLayout();
             gbxArcadeFloor.SuspendLayout();
             gbxMachineInfo.SuspendLayout();
             gbxStatus.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tabMachines.SuspendLayout();
+            tabCustomers.SuspendLayout();
+            gbxPlayCards.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -323,35 +330,93 @@ namespace arcade_manager {
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabMachines);
+            tabControl1.Controls.Add(tabCustomers);
             tabControl1.Location = new Point(12, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(771, 553);
             tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // tabMachines
             // 
-            tabPage1.BackColor = Color.MidnightBlue;
-            tabPage1.Controls.Add(gbxArcadeFloor);
-            tabPage1.Controls.Add(gbxMachineInfo);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(763, 525);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabMachines.BackColor = Color.MidnightBlue;
+            tabMachines.Controls.Add(gbxArcadeFloor);
+            tabMachines.Controls.Add(gbxMachineInfo);
+            tabMachines.Location = new Point(4, 24);
+            tabMachines.Name = "tabMachines";
+            tabMachines.Padding = new Padding(3);
+            tabMachines.Size = new Size(763, 525);
+            tabMachines.TabIndex = 0;
+            tabMachines.Text = "Machines";
             // 
-            // tabPage2
+            // tabCustomers
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(803, 255);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabCustomers.BackColor = Color.MidnightBlue;
+            tabCustomers.Controls.Add(gbxCustomerInfo);
+            tabCustomers.Controls.Add(gbxPlayCards);
+            tabCustomers.Location = new Point(4, 24);
+            tabCustomers.Name = "tabCustomers";
+            tabCustomers.Padding = new Padding(3);
+            tabCustomers.Size = new Size(763, 525);
+            tabCustomers.TabIndex = 1;
+            tabCustomers.Text = "Customers";
+            // 
+            // gbxPlayCards
+            // 
+            gbxPlayCards.Controls.Add(button2);
+            gbxPlayCards.Controls.Add(button1);
+            gbxPlayCards.Controls.Add(lbxPlayCards);
+            gbxPlayCards.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxPlayCards.ForeColor = Color.White;
+            gbxPlayCards.Location = new Point(7, 6);
+            gbxPlayCards.Name = "gbxPlayCards";
+            gbxPlayCards.Size = new Size(361, 513);
+            gbxPlayCards.TabIndex = 2;
+            gbxPlayCards.TabStop = false;
+            gbxPlayCards.Text = "Play Cards";
+            // 
+            // lbxPlayCards
+            // 
+            lbxPlayCards.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbxPlayCards.FormattingEnabled = true;
+            lbxPlayCards.Location = new Point(6, 34);
+            lbxPlayCards.Name = "lbxPlayCards";
+            lbxPlayCards.Size = new Size(349, 429);
+            lbxPlayCards.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(6, 467);
+            button1.Name = "button1";
+            button1.Size = new Size(172, 40);
+            button1.TabIndex = 4;
+            button1.Text = "Add Card";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(184, 467);
+            button2.Name = "button2";
+            button2.Size = new Size(171, 40);
+            button2.TabIndex = 5;
+            button2.Text = "Remove Card";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // gbxCustomerInfo
+            // 
+            gbxCustomerInfo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxCustomerInfo.ForeColor = Color.White;
+            gbxCustomerInfo.Location = new Point(374, 6);
+            gbxCustomerInfo.Name = "gbxCustomerInfo";
+            gbxCustomerInfo.Size = new Size(383, 513);
+            gbxCustomerInfo.TabIndex = 3;
+            gbxCustomerInfo.TabStop = false;
+            gbxCustomerInfo.Text = "Customer Information";
             // 
             // Form1
             // 
@@ -372,7 +437,9 @@ namespace arcade_manager {
             gbxStatus.ResumeLayout(false);
             gbxStatus.PerformLayout();
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
+            tabMachines.ResumeLayout(false);
+            tabCustomers.ResumeLayout(false);
+            gbxPlayCards.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -407,7 +474,12 @@ namespace arcade_manager {
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem exitToolStripMenuItem;
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tabMachines;
+        private TabPage tabCustomers;
+        private GroupBox gbxPlayCards;
+        private ListBox lbxPlayCards;
+        private Button button1;
+        private GroupBox gbxCustomerInfo;
+        private Button button2;
     }
 }

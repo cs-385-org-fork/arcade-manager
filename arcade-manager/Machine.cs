@@ -28,8 +28,7 @@ namespace arcade_manager
             get { return currentMachinePrice; }
             set
             {
-                currentMachinePrice = baseMachinePrice;
-                applySale();
+                currentMachinePrice = applySale();
             }
         }
         public string MachineStatus
@@ -42,11 +41,21 @@ namespace arcade_manager
             get { return onSale; }
             set { onSale = value; }
         }
-        public void applySale()
+
+        public Machine(string name, decimal price, string status) {
+            machineName = name;
+            baseMachinePrice = price;
+            machineStatus = status;
+        }
+
+        public decimal applySale()
         {
             if (onSale)
             {
-                baseMachinePrice = baseMachinePrice * Convert.ToDecimal(discount);
+                return baseMachinePrice * Convert.ToDecimal(discount);
+            }
+            else {
+                return baseMachinePrice;
             }
 
         }
