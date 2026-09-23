@@ -1,11 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 namespace arcade_manager
 {
     internal class PlayCard
     {
+        public PlayCard() 
+        {
+            cardID = 999999;
+            moneyOnCard = 0;
+            customerName = "Null";
+            vip = false;
+        }
+        public PlayCard(int ID, decimal money, string Name, bool VIPass)
+        {
+            cardID = ID;
+            moneyOnCard = money;
+            customerName = Name;
+            vip = VIPass;
+        }
+
         int cardID;
         decimal moneyOnCard;
         string customerName;
