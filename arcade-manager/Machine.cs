@@ -32,7 +32,6 @@ namespace arcade_manager
                 applySale();
             }
         }
-        }
         public string MachineStatus
         {
             get { return machineStatus; }
