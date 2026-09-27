@@ -2,10 +2,74 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace arcade_manager {
     internal class FileIO {
 
-        public void readCustomers() {
+        public FileIO() { }
+
+        public void readCustomers(List<PlayCard> customers) {
+
+            string filePath = "";
+
+            OpenFileDialog fileDiag = new OpenFileDialog();
+            DialogResult diagResult = fileDiag.ShowDialog();
+
+            if (diagResult == DialogResult.OK) {
+                filePath = fileDiag.FileName;
+            }
+            
+            StreamReader sr = new StreamReader(filePath);
+            string currentLine = sr.ReadLine();
+            //First line is amount of customers with active cards
+            if (int.TryParse(currentLine, out int activeCards)) { }
+            else {
+                return;
+            }
+
+            customers = new List<PlayCard> { }; //Create a list of active cards
+            customers.Add(new PlayCard()); // create first card
+
+            //Read the remaining lines and assign them to new playcard
+            int item = 1;
+            int card = 0;
+            while (currentLine != null) {
+                //Read the next line
+                currentLine = sr.ReadLine();
+                //ID Number
+                if (item == 1) {
+                    if (int.TryParse(currentLine, out int parsedLine)) { customers[card].CardID = parsedLine; }
+                }
+                //Money On Card
+                if (item == 2) {
+                    if (decimal.TryParse(currentLine, out decimal parsedLine)) { customers[card].MoneyOnCard = parsedLine; }
+                }
+                //customerName
+                if (item == 3) {
+                    customers[card].CustomerName = currentLine;
+                }
+                //VIP
+                if (item == 4) {
+                    if (currentLine == "true") {
+                        customers[card].VIP = true;
+                    }
+                    else if (currentLine == "false") {
+                        customers[card].VIP = false;
+                    }
+
+                    customers.Add(new PlayCard()); // create next card,
+                    card++; // and move on to next card
+                }
+
+                item++; // move on to next item
+            }
+            //close the file
+            sr.Close();
+            
+            
+        }
+
+        /*public void readCustomers() {
             if (File.Exists("Customers.txt")) {
                 StreamReader sr = new StreamReader("Customers.txt");
                 string currentLine = sr.ReadLine();
@@ -44,7 +108,7 @@ namespace arcade_manager {
                 sr.Close();
             }
             else { Console.WriteLine("No customer text file."); }
-        }
+        }*/
 
     }
 }
