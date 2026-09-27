@@ -5,8 +5,15 @@ using static System.Windows.Forms.LinkLabel;
 namespace arcade_manager {
     public partial class Form1 : Form {
 
-        Machine[] floorMachines = new Machine[6];
-        //List<PlayCard> customers = new List<PlayCard> { };
+        List<Machine> floorMachines = new List<Machine>
+        {
+            new Machine("Machine1", 0, "Available"),
+            new Machine("Machine2", 0, "Available"),
+            new Machine("Machine3", 0, "Available"),
+            new Machine("Machine4", 0, "Available"),
+            new Machine("Machine5", 0, "Available"),
+            new Machine("Machine6", 0, "Available")
+        };
         List<PlayCard> customers = new List<PlayCard>
         {
             new PlayCard(1, (decimal)123.45, "Bob", true),
@@ -19,8 +26,33 @@ namespace arcade_manager {
 
         public void updatePlayCardsListBox() { // updates the play cards displayed in the list box in the Customers tab
             lbxPlayCards.Items.Clear();
+
+            // sorting
+            List<int> sortedCustomers = new List<int> { }; // create list of indexes of sorted customers
             for (int i = 0; i < customers.Count(); i++) {
-                lbxPlayCards.Items.Add("" + customers[i].CardID);
+                if (customers[i].IsActive) { // if the customer is active,
+                    sortedCustomers.Add(customers[i].CardID); // add their card ID/index to the sorted list
+                }
+            }
+
+            if (cmbxSortPlayCards.Text == "ID") {
+                // bubble sort (from https://dotnetfullstackdev.substack.com/p/c-most-used-five-sorting-algorithms-24-04-08 )
+                int n = sortedCustomers.Count();
+                for (int i = 0; i < n - 1; i++) {
+                    for (int j = 0; j < n - i - 1; j++) {
+                        if (customers[sortedCustomers[j]].CardID > customers[sortedCustomers[j] + 1].CardID) {
+                            int temp = sortedCustomers[j];
+                            sortedCustomers[j] = sortedCustomers[j + 1];
+                            sortedCustomers[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+
+
+
+            for (int i = 0; i < sortedCustomers.Count(); i++) {
+                lbxPlayCards.Items.Add("" + customers[sortedCustomers[i]].CardID);
             }
         }
 
@@ -133,6 +165,7 @@ namespace arcade_manager {
         public Form1() {
             InitializeComponent();
 
+            updateMachineButtons();
             updatePlayCardsListBox();
             gbxNewCard.Visible = false;
         }
@@ -151,7 +184,8 @@ namespace arcade_manager {
         }
 
         private void loadMachinesToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            fileIO.readMachines(floorMachines);
+            updateMachineButtons();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {

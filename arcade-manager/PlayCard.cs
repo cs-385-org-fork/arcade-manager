@@ -26,12 +26,17 @@ namespace arcade_manager
         decimal moneyOnCard;
         string customerName;
         bool vip;
+        bool isActive = true;
 
         //VIP status might change after a customer owns a card.
         public bool VIP
         {
             get { return vip; }
             set { vip = value; }
+        }
+        public bool IsActive {
+            get { return isActive; }
+            set { isActive = value; }
         }
         public int CardID
         {

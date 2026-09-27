@@ -56,59 +56,70 @@ namespace arcade_manager {
                     else if (currentLine == "false") {
                         customers[card].VIP = false;
                     }
+                }
+                //isActive
+                if (item == 5) {
+                    if (currentLine == "true") {
+                        customers[card].IsActive = true;
+                    }
+                    else if (currentLine == "false") {
+                        customers[card].IsActive = false;
+                    }
 
                     customers.Add(new PlayCard()); // create next card,
                     card++; // and move on to next card
+                    item = 0; // reset item count
                 }
 
                 item++; // move on to next item
             }
             //close the file
             sr.Close();
-            
-            
         }
 
-        /*public void readCustomers() {
-            if (File.Exists("Customers.txt")) {
-                StreamReader sr = new StreamReader("Customers.txt");
-                string currentLine = sr.ReadLine();
-                //First line is amount of customers with active cards
-                if (int.TryParse(currentLine, out int activeCards)) { }
-                else {
-                    return;
-                }
-                //Create an array of the length of active cards
+        public void readMachines(List<Machine> floorMachines) {
 
-                //Read the remaining lines and assign them to new playcard
+            string filePath = "";
+
+            OpenFileDialog fileDiag = new OpenFileDialog();
+            DialogResult diagResult = fileDiag.ShowDialog();
+
+            if (diagResult == DialogResult.OK) {
+                filePath = fileDiag.FileName;
+            }
+
+            StreamReader sr = new StreamReader(filePath);
+
+            floorMachines = new List<Machine> { }; //Create a list of arcade machines
+
+            for (int machine = 0; machine < 6; machine++) {
+                floorMachines.Add(new Machine()); // create new machine
                 int item = 1;
+                string currentLine = " ";
                 while (currentLine != null) {
                     //Read the next line
                     currentLine = sr.ReadLine();
-                    //ID Number
+                    //MachineName
                     if (item == 1) {
-                        if (int.TryParse(currentLine, out int parsedLine)) {.cardID = parsedLine; }
+                        floorMachines[machine].MachineName = currentLine;
                     }
-                    //Money On Card
+                    //(Base) Machine Price
                     if (item == 2) {
-                        if (decimal.TryParse(currentLine, out int parsedLine)) {.moneyOnCard = parsedLine; }
+                        if (decimal.TryParse(currentLine, out decimal parsedLine)) { floorMachines[machine].BaseMachinePrice = parsedLine; }
                     }
-                    //customerName
+                    //machineStatus
                     if (item == 3) {
-                        if (decimal.TryParse(currentLine, out int parsedLine)) {.customerName = currentLine; }
-                    }
-                    //VIP
-                    if (item == 4) {
-                        if (decimal.TryParse(currentLine, out int parsedLine)) { }
+                        floorMachines[machine].MachineStatus = currentLine;
+                        currentLine = null;
                     }
 
-                    item++;
+                    item++; // move on to next item
                 }
-                //close the file
-                sr.Close();
             }
-            else { Console.WriteLine("No customer text file."); }
-        }*/
+
+            //close the file
+            sr.Close();
+        }
 
     }
 }

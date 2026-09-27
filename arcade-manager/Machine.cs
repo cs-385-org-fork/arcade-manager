@@ -42,6 +42,8 @@ namespace arcade_manager
             set { onSale = value; }
         }
 
+        public Machine() { } // base constructor
+
         public Machine(string name, decimal price, string status) {
             machineName = name;
             baseMachinePrice = price;
