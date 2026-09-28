@@ -41,6 +41,8 @@ namespace arcade_manager {
             btnMachine2 = new Button();
             btnMachine1 = new Button();
             gbxMachineInfo = new GroupBox();
+            label3 = new Label();
+            txtbxDiscount = new TextBox();
             lblDiscount = new Label();
             btnSimPlay = new Button();
             txtbxPlayCost = new TextBox();
@@ -252,6 +254,8 @@ namespace arcade_manager {
             // 
             // gbxMachineInfo
             // 
+            gbxMachineInfo.Controls.Add(label3);
+            gbxMachineInfo.Controls.Add(txtbxDiscount);
             gbxMachineInfo.Controls.Add(lblDiscount);
             gbxMachineInfo.Controls.Add(btnSimPlay);
             gbxMachineInfo.Controls.Add(txtbxPlayCost);
@@ -266,6 +270,25 @@ namespace arcade_manager {
             gbxMachineInfo.TabIndex = 2;
             gbxMachineInfo.TabStop = false;
             gbxMachineInfo.Text = "Machine Information";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(716, 40);
+            label3.Name = "label3";
+            label3.Size = new Size(28, 25);
+            label3.TabIndex = 7;
+            label3.Text = "%";
+            // 
+            // txtbxDiscount
+            // 
+            txtbxDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxDiscount.Location = new Point(628, 37);
+            txtbxDiscount.Name = "txtbxDiscount";
+            txtbxDiscount.Size = new Size(83, 33);
+            txtbxDiscount.TabIndex = 6;
+            txtbxDiscount.KeyDown += txtbxDiscount_KeyDown;
             // 
             // lblDiscount
             // 
@@ -290,10 +313,11 @@ namespace arcade_manager {
             // txtbxPlayCost
             // 
             txtbxPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxPlayCost.Location = new Point(392, 34);
+            txtbxPlayCost.Location = new Point(386, 37);
             txtbxPlayCost.Name = "txtbxPlayCost";
-            txtbxPlayCost.Size = new Size(128, 33);
+            txtbxPlayCost.Size = new Size(134, 33);
             txtbxPlayCost.TabIndex = 3;
+            txtbxPlayCost.KeyDown += txtbxPlayCost_KeyDown;
             // 
             // lblPlayCost
             // 
@@ -802,5 +826,7 @@ namespace arcade_manager {
         private ComboBox cmbxSortPlayCards;
         private Label lblSortPlayCards;
         private Label lblDiscount;
+        private TextBox txtbxDiscount;
+        private Label label3;
     }
 }

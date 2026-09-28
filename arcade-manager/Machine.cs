@@ -41,6 +41,11 @@ namespace arcade_manager
             get { return onSale; }
             set { onSale = value; }
         }
+        public double Discount 
+        {
+            get { return (1.0 - discount); } // return how much the price is discounted
+            set { discount = (1.0 - value); }
+        }
 
         public Machine() { } // base constructor
 

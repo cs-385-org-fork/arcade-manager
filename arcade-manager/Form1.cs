@@ -78,6 +78,20 @@ namespace arcade_manager {
                 lbxPlayCards.Items.Add(customers[sortedCustomers[i]].CardID + "\t\t$" + customers[sortedCustomers[i]].MoneyOnCard);
             }
         }
+        public void updateCustomerInfo(int customer) {
+            lblCustomerName.Text = ("Name: " + customers[customer].CustomerName);
+            lblCardID.Text = ("Card ID: " + customers[customer].CardID);
+            txtbxMoneyOnCard.Text = ("" + customers[customer].MoneyOnCard);
+
+            rbtnVIPTier.Checked = false;
+            rbtnStdTier.Checked = false;
+            if (customers[customer].VIP) {
+                rbtnVIPTier.Checked = true;
+            }
+            else {
+                rbtnStdTier.Checked = true;
+            }
+        }
 
         public void updateMachineButtons() { // updates machines displayed on floor in the Machines tab
 
@@ -167,20 +181,12 @@ namespace arcade_manager {
             }
 
             txtbxPlayCost.Text = ("" + floorMachines[machine].BaseMachinePrice);
-        }
 
-        public void updateCustomerInfo(int customer) {
-            lblCustomerName.Text = ("Name: " + customers[customer].CustomerName);
-            lblCardID.Text = ("Card ID: " + customers[customer].CardID);
-            txtbxMoneyOnCard.Text = ("" + customers[customer].MoneyOnCard);
-
-            rbtnVIPTier.Checked = false;
-            rbtnStdTier.Checked = false;
-            if (customers[customer].VIP) {
-                rbtnVIPTier.Checked = true;
+            if (floorMachines[machine].OnSale) {
+                txtbxDiscount.Text = ("" + floorMachines[machine].Discount * 100);
             }
             else {
-                rbtnStdTier.Checked = true;
+                txtbxDiscount.Text = "N/A";
             }
         }
 
@@ -280,6 +286,26 @@ namespace arcade_manager {
             updatePlayCardsListBox();
         }
 
-        
+        private void txtbxPlayCost_KeyDown(object sender, KeyEventArgs e) { // update play cost
+            if (e.KeyCode == Keys.Enter) {
+                decimal.TryParse(txtbxPlayCost.Text, out decimal parsedAmount);
+                floorMachines[selectedMachine].BaseMachinePrice = parsedAmount;
+                updateMachineInfo(selectedMachine);
+            }
+        }
+
+        private void txtbxDiscount_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                if (txtbxDiscount.Text == "N/A" || txtbxDiscount.Text == "n/a" || txtbxDiscount.Text == "" || txtbxDiscount.Text == "0") {
+                    floorMachines[selectedMachine].OnSale = false;
+                }
+                else {
+                    floorMachines[selectedMachine].OnSale = true;
+                    double.TryParse(txtbxDiscount.Text, out double parsedAmount);
+                    floorMachines[selectedMachine].Discount = (parsedAmount / 100.0);
+                }
+                updateMachineInfo(selectedMachine);
+            }
+        }
     }
 }
