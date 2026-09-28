@@ -150,6 +150,22 @@ namespace arcade_manager
         //isActive bool
 
         //method to write playcards to .txt
+         outputPlaycards()
+        {
+            using (StreamWriter pc = new StreamWriter("pcoutput.txt"))
+            {
+            pc.WriteLine(customers.Count());
+           for(int i = 0; i  < readCustomers.Count(); i++)
+           {
+            pc.WriteLine(customers[card].cardID);
+            pc.WriteLine(customers[card].moneyOnCard);
+            pc.WriteLine(customers[card].CustomerName);
+            pc.WriteLine(customers[card].VIP);
+            pc.WriteLine(customers[card].isActive);
+           }
+           pc.Flush();
+            }
+        }
         //method to write machines to .txt
 
     }
