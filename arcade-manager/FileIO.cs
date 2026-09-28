@@ -3,26 +3,31 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace arcade_manager {
-    internal class FileIO {
+namespace arcade_manager
+{
+    internal class FileIO
+    {
 
         public FileIO() { }
 
-        public void readCustomers(ref List<PlayCard> customers) {
+        public void readCustomers(ref List<PlayCard> customers)
+        {
 
             string filePath = "";
             OpenFileDialog fileDiag = new OpenFileDialog();
             DialogResult diagResult = fileDiag.ShowDialog();
 
-            if (diagResult == DialogResult.OK) {
+            if (diagResult == DialogResult.OK)
+            {
                 filePath = fileDiag.FileName;
             }
-            
+
             StreamReader sr = new StreamReader(filePath);
             string currentLine = sr.ReadLine();
             //First line is amount of customers with active cards
             if (int.TryParse(currentLine, out int activeCards)) { }
-            else {
+            else
+            {
                 return;
             }
 
@@ -31,38 +36,48 @@ namespace arcade_manager {
             //Read the remaining lines and assign them to new playcard
             int item = 1;
             int card = 0;
-            while (currentLine != null) {
+            while (currentLine != null)
+            {
                 customers.Add(new PlayCard()); // create card
 
                 //Read the next line
                 currentLine = sr.ReadLine();
                 //ID Number
-                if (item == 1) {
+                if (item == 1)
+                {
                     if (int.TryParse(currentLine, out int parsedLine)) { customers[card].CardID = parsedLine; }
                 }
                 //Money On Card
-                if (item == 2) {
+                if (item == 2)
+                {
                     if (decimal.TryParse(currentLine, out decimal parsedLine)) { customers[card].MoneyOnCard = parsedLine; }
                 }
                 //customerName
-                if (item == 3) {
+                if (item == 3)
+                {
                     customers[card].CustomerName = currentLine;
                 }
                 //VIP
-                if (item == 4) {
-                    if (currentLine == "true") {
+                if (item == 4)
+                {
+                    if (currentLine == "true")
+                    {
                         customers[card].VIP = true;
                     }
-                    else if (currentLine == "false") {
+                    else if (currentLine == "false")
+                    {
                         customers[card].VIP = false;
                     }
                 }
                 //isActive
-                if (item == 5) {
-                    if (currentLine == "true") {
+                if (item == 5)
+                {
+                    if (currentLine == "true")
+                    {
                         customers[card].IsActive = true;
                     }
-                    else if (currentLine == "false") {
+                    else if (currentLine == "false")
+                    {
                         customers[card].IsActive = false;
                     }
 
@@ -76,14 +91,16 @@ namespace arcade_manager {
             sr.Close();
         }
 
-        public void readMachines(ref List<Machine> floorMachines) {
+        public void readMachines(ref List<Machine> floorMachines)
+        {
 
             string filePath = "";
 
             OpenFileDialog fileDiag = new OpenFileDialog();
             DialogResult diagResult = fileDiag.ShowDialog();
 
-            if (diagResult == DialogResult.OK) {
+            if (diagResult == DialogResult.OK)
+            {
                 filePath = fileDiag.FileName;
             }
 
@@ -91,23 +108,28 @@ namespace arcade_manager {
 
             floorMachines = new List<Machine> { }; //Create a list of arcade machines
 
-            for (int machine = 0; machine < 6; machine++) {
+            for (int machine = 0; machine < 6; machine++)
+            {
                 floorMachines.Add(new Machine()); // create new machine
                 int item = 1;
                 string currentLine = " ";
-                while (currentLine != null) {
+                while (currentLine != null)
+                {
                     //Read the next line
                     currentLine = sr.ReadLine();
                     //MachineName
-                    if (item == 1) {
+                    if (item == 1)
+                    {
                         floorMachines[machine].MachineName = currentLine;
                     }
                     //(Base) Machine Price
-                    if (item == 2) {
+                    if (item == 2)
+                    {
                         if (decimal.TryParse(currentLine, out decimal parsedLine)) { floorMachines[machine].BaseMachinePrice = parsedLine; }
                     }
                     //machineStatus
-                    if (item == 3) {
+                    if (item == 3)
+                    {
                         floorMachines[machine].MachineStatus = currentLine;
                         currentLine = null;
                     }
@@ -119,6 +141,16 @@ namespace arcade_manager {
             //close the file
             sr.Close();
         }
+        //property names:
+        //customers[card].
+        //cardID int
+        //customerName string
+        //moneyOnCard double
+        //VIP bool
+        //isActive bool
+
+        //method to write playcards to .txt
+        //method to write machines to .txt
 
     }
 }
