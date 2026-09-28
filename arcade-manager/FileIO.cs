@@ -141,15 +141,6 @@ namespace arcade_manager
             //close the file
             sr.Close();
         }
-        //property names:
-        //customers[card].
-        //cardID int
-        //customerName string
-        //moneyOnCard double
-        //VIP bool
-        //isActive bool
-
-        //method to write playcards to .txt
          outputPlaycards()
         {
             using (StreamWriter pc = new StreamWriter("pcoutput.txt"))
@@ -166,7 +157,20 @@ namespace arcade_manager
            pc.Flush();
             }
         }
-        //method to write machines to .txt
+        outputMachines()
+        {
+            using (StreamWriter mach = new StreamWriter("machoutput.txt"))
+            {
+            pc.WriteLine(customers.Count());
+           for(int i = 0; i  < floorMachines.count(); i++)
+           {
+            pc.WriteLine(floorMachines[machine].machineName);
+            pc.WriteLine(floorMachines[machine].baseMachinePrice);
+            pc.WriteLine(floorMachines[machine].MachineStatus);
+           }
+           pc.Flush();
+            }
+        }
 
     }
 }
