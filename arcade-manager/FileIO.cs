@@ -8,10 +8,9 @@ namespace arcade_manager {
 
         public FileIO() { }
 
-        public void readCustomers(List<PlayCard> customers) {
+        public void readCustomers(ref List<PlayCard> customers) {
 
             string filePath = "";
-
             OpenFileDialog fileDiag = new OpenFileDialog();
             DialogResult diagResult = fileDiag.ShowDialog();
 
@@ -28,12 +27,13 @@ namespace arcade_manager {
             }
 
             customers = new List<PlayCard> { }; //Create a list of active cards
-            customers.Add(new PlayCard()); // create first card
 
             //Read the remaining lines and assign them to new playcard
             int item = 1;
             int card = 0;
             while (currentLine != null) {
+                customers.Add(new PlayCard()); // create card
+
                 //Read the next line
                 currentLine = sr.ReadLine();
                 //ID Number
@@ -66,8 +66,7 @@ namespace arcade_manager {
                         customers[card].IsActive = false;
                     }
 
-                    customers.Add(new PlayCard()); // create next card,
-                    card++; // and move on to next card
+                    card++; // move on to next card
                     item = 0; // reset item count
                 }
 
@@ -77,7 +76,7 @@ namespace arcade_manager {
             sr.Close();
         }
 
-        public void readMachines(List<Machine> floorMachines) {
+        public void readMachines(ref List<Machine> floorMachines) {
 
             string filePath = "";
 

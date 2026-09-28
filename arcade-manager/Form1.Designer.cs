@@ -41,6 +41,7 @@ namespace arcade_manager {
             btnMachine2 = new Button();
             btnMachine1 = new Button();
             gbxMachineInfo = new GroupBox();
+            lblDiscount = new Label();
             btnSimPlay = new Button();
             txtbxPlayCost = new TextBox();
             lblPlayCost = new Label();
@@ -78,7 +79,6 @@ namespace arcade_manager {
             btnRemoveCard = new Button();
             btnAddCard = new Button();
             lbxPlayCards = new ListBox();
-            lblDiscount = new Label();
             menuStrip1.SuspendLayout();
             gbxArcadeFloor.SuspendLayout();
             gbxMachineInfo.SuspendLayout();
@@ -267,6 +267,16 @@ namespace arcade_manager {
             gbxMachineInfo.TabStop = false;
             gbxMachineInfo.Text = "Machine Information";
             // 
+            // lblDiscount
+            // 
+            lblDiscount.AutoSize = true;
+            lblDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDiscount.Location = new Point(536, 40);
+            lblDiscount.Name = "lblDiscount";
+            lblDiscount.Size = new Size(95, 25);
+            lblDiscount.TabIndex = 5;
+            lblDiscount.Text = "Discount: ";
+            // 
             // btnSimPlay
             // 
             btnSimPlay.ForeColor = Color.Black;
@@ -446,6 +456,7 @@ namespace arcade_manager {
             btnNewCardAdd.TabIndex = 7;
             btnNewCardAdd.Text = "Add";
             btnNewCardAdd.UseVisualStyleBackColor = true;
+            btnNewCardAdd.Click += btnNewCardAdd_Click;
             // 
             // txtbxNewCardMoney
             // 
@@ -662,6 +673,7 @@ namespace arcade_manager {
             cmbxSortPlayCards.Size = new Size(182, 29);
             cmbxSortPlayCards.TabIndex = 6;
             cmbxSortPlayCards.Text = "ID";
+            cmbxSortPlayCards.SelectedIndexChanged += cmbxSortPlayCards_SelectedIndexChanged;
             // 
             // btnRemoveCard
             // 
@@ -673,6 +685,7 @@ namespace arcade_manager {
             btnRemoveCard.TabIndex = 5;
             btnRemoveCard.Text = "Remove Card";
             btnRemoveCard.UseVisualStyleBackColor = true;
+            btnRemoveCard.Click += btnRemoveCard_Click;
             // 
             // btnAddCard
             // 
@@ -695,16 +708,6 @@ namespace arcade_manager {
             lbxPlayCards.Size = new Size(349, 404);
             lbxPlayCards.TabIndex = 3;
             lbxPlayCards.SelectedIndexChanged += lbxPlayCards_SelectedIndexChanged;
-            // 
-            // lblDiscount
-            // 
-            lblDiscount.AutoSize = true;
-            lblDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDiscount.Location = new Point(536, 40);
-            lblDiscount.Name = "lblDiscount";
-            lblDiscount.Size = new Size(95, 25);
-            lblDiscount.TabIndex = 5;
-            lblDiscount.Text = "Discount: ";
             // 
             // Form1
             // 

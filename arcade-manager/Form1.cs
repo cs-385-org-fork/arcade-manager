@@ -19,6 +19,7 @@ namespace arcade_manager {
             new PlayCard(1, (decimal)123.45, "Bob", true),
             new PlayCard(2, (decimal)234.56, "John", false)
         };
+        List<int> sortedCustomers = new List<int> { }; // parallel list of indexes of sorted customers (how theyre displayed in GUI)
         FileIO fileIO = new FileIO();
 
         int selectedMachine = 0;
@@ -28,31 +29,53 @@ namespace arcade_manager {
             lbxPlayCards.Items.Clear();
 
             // sorting
-            List<int> sortedCustomers = new List<int> { }; // create list of indexes of sorted customers
+            sortedCustomers.Clear();
             for (int i = 0; i < customers.Count(); i++) {
                 if (customers[i].IsActive) { // if the customer is active,
-                    sortedCustomers.Add(customers[i].CardID); // add their card ID/index to the sorted list
+                    sortedCustomers.Add(i); // add their card index to the sorted parallel list
                 }
             }
 
-            if (cmbxSortPlayCards.Text == "ID") {
-                // bubble sort (from https://dotnetfullstackdev.substack.com/p/c-most-used-five-sorting-algorithms-24-04-08 )
-                int n = sortedCustomers.Count();
-                for (int i = 0; i < n - 1; i++) {
-                    for (int j = 0; j < n - i - 1; j++) {
-                        if (customers[sortedCustomers[j]].CardID > customers[sortedCustomers[j] + 1].CardID) {
-                            int temp = sortedCustomers[j];
-                            sortedCustomers[j] = sortedCustomers[j + 1];
-                            sortedCustomers[j + 1] = temp;
+            if (cmbxSortPlayCards.Text == "Balance (Low to High)") {
+                int temporary;
+                for (int j = 0; j <= sortedCustomers.Count() - 2; j++) {
+                    for (int i = 0; i <= sortedCustomers.Count() - 2; i++) {
+                        if (customers[sortedCustomers[i]].MoneyOnCard > customers[sortedCustomers[i + 1]].MoneyOnCard) {
+                            temporary = sortedCustomers[i + 1];
+                            sortedCustomers[i + 1] = sortedCustomers[i];
+                            sortedCustomers[i] = temporary;
+                        }
+                    }
+                }
+            }
+            else if (cmbxSortPlayCards.Text == "Balance (High to Low)") {
+                int temporary;
+                for (int j = 0; j <= sortedCustomers.Count() - 2; j++) {
+                    for (int i = 0; i <= sortedCustomers.Count() - 2; i++) {
+                        if (customers[sortedCustomers[i]].MoneyOnCard < customers[sortedCustomers[i + 1]].MoneyOnCard) {
+                            temporary = sortedCustomers[i + 1];
+                            sortedCustomers[i + 1] = sortedCustomers[i];
+                            sortedCustomers[i] = temporary;
+                        }
+                    }
+                }
+            }
+            else { // "ID" or anything else 5 2 7 3
+                int temporary;
+                for (int j = 0; j <= sortedCustomers.Count() - 2; j++) {
+                    for (int i = 0; i <= sortedCustomers.Count() - 2; i++) {
+                        if (customers[sortedCustomers[i]].CardID > customers[sortedCustomers[i + 1]].CardID) {
+                            temporary = sortedCustomers[i + 1];
+                            sortedCustomers[i + 1] = sortedCustomers[i];
+                            sortedCustomers[i] = temporary;
                         }
                     }
                 }
             }
 
-
-
+            // put sorted cards into listbox
             for (int i = 0; i < sortedCustomers.Count(); i++) {
-                lbxPlayCards.Items.Add("" + customers[sortedCustomers[i]].CardID);
+                lbxPlayCards.Items.Add(customers[sortedCustomers[i]].CardID + "\t\t$" + customers[sortedCustomers[i]].MoneyOnCard);
             }
         }
 
@@ -179,12 +202,12 @@ namespace arcade_manager {
         }
 
         private void loadCustomersToolStripMenuItem_Click(object sender, EventArgs e) {
-            fileIO.readCustomers(customers);
+            fileIO.readCustomers(ref customers);
             updatePlayCardsListBox();
         }
 
         private void loadMachinesToolStripMenuItem_Click(object sender, EventArgs e) {
-            fileIO.readMachines(floorMachines);
+            fileIO.readMachines(ref floorMachines);
             updateMachineButtons();
         }
 
@@ -225,7 +248,7 @@ namespace arcade_manager {
         }
 
         private void lbxPlayCards_SelectedIndexChanged(object sender, EventArgs e) {
-            selectedCustomer = lbxPlayCards.SelectedIndex;
+            selectedCustomer = sortedCustomers[lbxPlayCards.SelectedIndex];
             updateCustomerInfo(selectedCustomer);
         }
 
@@ -233,8 +256,30 @@ namespace arcade_manager {
             gbxNewCard.Visible = true;
         }
 
+        private void btnRemoveCard_Click(object sender, EventArgs e) {
+            customers[sortedCustomers[lbxPlayCards.SelectedIndex]].IsActive = false;
+            updatePlayCardsListBox();
+        }
+
+        private void btnNewCardAdd_Click(object sender, EventArgs e) {
+            decimal.TryParse(txtbxNewCardMoney.Text, out decimal parsedMoney);
+            bool status = false;
+            if (rbtnNewCardVIPTier.Checked) {
+                status = true;
+            }
+            customers.Add(new PlayCard((customers.Count() + 1), parsedMoney, txtbxNewCardName.Text, status));
+            updatePlayCardsListBox();
+            gbxNewCard.Visible = false;
+        }
+
         private void btnNewCardCancel_Click(object sender, EventArgs e) {
             gbxNewCard.Visible = false;
         }
+
+        private void cmbxSortPlayCards_SelectedIndexChanged(object sender, EventArgs e) {
+            updatePlayCardsListBox();
+        }
+
+        
     }
 }

@@ -13,6 +13,7 @@ namespace arcade_manager
             moneyOnCard = 0;
             customerName = "Null";
             vip = false;
+            isActive = true;
         }
         public PlayCard(int ID, decimal money, string Name, bool VIPass)
         {
@@ -20,13 +21,14 @@ namespace arcade_manager
             moneyOnCard = money;
             customerName = Name;
             vip = VIPass;
+            isActive = true;
         }
 
         int cardID;
         decimal moneyOnCard;
         string customerName;
         bool vip;
-        bool isActive = true;
+        bool isActive;
 
         //VIP status might change after a customer owns a card.
         public bool VIP
