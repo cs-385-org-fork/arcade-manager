@@ -1,4 +1,3 @@
-using Microsoft.VisualBasic;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using static System.Windows.Forms.LinkLabel;
@@ -206,7 +205,7 @@ namespace arcade_manager {
         { // update displayed info of machine in GUI
             selectedMachine = machine;
 
-            lblMachineName.Text = floorMachines[machine].MachineName;
+            txtbxMachineName.Text = floorMachines[machine].MachineName;
 
             rbtnStatusAvailable.Checked = false;
             rbtnStatusMaintainence.Checked = false;
@@ -236,6 +235,42 @@ namespace arcade_manager {
             }
         }
 
+        public void updateSimPlayMachines()
+        {
+            cmbxMachines.Items.Clear();
+
+            // put machines into combobox
+            for (int i = 0; i < 6; i++)
+            {
+                cmbxMachines.Items.Add(floorMachines[i].MachineName);
+            }
+        }
+        public void updateSimPlayCards()
+        {
+            cmbxPlayCards.Items.Clear();
+
+            // sort cards by ID
+            int temporary;
+            for (int j = 0; j <= sortedCustomers.Count() - 2; j++)
+            {
+                for (int i = 0; i <= sortedCustomers.Count() - 2; i++)
+                {
+                    if (customers[sortedCustomers[i]].CardID > customers[sortedCustomers[i + 1]].CardID)
+                    {
+                        temporary = sortedCustomers[i + 1];
+                        sortedCustomers[i + 1] = sortedCustomers[i];
+                        sortedCustomers[i] = temporary;
+                    }
+                }
+            }
+
+            // put sorted cards into combobox
+            for (int i = 0; i < sortedCustomers.Count(); i++)
+            {
+                cmbxPlayCards.Items.Add(customers[sortedCustomers[i]].CardID);
+            }
+        }
+
 
         public Form1()
         {
@@ -244,6 +279,7 @@ namespace arcade_manager {
             updateMachineButtons();
             updatePlayCardsListBox();
             gbxNewCard.Visible = false;
+            lblSimPlayPlayCost3.Visible = false;
         }
 
         private void saveCustomersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -358,12 +394,21 @@ namespace arcade_manager {
             updatePlayCardsListBox();
         }
 
+        private void txtbxMachineName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                floorMachines[selectedMachine].MachineName = txtbxMachineName.Text;
+                updateMachineInfo(selectedMachine);
+                updateMachineButtons();
+            }
+        }
         private void txtbxPlayCost_KeyDown(object sender, KeyEventArgs e)
         { // update play cost
             if (e.KeyCode == Keys.Enter)
             {
                 decimal.TryParse(txtbxPlayCost.Text, out decimal parsedAmount);
-                floorMachines[selectedMachine].BaseMachinePrice = parsedAmount;
+                floorMachines[selectedMachine].BaseMachinePrice = Math.Round(parsedAmount, 2);
                 updateMachineInfo(selectedMachine);
             }
         }
@@ -380,14 +425,88 @@ namespace arcade_manager {
                 {
                     floorMachines[selectedMachine].OnSale = true;
                     double.TryParse(txtbxDiscount.Text, out double parsedAmount);
-                    floorMachines[selectedMachine].Discount = (parsedAmount / 100.0);
+                    floorMachines[selectedMachine].Discount = Math.Round((parsedAmount / 100.0), 2);
                 }
                 updateMachineInfo(selectedMachine);
             }
         }
 
-        private void lblMachineName_Click(object sender, EventArgs e)
+        private void tabSimPlay_Enter(object sender, EventArgs e)
         {
+            updateSimPlayMachines();
+            updateSimPlayCards();
+        }
+
+        private void cmbxMachines_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSimPlayPlayCost2.Font = new Font(lblSimPlayPlayCost2.Font, FontStyle.Regular);
+            lblSimPlayPlayCost3.Visible = false;
+
+            if (cmbxPlayCards.Text == "")
+            {
+                MessageBox.Show("Please select a Play Card before selecting a machine.");
+                cmbxMachines.Text = "";
+            }
+            else if (floorMachines[cmbxMachines.SelectedIndex].MachineStatus != "Available")
+            {
+                MessageBox.Show("Sorry, this machine is currently unavailable. Please try a different machine.");
+            }
+            else
+            {
+                floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice = 0;
+                lblSimPlayPlayCost2.Text = ("" + floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
+                //MessageBox.Show("DEBUG: " + floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
+
+                if (customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].VIP)
+                {
+                    lblSimPlayPlayCost2.Font = new Font(lblSimPlayPlayCost2.Font, FontStyle.Strikeout);
+                    lblSimPlayPlayCost3.Visible = true;
+                    lblSimPlayPlayCost3.Text = ("with VIP Discount: $" + Math.Round((floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice * (decimal)0.75), 2));
+                }
+            }
+        }
+
+        private void cmbxPlayCards_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSimPlayMoneyOnCard.Text = ("Money on Card: $" + customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].MoneyOnCard);
+            if (customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].VIP)
+            {
+                lblSimPlayVIP.Text = "VIP: Yes";
+            }
+            else
+            {
+                lblSimPlayVIP.Text = "VIP: No";
+            }
+        }
+
+        private void btnSimPlay_Click(object sender, EventArgs e)
+        {
+            if (cmbxMachines.Text == "" || cmbxPlayCards.Text == "")
+            { // if a machine or play card isnt selected, notify user
+                MessageBox.Show("Please choose both a Machine and Play Card to swipe card.");
+            }
+            else
+            {
+                bool play = customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].gamePaidFor(floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
+
+                if (play)
+                {
+                    MessageBox.Show(customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].CustomerName + " (ID " + customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].CardID + ") played " + floorMachines[cmbxMachines.SelectedIndex].MachineName + "!");
+                }
+                else
+                {
+                    MessageBox.Show("Insufficient funds.");
+                }
+            }
+
+            lblSimPlayMoneyOnCard.Text = ("Money on Card: $" + customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].MoneyOnCard);
+        }
+
+        private void aboutArcadeManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Arcade Manager" + "\n"
+                               + "By Miles Crane, Connor Klering, Trevor Past" + "\n"
+                               + "September 2026");
         }
     }
 }

@@ -77,7 +77,7 @@ namespace arcade_manager
         {
             if (vip) { machinePrice *= 0.75m; }
             if (moneyOnCard < machinePrice) { Console.WriteLine("Invalid Amount On Card"); return false; }
-            else { moneyOnCard -= machinePrice; return true; }
+            else { moneyOnCard -= Math.Round(machinePrice, 2); return true; }
         }
     }
 }

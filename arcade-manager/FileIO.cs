@@ -22,6 +22,10 @@ namespace arcade_manager
             {
                 filePath = fileDiag.FileName;
             }
+            else
+            {
+                return;
+            }
 
             StreamReader sr = new StreamReader(filePath);
             string currentLine = sr.ReadLine();
@@ -39,14 +43,14 @@ namespace arcade_manager
             int card = 0;
             while (currentLine != null)
             {
-                
+
                 //Read the next line
                 currentLine = sr.ReadLine();
                 //ID Number
                 if (item == 1)
                 {
                     if (int.TryParse(currentLine, out int parsedLine)) { customers.Add(new PlayCard()); customers[card].CardID = parsedLine; }
-                    }
+                }
                 //Money On Card
                 if (item == 2)
                 {
@@ -103,6 +107,10 @@ namespace arcade_manager
             {
                 filePath = fileDiag.FileName;
             }
+            else
+            {
+                return;
+            }
 
             StreamReader sr = new StreamReader(filePath);
 
@@ -142,26 +150,58 @@ namespace arcade_manager
             //close the file
             sr.Close();
         }
-         public void outputPlaycards(List<PlayCard> customers)
+        public void outputPlaycards(List<PlayCard> customers)
         {
-            using (StreamWriter pc = new StreamWriter("pcoutput.txt"))
+            string filePath = "";
+
+            SaveFileDialog fileDiag = new SaveFileDialog();
+            fileDiag.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            fileDiag.FilterIndex = 1;
+            DialogResult diagResult = fileDiag.ShowDialog();
+
+            if (diagResult == DialogResult.OK)
             {
-            pc.WriteLine(customers.Count());
-           for(int i = 0; i  < customers.Count(); i++)
-           {
-            pc.WriteLine(customers[i].CardID);
-            pc.WriteLine(customers[i].MoneyOnCard);
-            pc.WriteLine(customers[i].CustomerName);
-            pc.WriteLine(customers[i].VIP);
-            pc.WriteLine(customers[i].IsActive);
-           }
-           pc.Flush();
+                filePath = fileDiag.FileName;
+            }
+            else
+            {
+                return;
+            }
+
+            using (StreamWriter pc = new StreamWriter(filePath))
+            {
+                pc.WriteLine(customers.Count());
+                for (int i = 0; i < customers.Count(); i++)
+                {
+                    pc.WriteLine(customers[i].CardID);
+                    pc.WriteLine(customers[i].MoneyOnCard);
+                    pc.WriteLine(customers[i].CustomerName);
+                    pc.WriteLine(customers[i].VIP);
+                    pc.WriteLine(customers[i].IsActive);
+                }
+                pc.Flush();
             }
         }
 
         public void outputMachines(List<Machine> floorMachines)
         {
-            using (StreamWriter mach = new StreamWriter("machoutput.txt"))
+            string filePath = "";
+
+            SaveFileDialog fileDiag = new SaveFileDialog();
+            fileDiag.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            fileDiag.FilterIndex = 1;
+            DialogResult diagResult = fileDiag.ShowDialog();
+
+            if (diagResult == DialogResult.OK)
+            {
+                filePath = fileDiag.FileName;
+            }
+            else
+            {
+                return;
+            }
+
+            using (StreamWriter mach = new StreamWriter(filePath))
             {
                 for (int i = 0; i < floorMachines.Count(); i++)
                 {

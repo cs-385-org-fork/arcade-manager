@@ -52,6 +52,7 @@ namespace arcade_manager
         public Machine(string name, decimal price, string status) {
             machineName = name;
             baseMachinePrice = price;
+            currentMachinePrice = price;
             machineStatus = status;
         }
 

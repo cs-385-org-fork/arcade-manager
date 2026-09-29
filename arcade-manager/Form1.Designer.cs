@@ -24,6 +24,7 @@ namespace arcade_manager {
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveCustomersToolStripMenuItem = new ToolStripMenuItem();
@@ -32,7 +33,6 @@ namespace arcade_manager {
             loadMachinesToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             exitToolStripMenuItem = new ToolStripMenuItem();
-            editToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             gbxArcadeFloor = new GroupBox();
             btnMachine4 = new Button();
@@ -42,10 +42,10 @@ namespace arcade_manager {
             btnMachine2 = new Button();
             btnMachine1 = new Button();
             gbxMachineInfo = new GroupBox();
+            txtbxMachineName = new TextBox();
             label3 = new Label();
             txtbxDiscount = new TextBox();
             lblDiscount = new Label();
-            btnSimPlay = new Button();
             txtbxPlayCost = new TextBox();
             lblPlayCost = new Label();
             gbxStatus = new GroupBox();
@@ -82,6 +82,19 @@ namespace arcade_manager {
             btnRemoveCard = new Button();
             btnAddCard = new Button();
             lbxPlayCards = new ListBox();
+            tabSimPlay = new TabPage();
+            btnSimPlay = new Button();
+            gbxChooseCard = new GroupBox();
+            lblSimPlayVIP = new Label();
+            lblSimPlayMoneyOnCard = new Label();
+            cmbxPlayCards = new ComboBox();
+            gbxChooseMachine = new GroupBox();
+            cmbxMachines = new ComboBox();
+            lblSimPlayPlayCost3 = new Label();
+            lblSimPlayPlayCost2 = new Label();
+            lblSimPlayPlayCost1 = new Label();
+            toolTipEnter = new ToolTip(components);
+            aboutArcadeManagerToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             gbxArcadeFloor.SuspendLayout();
             gbxMachineInfo.SuspendLayout();
@@ -94,11 +107,14 @@ namespace arcade_manager {
             gbxCustomerInfo.SuspendLayout();
             gbxCustomerTier.SuspendLayout();
             gbxPlayCards.SuspendLayout();
+            tabSimPlay.SuspendLayout();
+            gbxChooseCard.SuspendLayout();
+            gbxChooseMachine.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(794, 24);
@@ -152,14 +168,9 @@ namespace arcade_manager {
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // editToolStripMenuItem
-            // 
-            editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(39, 20);
-            editToolStripMenuItem.Text = "Edit";
-            // 
             // helpToolStripMenuItem
             // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutArcadeManagerToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(44, 20);
             helpToolStripMenuItem.Text = "Help";
@@ -255,10 +266,10 @@ namespace arcade_manager {
             // 
             // gbxMachineInfo
             // 
+            gbxMachineInfo.Controls.Add(txtbxMachineName);
             gbxMachineInfo.Controls.Add(label3);
             gbxMachineInfo.Controls.Add(txtbxDiscount);
             gbxMachineInfo.Controls.Add(lblDiscount);
-            gbxMachineInfo.Controls.Add(btnSimPlay);
             gbxMachineInfo.Controls.Add(txtbxPlayCost);
             gbxMachineInfo.Controls.Add(lblPlayCost);
             gbxMachineInfo.Controls.Add(gbxStatus);
@@ -272,63 +283,68 @@ namespace arcade_manager {
             gbxMachineInfo.TabStop = false;
             gbxMachineInfo.Text = "Machine Information";
             // 
+            // txtbxMachineName
+            // 
+            txtbxMachineName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxMachineName.Location = new Point(78, 37);
+            txtbxMachineName.Name = "txtbxMachineName";
+            txtbxMachineName.Size = new Size(350, 33);
+            txtbxMachineName.TabIndex = 8;
+            toolTipEnter.SetToolTip(txtbxMachineName, "Press Enter after typing in the box to update the machine information.");
+            txtbxMachineName.KeyDown += txtbxMachineName_KeyDown;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(716, 40);
+            label3.Location = new Point(705, 109);
             label3.Name = "label3";
             label3.Size = new Size(28, 25);
             label3.TabIndex = 7;
             label3.Text = "%";
+            toolTipEnter.SetToolTip(label3, "Press Enter after typing in the box to update the machine information.");
             // 
             // txtbxDiscount
             // 
             txtbxDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxDiscount.Location = new Point(628, 37);
+            txtbxDiscount.Location = new Point(557, 106);
             txtbxDiscount.Name = "txtbxDiscount";
-            txtbxDiscount.Size = new Size(83, 33);
+            txtbxDiscount.Size = new Size(142, 33);
             txtbxDiscount.TabIndex = 6;
+            toolTipEnter.SetToolTip(txtbxDiscount, "Press Enter after typing in the box to update the machine information.");
             txtbxDiscount.KeyDown += txtbxDiscount_KeyDown;
             // 
             // lblDiscount
             // 
             lblDiscount.AutoSize = true;
             lblDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDiscount.Location = new Point(536, 40);
+            lblDiscount.Location = new Point(456, 109);
             lblDiscount.Name = "lblDiscount";
             lblDiscount.Size = new Size(95, 25);
             lblDiscount.TabIndex = 5;
             lblDiscount.Text = "Discount: ";
-            // 
-            // btnSimPlay
-            // 
-            btnSimPlay.ForeColor = Color.Black;
-            btnSimPlay.Location = new Point(489, 92);
-            btnSimPlay.Name = "btnSimPlay";
-            btnSimPlay.Size = new Size(222, 46);
-            btnSimPlay.TabIndex = 4;
-            btnSimPlay.Text = "Simulate Play";
-            btnSimPlay.UseVisualStyleBackColor = true;
+            toolTipEnter.SetToolTip(lblDiscount, "Press Enter after typing in the box to update the machine information.");
             // 
             // txtbxPlayCost
             // 
             txtbxPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxPlayCost.Location = new Point(386, 37);
+            txtbxPlayCost.Location = new Point(557, 37);
             txtbxPlayCost.Name = "txtbxPlayCost";
-            txtbxPlayCost.Size = new Size(134, 33);
+            txtbxPlayCost.Size = new Size(176, 33);
             txtbxPlayCost.TabIndex = 3;
+            toolTipEnter.SetToolTip(txtbxPlayCost, "Press Enter after typing in the box to update the machine information.");
             txtbxPlayCost.KeyDown += txtbxPlayCost_KeyDown;
             // 
             // lblPlayCost
             // 
             lblPlayCost.AutoSize = true;
             lblPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPlayCost.Location = new Point(278, 40);
+            lblPlayCost.Location = new Point(443, 40);
             lblPlayCost.Name = "lblPlayCost";
             lblPlayCost.Size = new Size(108, 25);
             lblPlayCost.TabIndex = 2;
             lblPlayCost.Text = "Play Cost: $";
+            toolTipEnter.SetToolTip(lblPlayCost, "Press Enter after typing in the box to update the machine information.");
             // 
             // gbxStatus
             // 
@@ -390,17 +406,18 @@ namespace arcade_manager {
             // 
             lblMachineName.AutoSize = true;
             lblMachineName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMachineName.Location = new Point(12, 45);
+            lblMachineName.Location = new Point(6, 40);
             lblMachineName.Name = "lblMachineName";
-            lblMachineName.Size = new Size(134, 25);
+            lblMachineName.Size = new Size(66, 25);
             lblMachineName.TabIndex = 0;
-            lblMachineName.Text = "machineName";
-            lblMachineName.Click += lblMachineName_Click;
+            lblMachineName.Text = "Name:";
+            toolTipEnter.SetToolTip(lblMachineName, "Press Enter after typing in the box to update the machine information.");
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabMachines);
             tabControl1.Controls.Add(tabCustomers);
+            tabControl1.Controls.Add(tabSimPlay);
             tabControl1.Location = new Point(12, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -735,6 +752,138 @@ namespace arcade_manager {
             lbxPlayCards.TabIndex = 3;
             lbxPlayCards.SelectedIndexChanged += lbxPlayCards_SelectedIndexChanged;
             // 
+            // tabSimPlay
+            // 
+            tabSimPlay.BackColor = SystemColors.WindowFrame;
+            tabSimPlay.Controls.Add(btnSimPlay);
+            tabSimPlay.Controls.Add(gbxChooseCard);
+            tabSimPlay.Controls.Add(gbxChooseMachine);
+            tabSimPlay.Location = new Point(4, 24);
+            tabSimPlay.Name = "tabSimPlay";
+            tabSimPlay.Size = new Size(763, 525);
+            tabSimPlay.TabIndex = 2;
+            tabSimPlay.Text = "Simulate Play";
+            tabSimPlay.Enter += tabSimPlay_Enter;
+            // 
+            // btnSimPlay
+            // 
+            btnSimPlay.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSimPlay.Location = new Point(265, 319);
+            btnSimPlay.Name = "btnSimPlay";
+            btnSimPlay.Size = new Size(237, 50);
+            btnSimPlay.TabIndex = 4;
+            btnSimPlay.Text = "Swipe Card";
+            btnSimPlay.UseVisualStyleBackColor = true;
+            btnSimPlay.Click += btnSimPlay_Click;
+            // 
+            // gbxChooseCard
+            // 
+            gbxChooseCard.BackColor = Color.Maroon;
+            gbxChooseCard.Controls.Add(lblSimPlayVIP);
+            gbxChooseCard.Controls.Add(lblSimPlayMoneyOnCard);
+            gbxChooseCard.Controls.Add(cmbxPlayCards);
+            gbxChooseCard.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxChooseCard.ForeColor = Color.White;
+            gbxChooseCard.Location = new Point(385, 151);
+            gbxChooseCard.Name = "gbxChooseCard";
+            gbxChooseCard.Size = new Size(362, 162);
+            gbxChooseCard.TabIndex = 3;
+            gbxChooseCard.TabStop = false;
+            gbxChooseCard.Text = "Choose Play Card";
+            // 
+            // lblSimPlayVIP
+            // 
+            lblSimPlayVIP.AutoSize = true;
+            lblSimPlayVIP.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayVIP.Location = new Point(6, 125);
+            lblSimPlayVIP.Name = "lblSimPlayVIP";
+            lblSimPlayVIP.Size = new Size(49, 25);
+            lblSimPlayVIP.TabIndex = 9;
+            lblSimPlayVIP.Text = "VIP: ";
+            // 
+            // lblSimPlayMoneyOnCard
+            // 
+            lblSimPlayMoneyOnCard.AutoSize = true;
+            lblSimPlayMoneyOnCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayMoneyOnCard.Location = new Point(6, 90);
+            lblSimPlayMoneyOnCard.Name = "lblSimPlayMoneyOnCard";
+            lblSimPlayMoneyOnCard.Size = new Size(161, 25);
+            lblSimPlayMoneyOnCard.TabIndex = 8;
+            lblSimPlayMoneyOnCard.Text = "Money on Card: $";
+            // 
+            // cmbxPlayCards
+            // 
+            cmbxPlayCards.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbxPlayCards.FormattingEnabled = true;
+            cmbxPlayCards.Location = new Point(6, 44);
+            cmbxPlayCards.Name = "cmbxPlayCards";
+            cmbxPlayCards.Size = new Size(350, 33);
+            cmbxPlayCards.TabIndex = 7;
+            cmbxPlayCards.SelectedIndexChanged += cmbxPlayCards_SelectedIndexChanged;
+            // 
+            // gbxChooseMachine
+            // 
+            gbxChooseMachine.BackColor = Color.MidnightBlue;
+            gbxChooseMachine.Controls.Add(cmbxMachines);
+            gbxChooseMachine.Controls.Add(lblSimPlayPlayCost3);
+            gbxChooseMachine.Controls.Add(lblSimPlayPlayCost2);
+            gbxChooseMachine.Controls.Add(lblSimPlayPlayCost1);
+            gbxChooseMachine.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxChooseMachine.ForeColor = Color.White;
+            gbxChooseMachine.Location = new Point(15, 151);
+            gbxChooseMachine.Name = "gbxChooseMachine";
+            gbxChooseMachine.Size = new Size(362, 162);
+            gbxChooseMachine.TabIndex = 2;
+            gbxChooseMachine.TabStop = false;
+            gbxChooseMachine.Text = "Choose Machine";
+            // 
+            // cmbxMachines
+            // 
+            cmbxMachines.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbxMachines.FormattingEnabled = true;
+            cmbxMachines.Location = new Point(6, 44);
+            cmbxMachines.Name = "cmbxMachines";
+            cmbxMachines.Size = new Size(350, 33);
+            cmbxMachines.TabIndex = 8;
+            cmbxMachines.SelectedIndexChanged += cmbxMachines_SelectedIndexChanged;
+            // 
+            // lblSimPlayPlayCost3
+            // 
+            lblSimPlayPlayCost3.AutoSize = true;
+            lblSimPlayPlayCost3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCost3.Location = new Point(16, 125);
+            lblSimPlayPlayCost3.Name = "lblSimPlayPlayCost3";
+            lblSimPlayPlayCost3.Size = new Size(179, 25);
+            lblSimPlayPlayCost3.TabIndex = 7;
+            lblSimPlayPlayCost3.Text = "with VIP Discount: $";
+            // 
+            // lblSimPlayPlayCost2
+            // 
+            lblSimPlayPlayCost2.AutoSize = true;
+            lblSimPlayPlayCost2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCost2.Location = new Point(110, 90);
+            lblSimPlayPlayCost2.Name = "lblSimPlayPlayCost2";
+            lblSimPlayPlayCost2.Size = new Size(46, 25);
+            lblSimPlayPlayCost2.TabIndex = 6;
+            lblSimPlayPlayCost2.Text = "0.00";
+            // 
+            // lblSimPlayPlayCost1
+            // 
+            lblSimPlayPlayCost1.AutoSize = true;
+            lblSimPlayPlayCost1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCost1.Location = new Point(6, 90);
+            lblSimPlayPlayCost1.Name = "lblSimPlayPlayCost1";
+            lblSimPlayPlayCost1.Size = new Size(108, 25);
+            lblSimPlayPlayCost1.TabIndex = 5;
+            lblSimPlayPlayCost1.Text = "Play Cost: $";
+            // 
+            // aboutArcadeManagerToolStripMenuItem
+            // 
+            aboutArcadeManagerToolStripMenuItem.Name = "aboutArcadeManagerToolStripMenuItem";
+            aboutArcadeManagerToolStripMenuItem.Size = new Size(197, 22);
+            aboutArcadeManagerToolStripMenuItem.Text = "About Arcade Manager";
+            aboutArcadeManagerToolStripMenuItem.Click += aboutArcadeManagerToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -766,6 +915,11 @@ namespace arcade_manager {
             gbxCustomerTier.PerformLayout();
             gbxPlayCards.ResumeLayout(false);
             gbxPlayCards.PerformLayout();
+            tabSimPlay.ResumeLayout(false);
+            gbxChooseCard.ResumeLayout(false);
+            gbxChooseCard.PerformLayout();
+            gbxChooseMachine.ResumeLayout(false);
+            gbxChooseMachine.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -776,7 +930,6 @@ namespace arcade_manager {
         private GroupBox gbxArcadeFloor;
         private GroupBox gbxMachineInfo;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private Button btnMachine4;
         private Button btnMachine3;
@@ -789,7 +942,6 @@ namespace arcade_manager {
         private RadioButton rbtnStatusOutOfOrder;
         private RadioButton rbtnStatusAvailable;
         private Label lblMachineName;
-        private Button btnSimPlay;
         private TextBox txtbxPlayCost;
         private Label lblPlayCost;
         private ToolStripMenuItem saveCustomersToolStripMenuItem;
@@ -830,5 +982,19 @@ namespace arcade_manager {
         private Label lblDiscount;
         private TextBox txtbxDiscount;
         private Label label3;
+        private TabPage tabSimPlay;
+        private GroupBox gbxChooseMachine;
+        private Label lblSimPlayPlayCost3;
+        private Label lblSimPlayPlayCost2;
+        private Label lblSimPlayPlayCost1;
+        private GroupBox gbxChooseCard;
+        private Label lblSimPlayVIP;
+        private Label lblSimPlayMoneyOnCard;
+        private ComboBox cmbxPlayCards;
+        private ComboBox cmbxMachines;
+        private Button btnSimPlay;
+        private TextBox txtbxMachineName;
+        private ToolTip toolTipEnter;
+        private ToolStripMenuItem aboutArcadeManagerToolStripMenuItem;
     }
 }
