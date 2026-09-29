@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
 using System.Text;
 
 
@@ -38,15 +39,14 @@ namespace arcade_manager
             int card = 0;
             while (currentLine != null)
             {
-                customers.Add(new PlayCard()); // create card
-
+                
                 //Read the next line
                 currentLine = sr.ReadLine();
                 //ID Number
                 if (item == 1)
                 {
-                    if (int.TryParse(currentLine, out int parsedLine)) { customers[card].CardID = parsedLine; }
-                }
+                    if (int.TryParse(currentLine, out int parsedLine)) { customers.Add(new PlayCard()); customers[card].CardID = parsedLine; }
+                    }
                 //Money On Card
                 if (item == 2)
                 {
@@ -117,6 +117,7 @@ namespace arcade_manager
                 {
                     //Read the next line
                     currentLine = sr.ReadLine();
+
                     //MachineName
                     if (item == 1)
                     {
@@ -141,36 +142,35 @@ namespace arcade_manager
             //close the file
             sr.Close();
         }
-         outputPlaycards()
+         public void outputPlaycards(List<PlayCard> customers)
         {
             using (StreamWriter pc = new StreamWriter("pcoutput.txt"))
             {
             pc.WriteLine(customers.Count());
-           for(int i = 0; i  < readCustomers.Count(); i++)
+           for(int i = 0; i  < customers.Count(); i++)
            {
-            pc.WriteLine(customers[card].cardID);
-            pc.WriteLine(customers[card].moneyOnCard);
-            pc.WriteLine(customers[card].CustomerName);
-            pc.WriteLine(customers[card].VIP);
-            pc.WriteLine(customers[card].isActive);
-           }
-           pc.Flush();
-            }
-        }
-        outputMachines()
-        {
-            using (StreamWriter mach = new StreamWriter("machoutput.txt"))
-            {
-            pc.WriteLine(customers.Count());
-           for(int i = 0; i  < floorMachines.count(); i++)
-           {
-            pc.WriteLine(floorMachines[machine].machineName);
-            pc.WriteLine(floorMachines[machine].baseMachinePrice);
-            pc.WriteLine(floorMachines[machine].MachineStatus);
+            pc.WriteLine(customers[i].CardID);
+            pc.WriteLine(customers[i].MoneyOnCard);
+            pc.WriteLine(customers[i].CustomerName);
+            pc.WriteLine(customers[i].VIP);
+            pc.WriteLine(customers[i].IsActive);
            }
            pc.Flush();
             }
         }
 
+        public void outputMachines(List<Machine> floorMachines)
+        {
+            using (StreamWriter mach = new StreamWriter("machoutput.txt"))
+            {
+                for (int i = 0; i < floorMachines.Count(); i++)
+                {
+                    mach.WriteLine(floorMachines[i].MachineName);
+                    mach.WriteLine(floorMachines[i].BaseMachinePrice);
+                    mach.WriteLine(floorMachines[i].MachineStatus);
+                }
+                mach.Flush();
+            }
+        }
     }
 }

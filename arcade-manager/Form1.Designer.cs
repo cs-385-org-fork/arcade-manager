@@ -22,7 +22,8 @@ namespace arcade_manager {
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveCustomersToolStripMenuItem = new ToolStripMenuItem();
@@ -389,11 +390,12 @@ namespace arcade_manager {
             // 
             lblMachineName.AutoSize = true;
             lblMachineName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMachineName.Location = new Point(6, 40);
+            lblMachineName.Location = new Point(12, 45);
             lblMachineName.Name = "lblMachineName";
             lblMachineName.Size = new Size(134, 25);
             lblMachineName.TabIndex = 0;
             lblMachineName.Text = "machineName";
+            lblMachineName.Click += lblMachineName_Click;
             // 
             // tabControl1
             // 
