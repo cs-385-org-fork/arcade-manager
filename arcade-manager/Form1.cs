@@ -403,7 +403,7 @@ namespace arcade_manager {
                 lblSimPlayPlayCost2.Text = ("" + floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
                 //MessageBox.Show("DEBUG: " + floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
 
-                if (customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].VIP) {
+                if (customers[Int32.Parse(cmbxPlayCards.Text) - 1].VIP) {
                     lblSimPlayPlayCost2.Font = new Font(lblSimPlayPlayCost2.Font, FontStyle.Strikeout);
                     lblSimPlayPlayCost3.Visible = true;
                     lblSimPlayPlayCost3.Text = ("with VIP Discount: $" + Math.Round((floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice * (decimal)0.75), 2));
@@ -413,7 +413,7 @@ namespace arcade_manager {
 
         private void cmbxPlayCards_SelectedIndexChanged(object sender, EventArgs e) {
             lblSimPlayMoneyOnCard.Text = ("Money on Card: $" + customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].MoneyOnCard);
-            if (customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].VIP) {
+            if (customers[Int32.Parse(cmbxPlayCards.Text) - 1].VIP) {
                 lblSimPlayVIP.Text = "VIP: Yes";
             }
             else {
@@ -426,17 +426,17 @@ namespace arcade_manager {
                 MessageBox.Show("Please choose both a Machine and Play Card to swipe card.");
             }
             else {
-                bool play = customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].gamePaidFor(floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
+                bool play = customers[Int32.Parse(cmbxPlayCards.Text) - 1].gamePaidFor(floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
 
                 if (play) {
-                    MessageBox.Show(customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].CustomerName + " (ID " + customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].CardID + ") played " + floorMachines[cmbxMachines.SelectedIndex].MachineName + "!");
+                    MessageBox.Show(customers[Int32.Parse(cmbxPlayCards.Text) - 1].CustomerName + " (ID " + customers[Int32.Parse(cmbxPlayCards.Text) - 1].CardID + ") played " + floorMachines[cmbxMachines.SelectedIndex].MachineName + "!");
                 }
                 else {
                     MessageBox.Show("Insufficient funds.");
                 }
             }
 
-            lblSimPlayMoneyOnCard.Text = ("Money on Card: $" + customers[sortedCustomers[cmbxPlayCards.SelectedIndex]].MoneyOnCard);
+            lblSimPlayMoneyOnCard.Text = ("Money on Card: $" + customers[Int32.Parse(cmbxPlayCards.Text) - 1].MoneyOnCard);
         }
 
         private void aboutArcadeManagerToolStripMenuItem_Click(object sender, EventArgs e) {
