@@ -22,8 +22,7 @@ namespace arcade_manager {
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
@@ -34,6 +33,7 @@ namespace arcade_manager {
             toolStripSeparator1 = new ToolStripSeparator();
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            aboutArcadeManagerToolStripMenuItem = new ToolStripMenuItem();
             gbxArcadeFloor = new GroupBox();
             btnMachine4 = new Button();
             btnMachine3 = new Button();
@@ -68,6 +68,9 @@ namespace arcade_manager {
             lblNewCardMoney = new Label();
             lblNewCardName = new Label();
             gbxCustomerInfo = new GroupBox();
+            btnTopUp10 = new Button();
+            btnTopUp5 = new Button();
+            btnTopUp1 = new Button();
             txtbxMoneyOnCard = new TextBox();
             gbxCustomerTier = new GroupBox();
             rbtnVIPTier = new RadioButton();
@@ -94,7 +97,6 @@ namespace arcade_manager {
             lblSimPlayPlayCost2 = new Label();
             lblSimPlayPlayCost1 = new Label();
             toolTipEnter = new ToolTip(components);
-            aboutArcadeManagerToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             gbxArcadeFloor.SuspendLayout();
             gbxMachineInfo.SuspendLayout();
@@ -174,6 +176,13 @@ namespace arcade_manager {
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(44, 20);
             helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutArcadeManagerToolStripMenuItem
+            // 
+            aboutArcadeManagerToolStripMenuItem.Name = "aboutArcadeManagerToolStripMenuItem";
+            aboutArcadeManagerToolStripMenuItem.Size = new Size(197, 22);
+            aboutArcadeManagerToolStripMenuItem.Text = "About Arcade Manager";
+            aboutArcadeManagerToolStripMenuItem.Click += aboutArcadeManagerToolStripMenuItem_Click;
             // 
             // gbxArcadeFloor
             // 
@@ -462,9 +471,9 @@ namespace arcade_manager {
             gbxNewCard.Controls.Add(lblNewCardName);
             gbxNewCard.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             gbxNewCard.ForeColor = Color.White;
-            gbxNewCard.Location = new Point(374, 251);
+            gbxNewCard.Location = new Point(374, 285);
             gbxNewCard.Name = "gbxNewCard";
-            gbxNewCard.Size = new Size(383, 268);
+            gbxNewCard.Size = new Size(383, 234);
             gbxNewCard.TabIndex = 4;
             gbxNewCard.TabStop = false;
             gbxNewCard.Text = "New Card";
@@ -481,7 +490,7 @@ namespace arcade_manager {
             // 
             btnNewCardCancel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNewCardCancel.ForeColor = Color.Black;
-            btnNewCardCancel.Location = new Point(249, 222);
+            btnNewCardCancel.Location = new Point(249, 188);
             btnNewCardCancel.Name = "btnNewCardCancel";
             btnNewCardCancel.Size = new Size(128, 40);
             btnNewCardCancel.TabIndex = 8;
@@ -493,7 +502,7 @@ namespace arcade_manager {
             // 
             btnNewCardAdd.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNewCardAdd.ForeColor = Color.Black;
-            btnNewCardAdd.Location = new Point(115, 222);
+            btnNewCardAdd.Location = new Point(115, 188);
             btnNewCardAdd.Name = "btnNewCardAdd";
             btnNewCardAdd.Size = new Size(128, 40);
             btnNewCardAdd.TabIndex = 7;
@@ -579,6 +588,9 @@ namespace arcade_manager {
             // 
             // gbxCustomerInfo
             // 
+            gbxCustomerInfo.Controls.Add(btnTopUp10);
+            gbxCustomerInfo.Controls.Add(btnTopUp5);
+            gbxCustomerInfo.Controls.Add(btnTopUp1);
             gbxCustomerInfo.Controls.Add(txtbxMoneyOnCard);
             gbxCustomerInfo.Controls.Add(gbxCustomerTier);
             gbxCustomerInfo.Controls.Add(label1);
@@ -589,10 +601,46 @@ namespace arcade_manager {
             gbxCustomerInfo.ForeColor = Color.White;
             gbxCustomerInfo.Location = new Point(374, 6);
             gbxCustomerInfo.Name = "gbxCustomerInfo";
-            gbxCustomerInfo.Size = new Size(383, 231);
+            gbxCustomerInfo.Size = new Size(383, 273);
             gbxCustomerInfo.TabIndex = 3;
             gbxCustomerInfo.TabStop = false;
             gbxCustomerInfo.Text = "Customer Information";
+            // 
+            // btnTopUp10
+            // 
+            btnTopUp10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp10.ForeColor = Color.Black;
+            btnTopUp10.Location = new Point(261, 143);
+            btnTopUp10.Name = "btnTopUp10";
+            btnTopUp10.Size = new Size(116, 40);
+            btnTopUp10.TabIndex = 11;
+            btnTopUp10.Text = "Top Up $10";
+            btnTopUp10.UseVisualStyleBackColor = true;
+            btnTopUp10.Click += btnTopUp10_Click;
+            // 
+            // btnTopUp5
+            // 
+            btnTopUp5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp5.ForeColor = Color.Black;
+            btnTopUp5.Location = new Point(134, 143);
+            btnTopUp5.Name = "btnTopUp5";
+            btnTopUp5.Size = new Size(116, 40);
+            btnTopUp5.TabIndex = 10;
+            btnTopUp5.Text = "Top Up $5";
+            btnTopUp5.UseVisualStyleBackColor = true;
+            btnTopUp5.Click += btnTopUp5_Click;
+            // 
+            // btnTopUp1
+            // 
+            btnTopUp1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp1.ForeColor = Color.Black;
+            btnTopUp1.Location = new Point(6, 143);
+            btnTopUp1.Name = "btnTopUp1";
+            btnTopUp1.Size = new Size(116, 40);
+            btnTopUp1.TabIndex = 9;
+            btnTopUp1.Text = "Top Up $1";
+            btnTopUp1.UseVisualStyleBackColor = true;
+            btnTopUp1.Click += btnTopUp1_Click;
             // 
             // txtbxMoneyOnCard
             // 
@@ -601,6 +649,8 @@ namespace arcade_manager {
             txtbxMoneyOnCard.Name = "txtbxMoneyOnCard";
             txtbxMoneyOnCard.Size = new Size(204, 33);
             txtbxMoneyOnCard.TabIndex = 6;
+            toolTipEnter.SetToolTip(txtbxMoneyOnCard, "Press Enter after typing in the box to update the machine information.");
+            txtbxMoneyOnCard.KeyDown += txtbxMoneyOnCard_KeyDown;
             // 
             // gbxCustomerTier
             // 
@@ -608,7 +658,7 @@ namespace arcade_manager {
             gbxCustomerTier.Controls.Add(rbtnStdTier);
             gbxCustomerTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gbxCustomerTier.ForeColor = Color.White;
-            gbxCustomerTier.Location = new Point(12, 139);
+            gbxCustomerTier.Location = new Point(12, 189);
             gbxCustomerTier.Name = "gbxCustomerTier";
             gbxCustomerTier.Size = new Size(365, 78);
             gbxCustomerTier.TabIndex = 5;
@@ -627,6 +677,7 @@ namespace arcade_manager {
             rbtnVIPTier.TabStop = true;
             rbtnVIPTier.Text = "VIP";
             rbtnVIPTier.UseVisualStyleBackColor = true;
+            rbtnVIPTier.Click += rbtnVIPTier_CheckedChanged;
             // 
             // rbtnStdTier
             // 
@@ -640,6 +691,7 @@ namespace arcade_manager {
             rbtnStdTier.TabStop = true;
             rbtnStdTier.Text = "Standard";
             rbtnStdTier.UseVisualStyleBackColor = true;
+            rbtnStdTier.Click += rbtnStdTier_CheckedChanged;
             // 
             // label1
             // 
@@ -659,6 +711,7 @@ namespace arcade_manager {
             lblMoneyOnCard.Size = new Size(161, 25);
             lblMoneyOnCard.TabIndex = 3;
             lblMoneyOnCard.Text = "Money on Card: $";
+            toolTipEnter.SetToolTip(lblMoneyOnCard, "Press Enter after typing in the box to update the machine information.");
             // 
             // lblCardID
             // 
@@ -877,13 +930,6 @@ namespace arcade_manager {
             lblSimPlayPlayCost1.TabIndex = 5;
             lblSimPlayPlayCost1.Text = "Play Cost: $";
             // 
-            // aboutArcadeManagerToolStripMenuItem
-            // 
-            aboutArcadeManagerToolStripMenuItem.Name = "aboutArcadeManagerToolStripMenuItem";
-            aboutArcadeManagerToolStripMenuItem.Size = new Size(197, 22);
-            aboutArcadeManagerToolStripMenuItem.Text = "About Arcade Manager";
-            aboutArcadeManagerToolStripMenuItem.Click += aboutArcadeManagerToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -996,5 +1042,8 @@ namespace arcade_manager {
         private TextBox txtbxMachineName;
         private ToolTip toolTipEnter;
         private ToolStripMenuItem aboutArcadeManagerToolStripMenuItem;
+        private Button btnTopUp10;
+        private Button btnTopUp5;
+        private Button btnTopUp1;
     }
 }
