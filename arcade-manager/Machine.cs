@@ -56,7 +56,7 @@ namespace arcade_manager
             machineStatus = status;
         }
 
-        public decimal applySale()
+        public virtual decimal applySale()
         {
             if (onSale)
             {
