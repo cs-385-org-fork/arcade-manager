@@ -9,7 +9,7 @@ public override decimal applySale()
 {
 if (OnSale)
 {
-    return Machine.BaseMachinePrice * Convert.ToDecimal(Fighting_GameDiscount)
+    return Machine.BaseMachinePrice * Convert.ToDecimal(Fighting_GameDiscount);
 }
         
 }
