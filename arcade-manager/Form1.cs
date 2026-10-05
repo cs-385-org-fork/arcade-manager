@@ -7,12 +7,7 @@ namespace arcade_manager {
 
         List<Machine> floorMachines = new List<Machine>
         {
-            new Machine("Machine1", 0, "Available"),
-            new Machine("Machine2", 0, "Available"),
-            new Machine("Machine3", 0, "Available"),
-            new Machine("Machine4", 0, "Available"),
-            new Machine("Machine5", 0, "Available"),
-            new Machine("Machine6", 0, "Available")
+
         };
         List<PlayCard> customers = new List<PlayCard>
         {
@@ -92,73 +87,9 @@ namespace arcade_manager {
             }
         }
 
-        public void updateMachineButtons() { // updates machines displayed on floor in the Machines tab
+        public void updateMachines() { // updates machines displayed on floor in the Machines tab
 
-            btnMachine1.Text = floorMachines[0].MachineName; // update displayed name
-            if (floorMachines[0].MachineStatus == "Maintainence") { // update color to show status of machine
-                btnMachine1.BackColor = Color.Orange;
-            }
-            else if (floorMachines[0].MachineStatus == "Out of Order") {
-                btnMachine1.BackColor = Color.Red;
-            }
-            else if (floorMachines[0].MachineStatus == "Available") {
-                btnMachine1.BackColor = Color.GreenYellow;
-            }
-
-            btnMachine2.Text = floorMachines[1].MachineName;
-            if (floorMachines[1].MachineStatus == "Maintainence") {
-                btnMachine2.BackColor = Color.Orange;
-            }
-            else if (floorMachines[1].MachineStatus == "Out of Order") {
-                btnMachine2.BackColor = Color.Red;
-            }
-            else if (floorMachines[1].MachineStatus == "Available") {
-                btnMachine2.BackColor = Color.GreenYellow;
-            }
-
-            btnMachine3.Text = floorMachines[2].MachineName;
-            if (floorMachines[2].MachineStatus == "Maintainence") {
-                btnMachine3.BackColor = Color.Orange;
-            }
-            else if (floorMachines[2].MachineStatus == "Out of Order") {
-                btnMachine3.BackColor = Color.Red;
-            }
-            else if (floorMachines[2].MachineStatus == "Available") {
-                btnMachine3.BackColor = Color.GreenYellow;
-            }
-
-            btnMachine4.Text = floorMachines[3].MachineName;
-            if (floorMachines[3].MachineStatus == "Maintainence") {
-                btnMachine4.BackColor = Color.Orange;
-            }
-            else if (floorMachines[3].MachineStatus == "Out of Order") {
-                btnMachine4.BackColor = Color.Red;
-            }
-            else if (floorMachines[3].MachineStatus == "Available") {
-                btnMachine4.BackColor = Color.GreenYellow;
-            }
-
-            btnMachine5.Text = floorMachines[4].MachineName;
-            if (floorMachines[4].MachineStatus == "Maintainence") {
-                btnMachine5.BackColor = Color.Orange;
-            }
-            else if (floorMachines[4].MachineStatus == "Out of Order") {
-                btnMachine5.BackColor = Color.Red;
-            }
-            else if (floorMachines[4].MachineStatus == "Available") {
-                btnMachine5.BackColor = Color.GreenYellow;
-            }
-
-            btnMachine6.Text = floorMachines[5].MachineName;
-            if (floorMachines[5].MachineStatus == "Maintainence") {
-                btnMachine6.BackColor = Color.Orange;
-            }
-            else if (floorMachines[5].MachineStatus == "Out of Order") {
-                btnMachine6.BackColor = Color.Red;
-            }
-            else if (floorMachines[5].MachineStatus == "Available") {
-                btnMachine6.BackColor = Color.GreenYellow;
-            }
+            
         }
 
         public void updateMachineInfo(int machine) { // update displayed info of machine in GUI
@@ -222,7 +153,14 @@ namespace arcade_manager {
         public Form1() {
             InitializeComponent();
 
-            updateMachineButtons();
+            // update stuff on Machines tab:
+            updateMachines();
+            cmbxMachineGenre.Visible = false;
+            btnNewMachAdd.Visible = false;
+            btnNewMachCancel.Visible = false;
+
+
+            // on Customers tab:
             updatePlayCardsListBox();
             gbxNewCard.Visible = false;
             lblSimPlayPlayCost3.Visible = false;
@@ -247,43 +185,24 @@ namespace arcade_manager {
 
         private void loadMachinesToolStripMenuItem_Click(object sender, EventArgs e) {
             fileIO.readMachines(ref floorMachines);
-            updateMachineButtons();
+            updateMachines();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
             Application.Exit();
         }
 
-        private void btnMachine1_Click(object sender, EventArgs e) {
-            updateMachineInfo(0);
-        }
-        private void btnMachine2_Click(object sender, EventArgs e) {
-            updateMachineInfo(1);
-        }
-        private void btnMachine3_Click(object sender, EventArgs e) {
-            updateMachineInfo(2);
-        }
-        private void btnMachine4_Click(object sender, EventArgs e) {
-            updateMachineInfo(3);
-        }
-        private void btnMachine5_Click(object sender, EventArgs e) {
-            updateMachineInfo(4);
-        }
-        private void btnMachine6_Click(object sender, EventArgs e) {
-            updateMachineInfo(5);
-        }
-
         private void rbtnStatusAvailable_CheckedChanged(object sender, EventArgs e) {
             floorMachines[selectedMachine].MachineStatus = "Available";
-            updateMachineButtons();
+            updateMachines();
         }
         private void rbtnStatusOutOfOrder_CheckedChanged(object sender, EventArgs e) {
             floorMachines[selectedMachine].MachineStatus = "Out of Order";
-            updateMachineButtons();
+            updateMachines();
         }
         private void rbtnStatusMaintainence_CheckedChanged(object sender, EventArgs e) {
             floorMachines[selectedMachine].MachineStatus = "Maintainence";
-            updateMachineButtons();
+            updateMachines();
         }
 
         private void lbxPlayCards_SelectedIndexChanged(object sender, EventArgs e) {
@@ -357,7 +276,7 @@ namespace arcade_manager {
             if (e.KeyCode == Keys.Enter) {
                 floorMachines[selectedMachine].MachineName = txtbxMachineName.Text;
                 updateMachineInfo(selectedMachine);
-                updateMachineButtons();
+                updateMachines();
             }
         }
         private void txtbxPlayCost_KeyDown(object sender, KeyEventArgs e) { // update play cost

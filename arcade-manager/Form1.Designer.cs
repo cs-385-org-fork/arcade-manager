@@ -35,13 +35,13 @@ namespace arcade_manager {
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutArcadeManagerToolStripMenuItem = new ToolStripMenuItem();
             gbxArcadeFloor = new GroupBox();
-            btnMachine4 = new Button();
-            btnMachine3 = new Button();
-            btnMachine6 = new Button();
-            btnMachine5 = new Button();
-            btnMachine2 = new Button();
-            btnMachine1 = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            listBox1 = new ListBox();
             gbxMachineInfo = new GroupBox();
+            btnNewMachCancel = new Button();
+            btnNewMachAdd = new Button();
+            lblMachineGenre = new Label();
             txtbxMachineName = new TextBox();
             label3 = new Label();
             txtbxDiscount = new TextBox();
@@ -97,6 +97,7 @@ namespace arcade_manager {
             lblSimPlayPlayCost2 = new Label();
             lblSimPlayPlayCost1 = new Label();
             toolTipEnter = new ToolTip(components);
+            cmbxMachineGenre = new ComboBox();
             menuStrip1.SuspendLayout();
             gbxArcadeFloor.SuspendLayout();
             gbxMachineInfo.SuspendLayout();
@@ -186,95 +187,55 @@ namespace arcade_manager {
             // 
             // gbxArcadeFloor
             // 
-            gbxArcadeFloor.Controls.Add(btnMachine4);
-            gbxArcadeFloor.Controls.Add(btnMachine3);
-            gbxArcadeFloor.Controls.Add(btnMachine6);
-            gbxArcadeFloor.Controls.Add(btnMachine5);
-            gbxArcadeFloor.Controls.Add(btnMachine2);
-            gbxArcadeFloor.Controls.Add(btnMachine1);
+            gbxArcadeFloor.Controls.Add(button1);
+            gbxArcadeFloor.Controls.Add(button2);
+            gbxArcadeFloor.Controls.Add(listBox1);
             gbxArcadeFloor.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gbxArcadeFloor.ForeColor = Color.White;
             gbxArcadeFloor.Location = new Point(6, 6);
             gbxArcadeFloor.Name = "gbxArcadeFloor";
-            gbxArcadeFloor.Size = new Size(750, 341);
+            gbxArcadeFloor.Size = new Size(305, 513);
             gbxArcadeFloor.TabIndex = 1;
             gbxArcadeFloor.TabStop = false;
             gbxArcadeFloor.Text = "Arcade Floor";
             // 
-            // btnMachine4
+            // button1
             // 
-            btnMachine4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMachine4.ForeColor = Color.Black;
-            btnMachine4.Location = new Point(254, 191);
-            btnMachine4.Name = "btnMachine4";
-            btnMachine4.Size = new Size(242, 144);
-            btnMachine4.TabIndex = 5;
-            btnMachine4.Text = "Machine4";
-            btnMachine4.UseVisualStyleBackColor = true;
-            btnMachine4.Click += btnMachine4_Click;
+            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(6, 467);
+            button1.Name = "button1";
+            button1.Size = new Size(293, 40);
+            button1.TabIndex = 8;
+            button1.Text = "Remove Machine";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // btnMachine3
+            // button2
             // 
-            btnMachine3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMachine3.ForeColor = Color.Black;
-            btnMachine3.Location = new Point(254, 34);
-            btnMachine3.Name = "btnMachine3";
-            btnMachine3.Size = new Size(242, 144);
-            btnMachine3.TabIndex = 4;
-            btnMachine3.Text = "Machine3";
-            btnMachine3.UseVisualStyleBackColor = true;
-            btnMachine3.Click += btnMachine3_Click;
+            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(6, 421);
+            button2.Name = "button2";
+            button2.Size = new Size(293, 40);
+            button2.TabIndex = 7;
+            button2.Text = "Add Machine";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // btnMachine6
+            // listBox1
             // 
-            btnMachine6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMachine6.ForeColor = Color.Black;
-            btnMachine6.Location = new Point(502, 191);
-            btnMachine6.Name = "btnMachine6";
-            btnMachine6.Size = new Size(242, 144);
-            btnMachine6.TabIndex = 3;
-            btnMachine6.Text = "Machine6";
-            btnMachine6.UseVisualStyleBackColor = true;
-            btnMachine6.Click += btnMachine6_Click;
-            // 
-            // btnMachine5
-            // 
-            btnMachine5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMachine5.ForeColor = Color.Black;
-            btnMachine5.Location = new Point(502, 34);
-            btnMachine5.Name = "btnMachine5";
-            btnMachine5.Size = new Size(242, 144);
-            btnMachine5.TabIndex = 2;
-            btnMachine5.Text = "Machine5";
-            btnMachine5.UseVisualStyleBackColor = true;
-            btnMachine5.Click += btnMachine5_Click;
-            // 
-            // btnMachine2
-            // 
-            btnMachine2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMachine2.ForeColor = Color.Black;
-            btnMachine2.Location = new Point(6, 191);
-            btnMachine2.Name = "btnMachine2";
-            btnMachine2.Size = new Size(242, 144);
-            btnMachine2.TabIndex = 1;
-            btnMachine2.Text = "Machine2";
-            btnMachine2.UseVisualStyleBackColor = true;
-            btnMachine2.Click += btnMachine2_Click;
-            // 
-            // btnMachine1
-            // 
-            btnMachine1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMachine1.ForeColor = Color.Black;
-            btnMachine1.Location = new Point(6, 34);
-            btnMachine1.Name = "btnMachine1";
-            btnMachine1.Size = new Size(242, 144);
-            btnMachine1.TabIndex = 0;
-            btnMachine1.Text = "Machine1";
-            btnMachine1.UseVisualStyleBackColor = true;
-            btnMachine1.Click += btnMachine1_Click;
+            listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(6, 34);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(293, 379);
+            listBox1.TabIndex = 6;
             // 
             // gbxMachineInfo
             // 
+            gbxMachineInfo.Controls.Add(cmbxMachineGenre);
+            gbxMachineInfo.Controls.Add(btnNewMachCancel);
+            gbxMachineInfo.Controls.Add(btnNewMachAdd);
+            gbxMachineInfo.Controls.Add(lblMachineGenre);
             gbxMachineInfo.Controls.Add(txtbxMachineName);
             gbxMachineInfo.Controls.Add(label3);
             gbxMachineInfo.Controls.Add(txtbxDiscount);
@@ -285,19 +246,51 @@ namespace arcade_manager {
             gbxMachineInfo.Controls.Add(lblMachineName);
             gbxMachineInfo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gbxMachineInfo.ForeColor = Color.White;
-            gbxMachineInfo.Location = new Point(6, 353);
+            gbxMachineInfo.Location = new Point(317, 6);
             gbxMachineInfo.Name = "gbxMachineInfo";
-            gbxMachineInfo.Size = new Size(750, 159);
+            gbxMachineInfo.Size = new Size(440, 513);
             gbxMachineInfo.TabIndex = 2;
             gbxMachineInfo.TabStop = false;
             gbxMachineInfo.Text = "Machine Information";
+            // 
+            // btnNewMachCancel
+            // 
+            btnNewMachCancel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewMachCancel.ForeColor = Color.Black;
+            btnNewMachCancel.Location = new Point(306, 467);
+            btnNewMachCancel.Name = "btnNewMachCancel";
+            btnNewMachCancel.Size = new Size(128, 40);
+            btnNewMachCancel.TabIndex = 11;
+            btnNewMachCancel.Text = "Cancel";
+            btnNewMachCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnNewMachAdd
+            // 
+            btnNewMachAdd.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewMachAdd.ForeColor = Color.Black;
+            btnNewMachAdd.Location = new Point(172, 467);
+            btnNewMachAdd.Name = "btnNewMachAdd";
+            btnNewMachAdd.Size = new Size(128, 40);
+            btnNewMachAdd.TabIndex = 10;
+            btnNewMachAdd.Text = "Add";
+            btnNewMachAdd.UseVisualStyleBackColor = true;
+            // 
+            // lblMachineGenre
+            // 
+            lblMachineGenre.AutoSize = true;
+            lblMachineGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMachineGenre.Location = new Point(6, 79);
+            lblMachineGenre.Name = "lblMachineGenre";
+            lblMachineGenre.Size = new Size(72, 25);
+            lblMachineGenre.TabIndex = 9;
+            lblMachineGenre.Text = "Genre: ";
             // 
             // txtbxMachineName
             // 
             txtbxMachineName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtbxMachineName.Location = new Point(78, 37);
             txtbxMachineName.Name = "txtbxMachineName";
-            txtbxMachineName.Size = new Size(350, 33);
+            txtbxMachineName.Size = new Size(353, 33);
             txtbxMachineName.TabIndex = 8;
             toolTipEnter.SetToolTip(txtbxMachineName, "Press Enter after typing in the box to update the machine information.");
             txtbxMachineName.KeyDown += txtbxMachineName_KeyDown;
@@ -306,7 +299,7 @@ namespace arcade_manager {
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(705, 109);
+            label3.Location = new Point(406, 207);
             label3.Name = "label3";
             label3.Size = new Size(28, 25);
             label3.TabIndex = 7;
@@ -316,9 +309,9 @@ namespace arcade_manager {
             // txtbxDiscount
             // 
             txtbxDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxDiscount.Location = new Point(557, 106);
+            txtbxDiscount.Location = new Point(350, 204);
             txtbxDiscount.Name = "txtbxDiscount";
-            txtbxDiscount.Size = new Size(142, 33);
+            txtbxDiscount.Size = new Size(57, 33);
             txtbxDiscount.TabIndex = 6;
             toolTipEnter.SetToolTip(txtbxDiscount, "Press Enter after typing in the box to update the machine information.");
             txtbxDiscount.KeyDown += txtbxDiscount_KeyDown;
@@ -327,19 +320,19 @@ namespace arcade_manager {
             // 
             lblDiscount.AutoSize = true;
             lblDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDiscount.Location = new Point(456, 109);
+            lblDiscount.Location = new Point(263, 207);
             lblDiscount.Name = "lblDiscount";
-            lblDiscount.Size = new Size(95, 25);
+            lblDiscount.Size = new Size(90, 25);
             lblDiscount.TabIndex = 5;
-            lblDiscount.Text = "Discount: ";
+            lblDiscount.Text = "Discount:";
             toolTipEnter.SetToolTip(lblDiscount, "Press Enter after typing in the box to update the machine information.");
             // 
             // txtbxPlayCost
             // 
             txtbxPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxPlayCost.Location = new Point(557, 37);
+            txtbxPlayCost.Location = new Point(112, 204);
             txtbxPlayCost.Name = "txtbxPlayCost";
-            txtbxPlayCost.Size = new Size(176, 33);
+            txtbxPlayCost.Size = new Size(136, 33);
             txtbxPlayCost.TabIndex = 3;
             toolTipEnter.SetToolTip(txtbxPlayCost, "Press Enter after typing in the box to update the machine information.");
             txtbxPlayCost.KeyDown += txtbxPlayCost_KeyDown;
@@ -348,7 +341,7 @@ namespace arcade_manager {
             // 
             lblPlayCost.AutoSize = true;
             lblPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPlayCost.Location = new Point(443, 40);
+            lblPlayCost.Location = new Point(6, 207);
             lblPlayCost.Name = "lblPlayCost";
             lblPlayCost.Size = new Size(108, 25);
             lblPlayCost.TabIndex = 2;
@@ -362,9 +355,9 @@ namespace arcade_manager {
             gbxStatus.Controls.Add(rbtnStatusAvailable);
             gbxStatus.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gbxStatus.ForeColor = Color.White;
-            gbxStatus.Location = new Point(6, 77);
+            gbxStatus.Location = new Point(6, 115);
             gbxStatus.Name = "gbxStatus";
-            gbxStatus.Size = new Size(435, 78);
+            gbxStatus.Size = new Size(428, 78);
             gbxStatus.TabIndex = 1;
             gbxStatus.TabStop = false;
             gbxStatus.Text = "Status";
@@ -374,7 +367,7 @@ namespace arcade_manager {
             rbtnStatusMaintainence.AutoSize = true;
             rbtnStatusMaintainence.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rbtnStatusMaintainence.ForeColor = Color.Orange;
-            rbtnStatusMaintainence.Location = new Point(272, 32);
+            rbtnStatusMaintainence.Location = new Point(125, 32);
             rbtnStatusMaintainence.Name = "rbtnStatusMaintainence";
             rbtnStatusMaintainence.Size = new Size(150, 29);
             rbtnStatusMaintainence.TabIndex = 2;
@@ -388,7 +381,7 @@ namespace arcade_manager {
             rbtnStatusOutOfOrder.AutoSize = true;
             rbtnStatusOutOfOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rbtnStatusOutOfOrder.ForeColor = Color.Red;
-            rbtnStatusOutOfOrder.Location = new Point(122, 32);
+            rbtnStatusOutOfOrder.Location = new Point(281, 32);
             rbtnStatusOutOfOrder.Name = "rbtnStatusOutOfOrder";
             rbtnStatusOutOfOrder.Size = new Size(144, 29);
             rbtnStatusOutOfOrder.TabIndex = 1;
@@ -930,6 +923,15 @@ namespace arcade_manager {
             lblSimPlayPlayCost1.TabIndex = 5;
             lblSimPlayPlayCost1.Text = "Play Cost: $";
             // 
+            // cmbxMachineGenre
+            // 
+            cmbxMachineGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbxMachineGenre.FormattingEnabled = true;
+            cmbxMachineGenre.Location = new Point(78, 76);
+            cmbxMachineGenre.Name = "cmbxMachineGenre";
+            cmbxMachineGenre.Size = new Size(353, 33);
+            cmbxMachineGenre.TabIndex = 12;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -977,12 +979,6 @@ namespace arcade_manager {
         private GroupBox gbxMachineInfo;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
-        private Button btnMachine4;
-        private Button btnMachine3;
-        private Button btnMachine6;
-        private Button btnMachine5;
-        private Button btnMachine2;
-        private Button btnMachine1;
         private GroupBox gbxStatus;
         private RadioButton rbtnStatusMaintainence;
         private RadioButton rbtnStatusOutOfOrder;
@@ -1045,5 +1041,12 @@ namespace arcade_manager {
         private Button btnTopUp10;
         private Button btnTopUp5;
         private Button btnTopUp1;
+        private Button button1;
+        private Button button2;
+        private ListBox listBox1;
+        private Label lblMachineGenre;
+        private Button btnNewMachCancel;
+        private Button btnNewMachAdd;
+        private ComboBox cmbxMachineGenre;
     }
 }
