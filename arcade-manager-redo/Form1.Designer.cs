@@ -71,25 +71,12 @@
             lblMachName = new Label();
             tabPlayCards = new TabPage();
             gbxPlayCards = new GroupBox();
+            cmbxSortCards = new ComboBox();
+            lblSortCards = new Label();
             lbxPlayCards = new ListBox();
             btnAddCard = new Button();
             btnRemoveCard = new Button();
             gbxNewPlayCard = new GroupBox();
-            btnNewCardCancel = new Button();
-            btnNewCardAdd = new Button();
-            gbxCustInfo = new GroupBox();
-            btnTopUp10 = new Button();
-            lblCustID = new Label();
-            textBox5 = new TextBox();
-            label10 = new Label();
-            groupBox5 = new GroupBox();
-            rbtnCustStatusVIP = new RadioButton();
-            rbtnCustStatusStd = new RadioButton();
-            textBox6 = new TextBox();
-            label12 = new Label();
-            tabSimPlay = new TabPage();
-            btnTopUp1 = new Button();
-            btnTopUp5 = new Button();
             txtbxNewCardBalance = new TextBox();
             lblNewCardBalance = new Label();
             gbxNewCardStatus = new GroupBox();
@@ -97,8 +84,30 @@
             rbtnNewCardStatusStd = new RadioButton();
             txtbxNewCardCustName = new TextBox();
             lblNewCardCustName = new Label();
-            lblSortCards = new Label();
-            cmbxSortCards = new ComboBox();
+            btnNewCardCancel = new Button();
+            btnNewCardAdd = new Button();
+            gbxCustInfo = new GroupBox();
+            btnTopUp5 = new Button();
+            btnTopUp1 = new Button();
+            btnTopUp10 = new Button();
+            lblCustID = new Label();
+            txtbxCustBalance = new TextBox();
+            lblCustBalance = new Label();
+            groupBox5 = new GroupBox();
+            rbtnCustStatusVIP = new RadioButton();
+            rbtnCustStatusStd = new RadioButton();
+            txtbxCustName = new TextBox();
+            lblCustName = new Label();
+            tabSimPlay = new TabPage();
+            btnSwipeCard = new Button();
+            gbxSimPlayCard = new GroupBox();
+            lblSimPlayCustStatus = new Label();
+            lblSimPlayMoneyOnCard = new Label();
+            cmbxSimPlayCards = new ComboBox();
+            gbxSimPlayMachine = new GroupBox();
+            lblSimPlayPlayCostVIP = new Label();
+            lblSimPlayPlayCost = new Label();
+            cmbxSimPlayMachines = new ComboBox();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabMachines.SuspendLayout();
@@ -110,9 +119,12 @@
             tabPlayCards.SuspendLayout();
             gbxPlayCards.SuspendLayout();
             gbxNewPlayCard.SuspendLayout();
+            gbxNewCardStatus.SuspendLayout();
             gbxCustInfo.SuspendLayout();
             groupBox5.SuspendLayout();
-            gbxNewCardStatus.SuspendLayout();
+            tabSimPlay.SuspendLayout();
+            gbxSimPlayCard.SuspendLayout();
+            gbxSimPlayMachine.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -560,9 +572,9 @@
             lblMachGenre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMachGenre.Location = new Point(6, 70);
             lblMachGenre.Name = "lblMachGenre";
-            lblMachGenre.Size = new Size(59, 21);
+            lblMachGenre.Size = new Size(99, 21);
             lblMachGenre.TabIndex = 3;
-            lblMachGenre.Text = "Genre: ";
+            lblMachGenre.Text = "Genre: Other";
             // 
             // txtbxMachName
             // 
@@ -610,6 +622,27 @@
             gbxPlayCards.TabIndex = 5;
             gbxPlayCards.TabStop = false;
             gbxPlayCards.Text = "Play Cards";
+            // 
+            // cmbxSortCards
+            // 
+            cmbxSortCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbxSortCards.FormattingEnabled = true;
+            cmbxSortCards.Items.AddRange(new object[] { "ID", "Balance (Low to High)", "Balance (High to Low)" });
+            cmbxSortCards.Location = new Point(172, 32);
+            cmbxSortCards.Name = "cmbxSortCards";
+            cmbxSortCards.Size = new Size(180, 29);
+            cmbxSortCards.TabIndex = 16;
+            cmbxSortCards.Text = "ID";
+            // 
+            // lblSortCards
+            // 
+            lblSortCards.AutoSize = true;
+            lblSortCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSortCards.Location = new Point(103, 35);
+            lblSortCards.Name = "lblSortCards";
+            lblSortCards.Size = new Size(63, 21);
+            lblSortCards.TabIndex = 15;
+            lblSortCards.Text = "Sort by:";
             // 
             // lbxPlayCards
             // 
@@ -660,181 +693,12 @@
             gbxNewPlayCard.TabStop = false;
             gbxNewPlayCard.Text = "New Play Card";
             // 
-            // btnNewCardCancel
-            // 
-            btnNewCardCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewCardCancel.ForeColor = SystemColors.ControlText;
-            btnNewCardCancel.Location = new Point(311, 169);
-            btnNewCardCancel.Name = "btnNewCardCancel";
-            btnNewCardCancel.Size = new Size(75, 28);
-            btnNewCardCancel.TabIndex = 11;
-            btnNewCardCancel.Text = "Cancel";
-            btnNewCardCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnNewCardAdd
-            // 
-            btnNewCardAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewCardAdd.ForeColor = SystemColors.ControlText;
-            btnNewCardAdd.Location = new Point(230, 170);
-            btnNewCardAdd.Name = "btnNewCardAdd";
-            btnNewCardAdd.Size = new Size(75, 28);
-            btnNewCardAdd.TabIndex = 10;
-            btnNewCardAdd.Text = "Add";
-            btnNewCardAdd.UseVisualStyleBackColor = true;
-            // 
-            // gbxCustInfo
-            // 
-            gbxCustInfo.Controls.Add(btnTopUp5);
-            gbxCustInfo.Controls.Add(btnTopUp1);
-            gbxCustInfo.Controls.Add(btnTopUp10);
-            gbxCustInfo.Controls.Add(lblCustID);
-            gbxCustInfo.Controls.Add(textBox5);
-            gbxCustInfo.Controls.Add(label10);
-            gbxCustInfo.Controls.Add(groupBox5);
-            gbxCustInfo.Controls.Add(textBox6);
-            gbxCustInfo.Controls.Add(label12);
-            gbxCustInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxCustInfo.ForeColor = SystemColors.ControlLightLight;
-            gbxCustInfo.Location = new Point(6, 6);
-            gbxCustInfo.Name = "gbxCustInfo";
-            gbxCustInfo.Size = new Size(392, 203);
-            gbxCustInfo.TabIndex = 3;
-            gbxCustInfo.TabStop = false;
-            gbxCustInfo.Text = "Customer Information";
-            // 
-            // btnTopUp10
-            // 
-            btnTopUp10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTopUp10.ForeColor = SystemColors.ControlText;
-            btnTopUp10.Location = new Point(262, 169);
-            btnTopUp10.Name = "btnTopUp10";
-            btnTopUp10.Size = new Size(122, 28);
-            btnTopUp10.TabIndex = 11;
-            btnTopUp10.Text = "Top Up $10";
-            btnTopUp10.UseVisualStyleBackColor = true;
-            // 
-            // lblCustID
-            // 
-            lblCustID.AutoSize = true;
-            lblCustID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCustID.Location = new Point(6, 35);
-            lblCustID.Name = "lblCustID";
-            lblCustID.Size = new Size(95, 21);
-            lblCustID.TabIndex = 10;
-            lblCustID.Text = "ID: 0000000";
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(118, 134);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(268, 29);
-            textBox5.TabIndex = 6;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(6, 137);
-            label10.Name = "label10";
-            label10.Size = new Size(116, 21);
-            label10.TabIndex = 5;
-            label10.Text = "Card Balance: $";
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(rbtnCustStatusVIP);
-            groupBox5.Controls.Add(rbtnCustStatusStd);
-            groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox5.ForeColor = SystemColors.ControlLightLight;
-            groupBox5.Location = new Point(6, 67);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(380, 61);
-            groupBox5.TabIndex = 4;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Status";
-            // 
-            // rbtnCustStatusVIP
-            // 
-            rbtnCustStatusVIP.AutoSize = true;
-            rbtnCustStatusVIP.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnCustStatusVIP.ForeColor = Color.SkyBlue;
-            rbtnCustStatusVIP.Location = new Point(112, 28);
-            rbtnCustStatusVIP.Name = "rbtnCustStatusVIP";
-            rbtnCustStatusVIP.Size = new Size(54, 25);
-            rbtnCustStatusVIP.TabIndex = 1;
-            rbtnCustStatusVIP.TabStop = true;
-            rbtnCustStatusVIP.Text = "VIP";
-            rbtnCustStatusVIP.UseVisualStyleBackColor = true;
-            // 
-            // rbtnCustStatusStd
-            // 
-            rbtnCustStatusStd.AutoSize = true;
-            rbtnCustStatusStd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnCustStatusStd.ForeColor = SystemColors.ControlLightLight;
-            rbtnCustStatusStd.Location = new Point(6, 28);
-            rbtnCustStatusStd.Name = "rbtnCustStatusStd";
-            rbtnCustStatusStd.Size = new Size(97, 25);
-            rbtnCustStatusStd.TabIndex = 0;
-            rbtnCustStatusStd.TabStop = true;
-            rbtnCustStatusStd.Text = "Standard";
-            rbtnCustStatusStd.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            textBox6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(168, 32);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(218, 29);
-            textBox6.TabIndex = 1;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(107, 35);
-            label12.Name = "label12";
-            label12.Size = new Size(55, 21);
-            label12.TabIndex = 0;
-            label12.Text = "Name:";
-            // 
-            // tabSimPlay
-            // 
-            tabSimPlay.BackColor = SystemColors.WindowFrame;
-            tabSimPlay.Location = new Point(4, 30);
-            tabSimPlay.Name = "tabSimPlay";
-            tabSimPlay.Size = new Size(768, 452);
-            tabSimPlay.TabIndex = 2;
-            tabSimPlay.Text = "Simulate Play";
-            // 
-            // btnTopUp1
-            // 
-            btnTopUp1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTopUp1.ForeColor = SystemColors.ControlText;
-            btnTopUp1.Location = new Point(6, 169);
-            btnTopUp1.Name = "btnTopUp1";
-            btnTopUp1.Size = new Size(122, 28);
-            btnTopUp1.TabIndex = 12;
-            btnTopUp1.Text = "Top Up $1";
-            btnTopUp1.UseVisualStyleBackColor = true;
-            // 
-            // btnTopUp5
-            // 
-            btnTopUp5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTopUp5.ForeColor = SystemColors.ControlText;
-            btnTopUp5.Location = new Point(134, 169);
-            btnTopUp5.Name = "btnTopUp5";
-            btnTopUp5.Size = new Size(122, 28);
-            btnTopUp5.TabIndex = 13;
-            btnTopUp5.Text = "Top Up $5";
-            btnTopUp5.UseVisualStyleBackColor = true;
-            // 
             // txtbxNewCardBalance
             // 
             txtbxNewCardBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxNewCardBalance.Location = new Point(118, 128);
+            txtbxNewCardBalance.Location = new Point(134, 128);
             txtbxNewCardBalance.Name = "txtbxNewCardBalance";
-            txtbxNewCardBalance.Size = new Size(268, 29);
+            txtbxNewCardBalance.Size = new Size(252, 29);
             txtbxNewCardBalance.TabIndex = 16;
             // 
             // lblNewCardBalance
@@ -843,9 +707,9 @@
             lblNewCardBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNewCardBalance.Location = new Point(6, 131);
             lblNewCardBalance.Name = "lblNewCardBalance";
-            lblNewCardBalance.Size = new Size(116, 21);
+            lblNewCardBalance.Size = new Size(133, 21);
             lblNewCardBalance.TabIndex = 15;
-            lblNewCardBalance.Text = "Card Balance: $";
+            lblNewCardBalance.Text = "Money on Card: $";
             // 
             // gbxNewCardStatus
             // 
@@ -904,26 +768,273 @@
             lblNewCardCustName.TabIndex = 12;
             lblNewCardCustName.Text = "Customer Name:";
             // 
-            // lblSortCards
+            // btnNewCardCancel
             // 
-            lblSortCards.AutoSize = true;
-            lblSortCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSortCards.Location = new Point(103, 35);
-            lblSortCards.Name = "lblSortCards";
-            lblSortCards.Size = new Size(63, 21);
-            lblSortCards.TabIndex = 15;
-            lblSortCards.Text = "Sort by:";
+            btnNewCardCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewCardCancel.ForeColor = SystemColors.ControlText;
+            btnNewCardCancel.Location = new Point(311, 169);
+            btnNewCardCancel.Name = "btnNewCardCancel";
+            btnNewCardCancel.Size = new Size(75, 28);
+            btnNewCardCancel.TabIndex = 11;
+            btnNewCardCancel.Text = "Cancel";
+            btnNewCardCancel.UseVisualStyleBackColor = true;
             // 
-            // cmbxSortCards
+            // btnNewCardAdd
             // 
-            cmbxSortCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbxSortCards.FormattingEnabled = true;
-            cmbxSortCards.Items.AddRange(new object[] { "ID", "Balance (Low to High)", "Balance (High to Low)" });
-            cmbxSortCards.Location = new Point(172, 32);
-            cmbxSortCards.Name = "cmbxSortCards";
-            cmbxSortCards.Size = new Size(180, 29);
-            cmbxSortCards.TabIndex = 16;
-            cmbxSortCards.Text = "ID";
+            btnNewCardAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewCardAdd.ForeColor = SystemColors.ControlText;
+            btnNewCardAdd.Location = new Point(230, 170);
+            btnNewCardAdd.Name = "btnNewCardAdd";
+            btnNewCardAdd.Size = new Size(75, 28);
+            btnNewCardAdd.TabIndex = 10;
+            btnNewCardAdd.Text = "Add";
+            btnNewCardAdd.UseVisualStyleBackColor = true;
+            // 
+            // gbxCustInfo
+            // 
+            gbxCustInfo.Controls.Add(btnTopUp5);
+            gbxCustInfo.Controls.Add(btnTopUp1);
+            gbxCustInfo.Controls.Add(btnTopUp10);
+            gbxCustInfo.Controls.Add(lblCustID);
+            gbxCustInfo.Controls.Add(txtbxCustBalance);
+            gbxCustInfo.Controls.Add(lblCustBalance);
+            gbxCustInfo.Controls.Add(groupBox5);
+            gbxCustInfo.Controls.Add(txtbxCustName);
+            gbxCustInfo.Controls.Add(lblCustName);
+            gbxCustInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxCustInfo.ForeColor = SystemColors.ControlLightLight;
+            gbxCustInfo.Location = new Point(6, 6);
+            gbxCustInfo.Name = "gbxCustInfo";
+            gbxCustInfo.Size = new Size(392, 203);
+            gbxCustInfo.TabIndex = 3;
+            gbxCustInfo.TabStop = false;
+            gbxCustInfo.Text = "Customer Information";
+            // 
+            // btnTopUp5
+            // 
+            btnTopUp5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp5.ForeColor = SystemColors.ControlText;
+            btnTopUp5.Location = new Point(134, 169);
+            btnTopUp5.Name = "btnTopUp5";
+            btnTopUp5.Size = new Size(122, 28);
+            btnTopUp5.TabIndex = 13;
+            btnTopUp5.Text = "Top Up $5";
+            btnTopUp5.UseVisualStyleBackColor = true;
+            // 
+            // btnTopUp1
+            // 
+            btnTopUp1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp1.ForeColor = SystemColors.ControlText;
+            btnTopUp1.Location = new Point(6, 169);
+            btnTopUp1.Name = "btnTopUp1";
+            btnTopUp1.Size = new Size(122, 28);
+            btnTopUp1.TabIndex = 12;
+            btnTopUp1.Text = "Top Up $1";
+            btnTopUp1.UseVisualStyleBackColor = true;
+            // 
+            // btnTopUp10
+            // 
+            btnTopUp10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp10.ForeColor = SystemColors.ControlText;
+            btnTopUp10.Location = new Point(262, 169);
+            btnTopUp10.Name = "btnTopUp10";
+            btnTopUp10.Size = new Size(122, 28);
+            btnTopUp10.TabIndex = 11;
+            btnTopUp10.Text = "Top Up $10";
+            btnTopUp10.UseVisualStyleBackColor = true;
+            // 
+            // lblCustID
+            // 
+            lblCustID.AutoSize = true;
+            lblCustID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustID.Location = new Point(6, 35);
+            lblCustID.Name = "lblCustID";
+            lblCustID.Size = new Size(95, 21);
+            lblCustID.TabIndex = 10;
+            lblCustID.Text = "ID: 0000000";
+            // 
+            // txtbxCustBalance
+            // 
+            txtbxCustBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxCustBalance.Location = new Point(134, 134);
+            txtbxCustBalance.Name = "txtbxCustBalance";
+            txtbxCustBalance.Size = new Size(252, 29);
+            txtbxCustBalance.TabIndex = 6;
+            // 
+            // lblCustBalance
+            // 
+            lblCustBalance.AutoSize = true;
+            lblCustBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustBalance.Location = new Point(6, 137);
+            lblCustBalance.Name = "lblCustBalance";
+            lblCustBalance.Size = new Size(133, 21);
+            lblCustBalance.TabIndex = 5;
+            lblCustBalance.Text = "Money on Card: $";
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(rbtnCustStatusVIP);
+            groupBox5.Controls.Add(rbtnCustStatusStd);
+            groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox5.ForeColor = SystemColors.ControlLightLight;
+            groupBox5.Location = new Point(6, 67);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(380, 61);
+            groupBox5.TabIndex = 4;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Status";
+            // 
+            // rbtnCustStatusVIP
+            // 
+            rbtnCustStatusVIP.AutoSize = true;
+            rbtnCustStatusVIP.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnCustStatusVIP.ForeColor = Color.SkyBlue;
+            rbtnCustStatusVIP.Location = new Point(112, 28);
+            rbtnCustStatusVIP.Name = "rbtnCustStatusVIP";
+            rbtnCustStatusVIP.Size = new Size(54, 25);
+            rbtnCustStatusVIP.TabIndex = 1;
+            rbtnCustStatusVIP.TabStop = true;
+            rbtnCustStatusVIP.Text = "VIP";
+            rbtnCustStatusVIP.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCustStatusStd
+            // 
+            rbtnCustStatusStd.AutoSize = true;
+            rbtnCustStatusStd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnCustStatusStd.ForeColor = SystemColors.ControlLightLight;
+            rbtnCustStatusStd.Location = new Point(6, 28);
+            rbtnCustStatusStd.Name = "rbtnCustStatusStd";
+            rbtnCustStatusStd.Size = new Size(97, 25);
+            rbtnCustStatusStd.TabIndex = 0;
+            rbtnCustStatusStd.TabStop = true;
+            rbtnCustStatusStd.Text = "Standard";
+            rbtnCustStatusStd.UseVisualStyleBackColor = true;
+            // 
+            // txtbxCustName
+            // 
+            txtbxCustName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxCustName.Location = new Point(168, 32);
+            txtbxCustName.Name = "txtbxCustName";
+            txtbxCustName.Size = new Size(218, 29);
+            txtbxCustName.TabIndex = 1;
+            // 
+            // lblCustName
+            // 
+            lblCustName.AutoSize = true;
+            lblCustName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustName.Location = new Point(107, 35);
+            lblCustName.Name = "lblCustName";
+            lblCustName.Size = new Size(55, 21);
+            lblCustName.TabIndex = 0;
+            lblCustName.Text = "Name:";
+            // 
+            // tabSimPlay
+            // 
+            tabSimPlay.BackColor = SystemColors.WindowFrame;
+            tabSimPlay.Controls.Add(btnSwipeCard);
+            tabSimPlay.Controls.Add(gbxSimPlayCard);
+            tabSimPlay.Controls.Add(gbxSimPlayMachine);
+            tabSimPlay.Location = new Point(4, 30);
+            tabSimPlay.Name = "tabSimPlay";
+            tabSimPlay.Size = new Size(768, 452);
+            tabSimPlay.TabIndex = 2;
+            tabSimPlay.Text = "Simulate Play";
+            // 
+            // btnSwipeCard
+            // 
+            btnSwipeCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSwipeCard.Location = new Point(309, 254);
+            btnSwipeCard.Name = "btnSwipeCard";
+            btnSwipeCard.Size = new Size(150, 50);
+            btnSwipeCard.TabIndex = 2;
+            btnSwipeCard.Text = "Swipe Card";
+            btnSwipeCard.UseVisualStyleBackColor = true;
+            // 
+            // gbxSimPlayCard
+            // 
+            gbxSimPlayCard.BackColor = Color.Maroon;
+            gbxSimPlayCard.Controls.Add(lblSimPlayCustStatus);
+            gbxSimPlayCard.Controls.Add(lblSimPlayMoneyOnCard);
+            gbxSimPlayCard.Controls.Add(cmbxSimPlayCards);
+            gbxSimPlayCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxSimPlayCard.ForeColor = SystemColors.ControlLightLight;
+            gbxSimPlayCard.Location = new Point(388, 136);
+            gbxSimPlayCard.Name = "gbxSimPlayCard";
+            gbxSimPlayCard.Size = new Size(377, 112);
+            gbxSimPlayCard.TabIndex = 1;
+            gbxSimPlayCard.TabStop = false;
+            gbxSimPlayCard.Text = "Play Card";
+            // 
+            // lblSimPlayCustStatus
+            // 
+            lblSimPlayCustStatus.AutoSize = true;
+            lblSimPlayCustStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayCustStatus.Location = new Point(308, 78);
+            lblSimPlayCustStatus.Name = "lblSimPlayCustStatus";
+            lblSimPlayCustStatus.Size = new Size(63, 21);
+            lblSimPlayCustStatus.TabIndex = 4;
+            lblSimPlayCustStatus.Text = "VIP: Yes";
+            // 
+            // lblSimPlayMoneyOnCard
+            // 
+            lblSimPlayMoneyOnCard.AutoSize = true;
+            lblSimPlayMoneyOnCard.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayMoneyOnCard.Location = new Point(6, 78);
+            lblSimPlayMoneyOnCard.Name = "lblSimPlayMoneyOnCard";
+            lblSimPlayMoneyOnCard.Size = new Size(163, 21);
+            lblSimPlayMoneyOnCard.TabIndex = 3;
+            lblSimPlayMoneyOnCard.Text = "Money on Card: $0.00";
+            // 
+            // cmbxSimPlayCards
+            // 
+            cmbxSimPlayCards.FormattingEnabled = true;
+            cmbxSimPlayCards.Location = new Point(6, 32);
+            cmbxSimPlayCards.Name = "cmbxSimPlayCards";
+            cmbxSimPlayCards.Size = new Size(365, 33);
+            cmbxSimPlayCards.TabIndex = 1;
+            // 
+            // gbxSimPlayMachine
+            // 
+            gbxSimPlayMachine.BackColor = Color.MidnightBlue;
+            gbxSimPlayMachine.Controls.Add(lblSimPlayPlayCostVIP);
+            gbxSimPlayMachine.Controls.Add(lblSimPlayPlayCost);
+            gbxSimPlayMachine.Controls.Add(cmbxSimPlayMachines);
+            gbxSimPlayMachine.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxSimPlayMachine.ForeColor = SystemColors.ControlLightLight;
+            gbxSimPlayMachine.Location = new Point(3, 136);
+            gbxSimPlayMachine.Name = "gbxSimPlayMachine";
+            gbxSimPlayMachine.Size = new Size(377, 112);
+            gbxSimPlayMachine.TabIndex = 0;
+            gbxSimPlayMachine.TabStop = false;
+            gbxSimPlayMachine.Text = "Machine";
+            // 
+            // lblSimPlayPlayCostVIP
+            // 
+            lblSimPlayPlayCostVIP.AutoSize = true;
+            lblSimPlayPlayCostVIP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCostVIP.Location = new Point(177, 78);
+            lblSimPlayPlayCostVIP.Name = "lblSimPlayPlayCostVIP";
+            lblSimPlayPlayCostVIP.Size = new Size(176, 21);
+            lblSimPlayPlayCostVIP.TabIndex = 2;
+            lblSimPlayPlayCostVIP.Text = "with VIP discount: $0.00";
+            // 
+            // lblSimPlayPlayCost
+            // 
+            lblSimPlayPlayCost.AutoSize = true;
+            lblSimPlayPlayCost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCost.Location = new Point(6, 78);
+            lblSimPlayPlayCost.Name = "lblSimPlayPlayCost";
+            lblSimPlayPlayCost.Size = new Size(120, 21);
+            lblSimPlayPlayCost.TabIndex = 1;
+            lblSimPlayPlayCost.Text = "Play Cost: $0.00";
+            // 
+            // cmbxSimPlayMachines
+            // 
+            cmbxSimPlayMachines.FormattingEnabled = true;
+            cmbxSimPlayMachines.Location = new Point(6, 32);
+            cmbxSimPlayMachines.Name = "cmbxSimPlayMachines";
+            cmbxSimPlayMachines.Size = new Size(365, 33);
+            cmbxSimPlayMachines.TabIndex = 0;
             // 
             // Form1
             // 
@@ -954,12 +1065,17 @@
             gbxPlayCards.PerformLayout();
             gbxNewPlayCard.ResumeLayout(false);
             gbxNewPlayCard.PerformLayout();
+            gbxNewCardStatus.ResumeLayout(false);
+            gbxNewCardStatus.PerformLayout();
             gbxCustInfo.ResumeLayout(false);
             gbxCustInfo.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
-            gbxNewCardStatus.ResumeLayout(false);
-            gbxNewCardStatus.PerformLayout();
+            tabSimPlay.ResumeLayout(false);
+            gbxSimPlayCard.ResumeLayout(false);
+            gbxSimPlayCard.PerformLayout();
+            gbxSimPlayMachine.ResumeLayout(false);
+            gbxSimPlayMachine.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1022,13 +1138,13 @@
         private Button btnNewCardCancel;
         private Button btnNewCardAdd;
         private GroupBox gbxCustInfo;
-        private TextBox textBox5;
-        private Label label10;
+        private TextBox txtbxCustBalance;
+        private Label lblCustBalance;
         private GroupBox groupBox5;
         private RadioButton rbtnCustStatusVIP;
         private RadioButton rbtnCustStatusStd;
-        private TextBox textBox6;
-        private Label label12;
+        private TextBox txtbxCustName;
+        private Label lblCustName;
         private Button btnTopUp10;
         private Label lblCustID;
         private Button btnTopUp5;
@@ -1042,5 +1158,14 @@
         private Label lblNewCardCustName;
         private Label lblSortCards;
         private ComboBox cmbxSortCards;
+        private GroupBox gbxSimPlayCard;
+        private GroupBox gbxSimPlayMachine;
+        private ComboBox cmbxSimPlayCards;
+        private Label lblSimPlayPlayCostVIP;
+        private Label lblSimPlayPlayCost;
+        private ComboBox cmbxSimPlayMachines;
+        private Label lblSimPlayCustStatus;
+        private Label lblSimPlayMoneyOnCard;
+        private Button btnSwipeCard;
     }
 }
