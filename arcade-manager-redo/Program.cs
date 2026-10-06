@@ -1,4 +1,4 @@
-namespace arcade_manager {
+namespace arcade_manager_redo {
     internal static class Program {
         /// <summary>
         ///  The main entry point for the application.
