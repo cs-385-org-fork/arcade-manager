@@ -1,4 +1,4 @@
-namespace arcade_manager {
+﻿namespace arcade_manager {
     partial class Form1 {
         /// <summary>
         ///  Required designer variable.
@@ -23,96 +23,109 @@ namespace arcade_manager {
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
-            saveCustomersToolStripMenuItem = new ToolStripMenuItem();
-            saveMachinesToolStripMenuItem = new ToolStripMenuItem();
-            loadCustomersToolStripMenuItem = new ToolStripMenuItem();
             loadMachinesToolStripMenuItem = new ToolStripMenuItem();
+            loadCustomersToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
+            saveMachinesToolStripMenuItem = new ToolStripMenuItem();
+            saveCustomersToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
-            aboutArcadeManagerToolStripMenuItem = new ToolStripMenuItem();
-            gbxArcadeFloor = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
-            listBox1 = new ListBox();
-            gbxMachineInfo = new GroupBox();
-            btnNewMachCancel = new Button();
-            btnNewMachAdd = new Button();
-            lblMachineGenre = new Label();
-            txtbxMachineName = new TextBox();
-            label3 = new Label();
-            txtbxDiscount = new TextBox();
-            lblDiscount = new Label();
-            txtbxPlayCost = new TextBox();
-            lblPlayCost = new Label();
-            gbxStatus = new GroupBox();
-            rbtnStatusMaintainence = new RadioButton();
-            rbtnStatusOutOfOrder = new RadioButton();
-            rbtnStatusAvailable = new RadioButton();
-            lblMachineName = new Label();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabMachines = new TabPage();
-            tabCustomers = new TabPage();
-            gbxNewCard = new GroupBox();
-            txtbxNewCardName = new TextBox();
+            gbxArcadeFloor = new GroupBox();
+            lbxFloorMachines = new ListBox();
+            btnAddMach = new Button();
+            btnRemoveMach = new Button();
+            gbxNewMach = new GroupBox();
+            cmbxNewMachGenre = new ComboBox();
+            btnNewMachCancel = new Button();
+            btnNewMachAdd = new Button();
+            lblNewMachDiscount = new Label();
+            txtbxNewMachDiscount = new TextBox();
+            label4 = new Label();
+            txtbxNewMachPlayCost = new TextBox();
+            lblNewMachPlayCost = new Label();
+            gbxNewMachStatus = new GroupBox();
+            rbtnNewMachStatusMaint = new RadioButton();
+            rbtnNewMachStatusOutOrder = new RadioButton();
+            rbtnNewMachStatusAvail = new RadioButton();
+            lblNewMachGenre = new Label();
+            txtbxNewMachName = new TextBox();
+            lblNewMachName = new Label();
+            gbxMachInfo = new GroupBox();
+            lblMachDiscount = new Label();
+            txtbxMachDiscount = new TextBox();
+            label1 = new Label();
+            txtbxMachPlayCost = new TextBox();
+            lblMachPlayCost = new Label();
+            gbxMachStatus = new GroupBox();
+            rbtnStatusMaint = new RadioButton();
+            rbtnStatusOutOrder = new RadioButton();
+            rbtnStatusAvail = new RadioButton();
+            lblMachGenre = new Label();
+            txtbxMachName = new TextBox();
+            lblMachName = new Label();
+            tabPlayCards = new TabPage();
+            gbxPlayCards = new GroupBox();
+            cmbxSortCards = new ComboBox();
+            lblSortCards = new Label();
+            lbxPlayCards = new ListBox();
+            btnAddCard = new Button();
+            btnRemoveCard = new Button();
+            gbxNewPlayCard = new GroupBox();
+            txtbxNewCardBalance = new TextBox();
+            lblNewCardBalance = new Label();
+            gbxNewCardStatus = new GroupBox();
+            rbtnNewCardStatusVIP = new RadioButton();
+            rbtnNewCardStatusStd = new RadioButton();
+            txtbxNewCardCustName = new TextBox();
+            lblNewCardCustName = new Label();
             btnNewCardCancel = new Button();
             btnNewCardAdd = new Button();
-            txtbxNewCardMoney = new TextBox();
-            gbxNewCardTier = new GroupBox();
-            rbtnNewCardVIPTier = new RadioButton();
-            rbtnNewCardStdTier = new RadioButton();
-            label2 = new Label();
-            lblNewCardMoney = new Label();
-            lblNewCardName = new Label();
-            gbxCustomerInfo = new GroupBox();
-            btnTopUp10 = new Button();
+            gbxCustInfo = new GroupBox();
             btnTopUp5 = new Button();
             btnTopUp1 = new Button();
-            txtbxMoneyOnCard = new TextBox();
-            gbxCustomerTier = new GroupBox();
-            rbtnVIPTier = new RadioButton();
-            rbtnStdTier = new RadioButton();
-            label1 = new Label();
-            lblMoneyOnCard = new Label();
-            lblCardID = new Label();
-            lblCustomerName = new Label();
-            gbxPlayCards = new GroupBox();
-            lblSortPlayCards = new Label();
-            cmbxSortPlayCards = new ComboBox();
-            btnRemoveCard = new Button();
-            btnAddCard = new Button();
-            lbxPlayCards = new ListBox();
+            btnTopUp10 = new Button();
+            lblCustID = new Label();
+            txtbxCustBalance = new TextBox();
+            lblCustBalance = new Label();
+            groupBox5 = new GroupBox();
+            rbtnCustStatusVIP = new RadioButton();
+            rbtnCustStatusStd = new RadioButton();
+            txtbxCustName = new TextBox();
+            lblCustName = new Label();
             tabSimPlay = new TabPage();
-            btnSimPlay = new Button();
-            gbxChooseCard = new GroupBox();
-            lblSimPlayVIP = new Label();
+            btnSwipeCard = new Button();
+            gbxSimPlayCard = new GroupBox();
+            lblSimPlayCustStatus = new Label();
             lblSimPlayMoneyOnCard = new Label();
-            cmbxPlayCards = new ComboBox();
-            gbxChooseMachine = new GroupBox();
-            cmbxMachines = new ComboBox();
-            lblSimPlayPlayCost3 = new Label();
+            cmbxSimPlayCards = new ComboBox();
+            gbxSimPlayMachine = new GroupBox();
             lblSimPlayPlayCost2 = new Label();
-            lblSimPlayPlayCost1 = new Label();
-            toolTipEnter = new ToolTip(components);
-            cmbxMachineGenre = new ComboBox();
+            lblSimPlayPlayCostVIP = new Label();
+            lblSimPlayPlayCost = new Label();
+            cmbxSimPlayMachines = new ComboBox();
             menuStrip1.SuspendLayout();
-            gbxArcadeFloor.SuspendLayout();
-            gbxMachineInfo.SuspendLayout();
-            gbxStatus.SuspendLayout();
             tabControl1.SuspendLayout();
             tabMachines.SuspendLayout();
-            tabCustomers.SuspendLayout();
-            gbxNewCard.SuspendLayout();
-            gbxNewCardTier.SuspendLayout();
-            gbxCustomerInfo.SuspendLayout();
-            gbxCustomerTier.SuspendLayout();
+            gbxArcadeFloor.SuspendLayout();
+            gbxNewMach.SuspendLayout();
+            gbxNewMachStatus.SuspendLayout();
+            gbxMachInfo.SuspendLayout();
+            gbxMachStatus.SuspendLayout();
+            tabPlayCards.SuspendLayout();
             gbxPlayCards.SuspendLayout();
+            gbxNewPlayCard.SuspendLayout();
+            gbxNewCardStatus.SuspendLayout();
+            gbxCustInfo.SuspendLayout();
+            groupBox5.SuspendLayout();
             tabSimPlay.SuspendLayout();
-            gbxChooseCard.SuspendLayout();
-            gbxChooseMachine.SuspendLayout();
+            gbxSimPlayCard.SuspendLayout();
+            gbxSimPlayMachine.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -120,824 +133,943 @@ namespace arcade_manager {
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(794, 24);
+            menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveCustomersToolStripMenuItem, saveMachinesToolStripMenuItem, loadCustomersToolStripMenuItem, loadMachinesToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadMachinesToolStripMenuItem, loadCustomersToolStripMenuItem, toolStripSeparator1, saveMachinesToolStripMenuItem, saveCustomersToolStripMenuItem, toolStripSeparator2, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
-            // 
-            // saveCustomersToolStripMenuItem
-            // 
-            saveCustomersToolStripMenuItem.Name = "saveCustomersToolStripMenuItem";
-            saveCustomersToolStripMenuItem.Size = new Size(160, 22);
-            saveCustomersToolStripMenuItem.Text = "Save Customers";
-            saveCustomersToolStripMenuItem.Click += saveCustomersToolStripMenuItem_Click;
-            // 
-            // saveMachinesToolStripMenuItem
-            // 
-            saveMachinesToolStripMenuItem.Name = "saveMachinesToolStripMenuItem";
-            saveMachinesToolStripMenuItem.Size = new Size(160, 22);
-            saveMachinesToolStripMenuItem.Text = "Save Machines";
-            saveMachinesToolStripMenuItem.Click += saveMachinesToolStripMenuItem_Click;
-            // 
-            // loadCustomersToolStripMenuItem
-            // 
-            loadCustomersToolStripMenuItem.Name = "loadCustomersToolStripMenuItem";
-            loadCustomersToolStripMenuItem.Size = new Size(160, 22);
-            loadCustomersToolStripMenuItem.Text = "Load Customers";
-            loadCustomersToolStripMenuItem.Click += loadCustomersToolStripMenuItem_Click;
             // 
             // loadMachinesToolStripMenuItem
             // 
             loadMachinesToolStripMenuItem.Name = "loadMachinesToolStripMenuItem";
             loadMachinesToolStripMenuItem.Size = new Size(160, 22);
             loadMachinesToolStripMenuItem.Text = "Load Machines";
-            loadMachinesToolStripMenuItem.Click += loadMachinesToolStripMenuItem_Click;
+            // 
+            // loadCustomersToolStripMenuItem
+            // 
+            loadCustomersToolStripMenuItem.Name = "loadCustomersToolStripMenuItem";
+            loadCustomersToolStripMenuItem.Size = new Size(160, 22);
+            loadCustomersToolStripMenuItem.Text = "Load Customers";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(157, 6);
             // 
+            // saveMachinesToolStripMenuItem
+            // 
+            saveMachinesToolStripMenuItem.Name = "saveMachinesToolStripMenuItem";
+            saveMachinesToolStripMenuItem.Size = new Size(160, 22);
+            saveMachinesToolStripMenuItem.Text = "Save Machines";
+            // 
+            // saveCustomersToolStripMenuItem
+            // 
+            saveCustomersToolStripMenuItem.Name = "saveCustomersToolStripMenuItem";
+            saveCustomersToolStripMenuItem.Size = new Size(160, 22);
+            saveCustomersToolStripMenuItem.Text = "Save Customers";
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(157, 6);
+            // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(160, 22);
             exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutArcadeManagerToolStripMenuItem });
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(44, 20);
             helpToolStripMenuItem.Text = "Help";
             // 
-            // aboutArcadeManagerToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            aboutArcadeManagerToolStripMenuItem.Name = "aboutArcadeManagerToolStripMenuItem";
-            aboutArcadeManagerToolStripMenuItem.Size = new Size(197, 22);
-            aboutArcadeManagerToolStripMenuItem.Text = "About Arcade Manager";
-            aboutArcadeManagerToolStripMenuItem.Click += aboutArcadeManagerToolStripMenuItem_Click;
-            // 
-            // gbxArcadeFloor
-            // 
-            gbxArcadeFloor.Controls.Add(button1);
-            gbxArcadeFloor.Controls.Add(button2);
-            gbxArcadeFloor.Controls.Add(listBox1);
-            gbxArcadeFloor.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxArcadeFloor.ForeColor = Color.White;
-            gbxArcadeFloor.Location = new Point(6, 6);
-            gbxArcadeFloor.Name = "gbxArcadeFloor";
-            gbxArcadeFloor.Size = new Size(305, 513);
-            gbxArcadeFloor.TabIndex = 1;
-            gbxArcadeFloor.TabStop = false;
-            gbxArcadeFloor.Text = "Arcade Floor";
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(6, 467);
-            button1.Name = "button1";
-            button1.Size = new Size(293, 40);
-            button1.TabIndex = 8;
-            button1.Text = "Remove Machine";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(6, 421);
-            button2.Name = "button2";
-            button2.Size = new Size(293, 40);
-            button2.TabIndex = 7;
-            button2.Text = "Add Machine";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(6, 34);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(293, 379);
-            listBox1.TabIndex = 6;
-            // 
-            // gbxMachineInfo
-            // 
-            gbxMachineInfo.Controls.Add(cmbxMachineGenre);
-            gbxMachineInfo.Controls.Add(btnNewMachCancel);
-            gbxMachineInfo.Controls.Add(btnNewMachAdd);
-            gbxMachineInfo.Controls.Add(lblMachineGenre);
-            gbxMachineInfo.Controls.Add(txtbxMachineName);
-            gbxMachineInfo.Controls.Add(label3);
-            gbxMachineInfo.Controls.Add(txtbxDiscount);
-            gbxMachineInfo.Controls.Add(lblDiscount);
-            gbxMachineInfo.Controls.Add(txtbxPlayCost);
-            gbxMachineInfo.Controls.Add(lblPlayCost);
-            gbxMachineInfo.Controls.Add(gbxStatus);
-            gbxMachineInfo.Controls.Add(lblMachineName);
-            gbxMachineInfo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxMachineInfo.ForeColor = Color.White;
-            gbxMachineInfo.Location = new Point(317, 6);
-            gbxMachineInfo.Name = "gbxMachineInfo";
-            gbxMachineInfo.Size = new Size(440, 513);
-            gbxMachineInfo.TabIndex = 2;
-            gbxMachineInfo.TabStop = false;
-            gbxMachineInfo.Text = "Machine Information";
-            // 
-            // btnNewMachCancel
-            // 
-            btnNewMachCancel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewMachCancel.ForeColor = Color.Black;
-            btnNewMachCancel.Location = new Point(306, 467);
-            btnNewMachCancel.Name = "btnNewMachCancel";
-            btnNewMachCancel.Size = new Size(128, 40);
-            btnNewMachCancel.TabIndex = 11;
-            btnNewMachCancel.Text = "Cancel";
-            btnNewMachCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnNewMachAdd
-            // 
-            btnNewMachAdd.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewMachAdd.ForeColor = Color.Black;
-            btnNewMachAdd.Location = new Point(172, 467);
-            btnNewMachAdd.Name = "btnNewMachAdd";
-            btnNewMachAdd.Size = new Size(128, 40);
-            btnNewMachAdd.TabIndex = 10;
-            btnNewMachAdd.Text = "Add";
-            btnNewMachAdd.UseVisualStyleBackColor = true;
-            // 
-            // lblMachineGenre
-            // 
-            lblMachineGenre.AutoSize = true;
-            lblMachineGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMachineGenre.Location = new Point(6, 79);
-            lblMachineGenre.Name = "lblMachineGenre";
-            lblMachineGenre.Size = new Size(72, 25);
-            lblMachineGenre.TabIndex = 9;
-            lblMachineGenre.Text = "Genre: ";
-            // 
-            // txtbxMachineName
-            // 
-            txtbxMachineName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxMachineName.Location = new Point(78, 37);
-            txtbxMachineName.Name = "txtbxMachineName";
-            txtbxMachineName.Size = new Size(353, 33);
-            txtbxMachineName.TabIndex = 8;
-            toolTipEnter.SetToolTip(txtbxMachineName, "Press Enter after typing in the box to update the machine information.");
-            txtbxMachineName.KeyDown += txtbxMachineName_KeyDown;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(406, 207);
-            label3.Name = "label3";
-            label3.Size = new Size(28, 25);
-            label3.TabIndex = 7;
-            label3.Text = "%";
-            toolTipEnter.SetToolTip(label3, "Press Enter after typing in the box to update the machine information.");
-            // 
-            // txtbxDiscount
-            // 
-            txtbxDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxDiscount.Location = new Point(350, 204);
-            txtbxDiscount.Name = "txtbxDiscount";
-            txtbxDiscount.Size = new Size(57, 33);
-            txtbxDiscount.TabIndex = 6;
-            toolTipEnter.SetToolTip(txtbxDiscount, "Press Enter after typing in the box to update the machine information.");
-            txtbxDiscount.KeyDown += txtbxDiscount_KeyDown;
-            // 
-            // lblDiscount
-            // 
-            lblDiscount.AutoSize = true;
-            lblDiscount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDiscount.Location = new Point(263, 207);
-            lblDiscount.Name = "lblDiscount";
-            lblDiscount.Size = new Size(90, 25);
-            lblDiscount.TabIndex = 5;
-            lblDiscount.Text = "Discount:";
-            toolTipEnter.SetToolTip(lblDiscount, "Press Enter after typing in the box to update the machine information.");
-            // 
-            // txtbxPlayCost
-            // 
-            txtbxPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxPlayCost.Location = new Point(112, 204);
-            txtbxPlayCost.Name = "txtbxPlayCost";
-            txtbxPlayCost.Size = new Size(136, 33);
-            txtbxPlayCost.TabIndex = 3;
-            toolTipEnter.SetToolTip(txtbxPlayCost, "Press Enter after typing in the box to update the machine information.");
-            txtbxPlayCost.KeyDown += txtbxPlayCost_KeyDown;
-            // 
-            // lblPlayCost
-            // 
-            lblPlayCost.AutoSize = true;
-            lblPlayCost.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPlayCost.Location = new Point(6, 207);
-            lblPlayCost.Name = "lblPlayCost";
-            lblPlayCost.Size = new Size(108, 25);
-            lblPlayCost.TabIndex = 2;
-            lblPlayCost.Text = "Play Cost: $";
-            toolTipEnter.SetToolTip(lblPlayCost, "Press Enter after typing in the box to update the machine information.");
-            // 
-            // gbxStatus
-            // 
-            gbxStatus.Controls.Add(rbtnStatusMaintainence);
-            gbxStatus.Controls.Add(rbtnStatusOutOfOrder);
-            gbxStatus.Controls.Add(rbtnStatusAvailable);
-            gbxStatus.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxStatus.ForeColor = Color.White;
-            gbxStatus.Location = new Point(6, 115);
-            gbxStatus.Name = "gbxStatus";
-            gbxStatus.Size = new Size(428, 78);
-            gbxStatus.TabIndex = 1;
-            gbxStatus.TabStop = false;
-            gbxStatus.Text = "Status";
-            // 
-            // rbtnStatusMaintainence
-            // 
-            rbtnStatusMaintainence.AutoSize = true;
-            rbtnStatusMaintainence.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnStatusMaintainence.ForeColor = Color.Orange;
-            rbtnStatusMaintainence.Location = new Point(125, 32);
-            rbtnStatusMaintainence.Name = "rbtnStatusMaintainence";
-            rbtnStatusMaintainence.Size = new Size(150, 29);
-            rbtnStatusMaintainence.TabIndex = 2;
-            rbtnStatusMaintainence.TabStop = true;
-            rbtnStatusMaintainence.Text = "Maintainence";
-            rbtnStatusMaintainence.UseVisualStyleBackColor = true;
-            rbtnStatusMaintainence.Click += rbtnStatusMaintainence_CheckedChanged;
-            // 
-            // rbtnStatusOutOfOrder
-            // 
-            rbtnStatusOutOfOrder.AutoSize = true;
-            rbtnStatusOutOfOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnStatusOutOfOrder.ForeColor = Color.Red;
-            rbtnStatusOutOfOrder.Location = new Point(281, 32);
-            rbtnStatusOutOfOrder.Name = "rbtnStatusOutOfOrder";
-            rbtnStatusOutOfOrder.Size = new Size(144, 29);
-            rbtnStatusOutOfOrder.TabIndex = 1;
-            rbtnStatusOutOfOrder.TabStop = true;
-            rbtnStatusOutOfOrder.Text = "Out of Order";
-            rbtnStatusOutOfOrder.UseVisualStyleBackColor = true;
-            rbtnStatusOutOfOrder.Click += rbtnStatusOutOfOrder_CheckedChanged;
-            // 
-            // rbtnStatusAvailable
-            // 
-            rbtnStatusAvailable.AutoSize = true;
-            rbtnStatusAvailable.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnStatusAvailable.ForeColor = Color.GreenYellow;
-            rbtnStatusAvailable.Location = new Point(6, 32);
-            rbtnStatusAvailable.Name = "rbtnStatusAvailable";
-            rbtnStatusAvailable.Size = new Size(110, 29);
-            rbtnStatusAvailable.TabIndex = 0;
-            rbtnStatusAvailable.TabStop = true;
-            rbtnStatusAvailable.Text = "Available";
-            rbtnStatusAvailable.UseVisualStyleBackColor = true;
-            rbtnStatusAvailable.Click += rbtnStatusAvailable_CheckedChanged;
-            // 
-            // lblMachineName
-            // 
-            lblMachineName.AutoSize = true;
-            lblMachineName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMachineName.Location = new Point(6, 40);
-            lblMachineName.Name = "lblMachineName";
-            lblMachineName.Size = new Size(66, 25);
-            lblMachineName.TabIndex = 0;
-            lblMachineName.Text = "Name:";
-            toolTipEnter.SetToolTip(lblMachineName, "Press Enter after typing in the box to update the machine information.");
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(107, 22);
+            aboutToolStripMenuItem.Text = "About";
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabMachines);
-            tabControl1.Controls.Add(tabCustomers);
+            tabControl1.Controls.Add(tabPlayCards);
             tabControl1.Controls.Add(tabSimPlay);
+            tabControl1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabControl1.Location = new Point(12, 27);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(771, 553);
-            tabControl1.TabIndex = 3;
+            tabControl1.Size = new Size(776, 486);
+            tabControl1.TabIndex = 1;
             // 
             // tabMachines
             // 
             tabMachines.BackColor = Color.MidnightBlue;
             tabMachines.Controls.Add(gbxArcadeFloor);
-            tabMachines.Controls.Add(gbxMachineInfo);
-            tabMachines.Location = new Point(4, 24);
+            tabMachines.Controls.Add(gbxNewMach);
+            tabMachines.Controls.Add(gbxMachInfo);
+            tabMachines.Location = new Point(4, 30);
             tabMachines.Name = "tabMachines";
             tabMachines.Padding = new Padding(3);
-            tabMachines.Size = new Size(763, 525);
+            tabMachines.Size = new Size(768, 452);
             tabMachines.TabIndex = 0;
             tabMachines.Text = "Machines";
             // 
-            // tabCustomers
+            // gbxArcadeFloor
             // 
-            tabCustomers.BackColor = Color.Maroon;
-            tabCustomers.Controls.Add(gbxNewCard);
-            tabCustomers.Controls.Add(gbxCustomerInfo);
-            tabCustomers.Controls.Add(gbxPlayCards);
-            tabCustomers.Location = new Point(4, 24);
-            tabCustomers.Name = "tabCustomers";
-            tabCustomers.Padding = new Padding(3);
-            tabCustomers.Size = new Size(763, 525);
-            tabCustomers.TabIndex = 1;
-            tabCustomers.Text = "Customers";
+            gbxArcadeFloor.Controls.Add(lbxFloorMachines);
+            gbxArcadeFloor.Controls.Add(btnAddMach);
+            gbxArcadeFloor.Controls.Add(btnRemoveMach);
+            gbxArcadeFloor.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxArcadeFloor.ForeColor = SystemColors.ControlLightLight;
+            gbxArcadeFloor.Location = new Point(404, 6);
+            gbxArcadeFloor.Name = "gbxArcadeFloor";
+            gbxArcadeFloor.Size = new Size(358, 440);
+            gbxArcadeFloor.TabIndex = 2;
+            gbxArcadeFloor.TabStop = false;
+            gbxArcadeFloor.Text = "Arcade Floor";
             // 
-            // gbxNewCard
+            // lbxFloorMachines
             // 
-            gbxNewCard.BackColor = Color.IndianRed;
-            gbxNewCard.Controls.Add(txtbxNewCardName);
-            gbxNewCard.Controls.Add(btnNewCardCancel);
-            gbxNewCard.Controls.Add(btnNewCardAdd);
-            gbxNewCard.Controls.Add(txtbxNewCardMoney);
-            gbxNewCard.Controls.Add(gbxNewCardTier);
-            gbxNewCard.Controls.Add(label2);
-            gbxNewCard.Controls.Add(lblNewCardMoney);
-            gbxNewCard.Controls.Add(lblNewCardName);
-            gbxNewCard.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gbxNewCard.ForeColor = Color.White;
-            gbxNewCard.Location = new Point(374, 285);
-            gbxNewCard.Name = "gbxNewCard";
-            gbxNewCard.Size = new Size(383, 234);
-            gbxNewCard.TabIndex = 4;
-            gbxNewCard.TabStop = false;
-            gbxNewCard.Text = "New Card";
+            lbxFloorMachines.FormattingEnabled = true;
+            lbxFloorMachines.Location = new Point(6, 32);
+            lbxFloorMachines.Name = "lbxFloorMachines";
+            lbxFloorMachines.Size = new Size(346, 354);
+            lbxFloorMachines.TabIndex = 14;
+            lbxFloorMachines.SelectedIndexChanged += lbxFloorMachines_SelectedIndexChanged;
             // 
-            // txtbxNewCardName
+            // btnAddMach
             // 
-            txtbxNewCardName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxNewCardName.Location = new Point(83, 31);
-            txtbxNewCardName.Name = "txtbxNewCardName";
-            txtbxNewCardName.Size = new Size(294, 33);
-            txtbxNewCardName.TabIndex = 9;
+            btnAddMach.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddMach.ForeColor = SystemColors.ControlText;
+            btnAddMach.Location = new Point(58, 407);
+            btnAddMach.Name = "btnAddMach";
+            btnAddMach.Size = new Size(144, 28);
+            btnAddMach.TabIndex = 13;
+            btnAddMach.Text = "Add Machine";
+            btnAddMach.UseVisualStyleBackColor = true;
+            btnAddMach.Click += btnAddMach_Click;
             // 
-            // btnNewCardCancel
+            // btnRemoveMach
             // 
-            btnNewCardCancel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewCardCancel.ForeColor = Color.Black;
-            btnNewCardCancel.Location = new Point(249, 188);
-            btnNewCardCancel.Name = "btnNewCardCancel";
-            btnNewCardCancel.Size = new Size(128, 40);
-            btnNewCardCancel.TabIndex = 8;
-            btnNewCardCancel.Text = "Cancel";
-            btnNewCardCancel.UseVisualStyleBackColor = true;
-            btnNewCardCancel.Click += btnNewCardCancel_Click;
+            btnRemoveMach.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRemoveMach.ForeColor = SystemColors.ControlText;
+            btnRemoveMach.Location = new Point(208, 406);
+            btnRemoveMach.Name = "btnRemoveMach";
+            btnRemoveMach.Size = new Size(144, 28);
+            btnRemoveMach.TabIndex = 12;
+            btnRemoveMach.Text = "Remove Machine";
+            btnRemoveMach.UseVisualStyleBackColor = true;
+            btnRemoveMach.Click += btnRemoveMach_Click;
             // 
-            // btnNewCardAdd
+            // gbxNewMach
             // 
-            btnNewCardAdd.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewCardAdd.ForeColor = Color.Black;
-            btnNewCardAdd.Location = new Point(115, 188);
-            btnNewCardAdd.Name = "btnNewCardAdd";
-            btnNewCardAdd.Size = new Size(128, 40);
-            btnNewCardAdd.TabIndex = 7;
-            btnNewCardAdd.Text = "Add";
-            btnNewCardAdd.UseVisualStyleBackColor = true;
-            btnNewCardAdd.Click += btnNewCardAdd_Click;
+            gbxNewMach.BackColor = Color.RoyalBlue;
+            gbxNewMach.Controls.Add(cmbxNewMachGenre);
+            gbxNewMach.Controls.Add(btnNewMachCancel);
+            gbxNewMach.Controls.Add(btnNewMachAdd);
+            gbxNewMach.Controls.Add(lblNewMachDiscount);
+            gbxNewMach.Controls.Add(txtbxNewMachDiscount);
+            gbxNewMach.Controls.Add(label4);
+            gbxNewMach.Controls.Add(txtbxNewMachPlayCost);
+            gbxNewMach.Controls.Add(lblNewMachPlayCost);
+            gbxNewMach.Controls.Add(gbxNewMachStatus);
+            gbxNewMach.Controls.Add(lblNewMachGenre);
+            gbxNewMach.Controls.Add(txtbxNewMachName);
+            gbxNewMach.Controls.Add(lblNewMachName);
+            gbxNewMach.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxNewMach.ForeColor = SystemColors.ControlLightLight;
+            gbxNewMach.Location = new Point(6, 208);
+            gbxNewMach.Name = "gbxNewMach";
+            gbxNewMach.Size = new Size(392, 239);
+            gbxNewMach.TabIndex = 1;
+            gbxNewMach.TabStop = false;
+            gbxNewMach.Text = "New Machine";
             // 
-            // txtbxNewCardMoney
+            // cmbxNewMachGenre
             // 
-            txtbxNewCardMoney.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxNewCardMoney.Location = new Point(173, 65);
-            txtbxNewCardMoney.Name = "txtbxNewCardMoney";
-            txtbxNewCardMoney.Size = new Size(204, 33);
-            txtbxNewCardMoney.TabIndex = 6;
+            cmbxNewMachGenre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbxNewMachGenre.FormattingEnabled = true;
+            cmbxNewMachGenre.Location = new Point(67, 67);
+            cmbxNewMachGenre.Name = "cmbxNewMachGenre";
+            cmbxNewMachGenre.Size = new Size(319, 29);
+            cmbxNewMachGenre.TabIndex = 12;
             // 
-            // gbxNewCardTier
+            // btnNewMachCancel
             // 
-            gbxNewCardTier.Controls.Add(rbtnNewCardVIPTier);
-            gbxNewCardTier.Controls.Add(rbtnNewCardStdTier);
-            gbxNewCardTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxNewCardTier.ForeColor = Color.White;
-            gbxNewCardTier.Location = new Point(12, 104);
-            gbxNewCardTier.Name = "gbxNewCardTier";
-            gbxNewCardTier.Size = new Size(365, 78);
-            gbxNewCardTier.TabIndex = 5;
-            gbxNewCardTier.TabStop = false;
-            gbxNewCardTier.Text = "Tier";
+            btnNewMachCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewMachCancel.ForeColor = SystemColors.ControlText;
+            btnNewMachCancel.Location = new Point(311, 205);
+            btnNewMachCancel.Name = "btnNewMachCancel";
+            btnNewMachCancel.Size = new Size(75, 28);
+            btnNewMachCancel.TabIndex = 11;
+            btnNewMachCancel.Text = "Cancel";
+            btnNewMachCancel.UseVisualStyleBackColor = true;
+            btnNewMachCancel.Click += btnNewMachCancel_Click;
             // 
-            // rbtnNewCardVIPTier
+            // btnNewMachAdd
             // 
-            rbtnNewCardVIPTier.AutoSize = true;
-            rbtnNewCardVIPTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnNewCardVIPTier.ForeColor = Color.Cyan;
-            rbtnNewCardVIPTier.Location = new Point(124, 32);
-            rbtnNewCardVIPTier.Name = "rbtnNewCardVIPTier";
-            rbtnNewCardVIPTier.Size = new Size(61, 29);
-            rbtnNewCardVIPTier.TabIndex = 1;
-            rbtnNewCardVIPTier.TabStop = true;
-            rbtnNewCardVIPTier.Text = "VIP";
-            rbtnNewCardVIPTier.UseVisualStyleBackColor = true;
+            btnNewMachAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewMachAdd.ForeColor = SystemColors.ControlText;
+            btnNewMachAdd.Location = new Point(230, 205);
+            btnNewMachAdd.Name = "btnNewMachAdd";
+            btnNewMachAdd.Size = new Size(75, 28);
+            btnNewMachAdd.TabIndex = 10;
+            btnNewMachAdd.Text = "Add";
+            btnNewMachAdd.UseVisualStyleBackColor = true;
+            btnNewMachAdd.Click += btnNewMachAdd_Click;
             // 
-            // rbtnNewCardStdTier
+            // lblNewMachDiscount
             // 
-            rbtnNewCardStdTier.AutoSize = true;
-            rbtnNewCardStdTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnNewCardStdTier.ForeColor = Color.White;
-            rbtnNewCardStdTier.Location = new Point(6, 32);
-            rbtnNewCardStdTier.Name = "rbtnNewCardStdTier";
-            rbtnNewCardStdTier.Size = new Size(112, 29);
-            rbtnNewCardStdTier.TabIndex = 0;
-            rbtnNewCardStdTier.TabStop = true;
-            rbtnNewCardStdTier.Text = "Standard";
-            rbtnNewCardStdTier.UseVisualStyleBackColor = true;
+            lblNewMachDiscount.AutoSize = true;
+            lblNewMachDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNewMachDiscount.Location = new Point(227, 164);
+            lblNewMachDiscount.Name = "lblNewMachDiscount";
+            lblNewMachDiscount.Size = new Size(74, 21);
+            lblNewMachDiscount.TabIndex = 9;
+            lblNewMachDiscount.Text = "Discount:";
             // 
-            // label2
+            // txtbxNewMachDiscount
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(6, 139);
-            label2.Name = "label2";
-            label2.Size = new Size(0, 25);
-            label2.TabIndex = 4;
+            txtbxNewMachDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxNewMachDiscount.Location = new Point(307, 161);
+            txtbxNewMachDiscount.Name = "txtbxNewMachDiscount";
+            txtbxNewMachDiscount.Size = new Size(59, 29);
+            txtbxNewMachDiscount.TabIndex = 8;
             // 
-            // lblNewCardMoney
+            // label4
             // 
-            lblNewCardMoney.AutoSize = true;
-            lblNewCardMoney.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNewCardMoney.Location = new Point(6, 68);
-            lblNewCardMoney.Name = "lblNewCardMoney";
-            lblNewCardMoney.Size = new Size(161, 25);
-            lblNewCardMoney.TabIndex = 3;
-            lblNewCardMoney.Text = "Money on Card: $";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(363, 164);
+            label4.Name = "label4";
+            label4.Size = new Size(23, 21);
+            label4.TabIndex = 7;
+            label4.Text = "%";
             // 
-            // lblNewCardName
+            // txtbxNewMachPlayCost
             // 
-            lblNewCardName.AutoSize = true;
-            lblNewCardName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNewCardName.Location = new Point(6, 34);
-            lblNewCardName.Name = "lblNewCardName";
-            lblNewCardName.Size = new Size(71, 25);
-            lblNewCardName.TabIndex = 1;
-            lblNewCardName.Text = "Name: ";
+            txtbxNewMachPlayCost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxNewMachPlayCost.Location = new Point(93, 161);
+            txtbxNewMachPlayCost.Name = "txtbxNewMachPlayCost";
+            txtbxNewMachPlayCost.Size = new Size(128, 29);
+            txtbxNewMachPlayCost.TabIndex = 6;
             // 
-            // gbxCustomerInfo
+            // lblNewMachPlayCost
             // 
-            gbxCustomerInfo.Controls.Add(btnTopUp10);
-            gbxCustomerInfo.Controls.Add(btnTopUp5);
-            gbxCustomerInfo.Controls.Add(btnTopUp1);
-            gbxCustomerInfo.Controls.Add(txtbxMoneyOnCard);
-            gbxCustomerInfo.Controls.Add(gbxCustomerTier);
-            gbxCustomerInfo.Controls.Add(label1);
-            gbxCustomerInfo.Controls.Add(lblMoneyOnCard);
-            gbxCustomerInfo.Controls.Add(lblCardID);
-            gbxCustomerInfo.Controls.Add(lblCustomerName);
-            gbxCustomerInfo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxCustomerInfo.ForeColor = Color.White;
-            gbxCustomerInfo.Location = new Point(374, 6);
-            gbxCustomerInfo.Name = "gbxCustomerInfo";
-            gbxCustomerInfo.Size = new Size(383, 273);
-            gbxCustomerInfo.TabIndex = 3;
-            gbxCustomerInfo.TabStop = false;
-            gbxCustomerInfo.Text = "Customer Information";
+            lblNewMachPlayCost.AutoSize = true;
+            lblNewMachPlayCost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNewMachPlayCost.Location = new Point(6, 164);
+            lblNewMachPlayCost.Name = "lblNewMachPlayCost";
+            lblNewMachPlayCost.Size = new Size(90, 21);
+            lblNewMachPlayCost.TabIndex = 5;
+            lblNewMachPlayCost.Text = "Play Cost: $";
             // 
-            // btnTopUp10
+            // gbxNewMachStatus
             // 
-            btnTopUp10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTopUp10.ForeColor = Color.Black;
-            btnTopUp10.Location = new Point(261, 143);
-            btnTopUp10.Name = "btnTopUp10";
-            btnTopUp10.Size = new Size(116, 40);
-            btnTopUp10.TabIndex = 11;
-            btnTopUp10.Text = "Top Up $10";
-            btnTopUp10.UseVisualStyleBackColor = true;
-            btnTopUp10.Click += btnTopUp10_Click;
+            gbxNewMachStatus.Controls.Add(rbtnNewMachStatusMaint);
+            gbxNewMachStatus.Controls.Add(rbtnNewMachStatusOutOrder);
+            gbxNewMachStatus.Controls.Add(rbtnNewMachStatusAvail);
+            gbxNewMachStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxNewMachStatus.ForeColor = SystemColors.ControlLightLight;
+            gbxNewMachStatus.Location = new Point(6, 94);
+            gbxNewMachStatus.Name = "gbxNewMachStatus";
+            gbxNewMachStatus.Size = new Size(380, 61);
+            gbxNewMachStatus.TabIndex = 4;
+            gbxNewMachStatus.TabStop = false;
+            gbxNewMachStatus.Text = "Status";
             // 
-            // btnTopUp5
+            // rbtnNewMachStatusMaint
             // 
-            btnTopUp5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTopUp5.ForeColor = Color.Black;
-            btnTopUp5.Location = new Point(134, 143);
-            btnTopUp5.Name = "btnTopUp5";
-            btnTopUp5.Size = new Size(116, 40);
-            btnTopUp5.TabIndex = 10;
-            btnTopUp5.Text = "Top Up $5";
-            btnTopUp5.UseVisualStyleBackColor = true;
-            btnTopUp5.Click += btnTopUp5_Click;
+            rbtnNewMachStatusMaint.AutoSize = true;
+            rbtnNewMachStatusMaint.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnNewMachStatusMaint.ForeColor = Color.Orange;
+            rbtnNewMachStatusMaint.Location = new Point(241, 28);
+            rbtnNewMachStatusMaint.Name = "rbtnNewMachStatusMaint";
+            rbtnNewMachStatusMaint.Size = new Size(133, 25);
+            rbtnNewMachStatusMaint.TabIndex = 2;
+            rbtnNewMachStatusMaint.TabStop = true;
+            rbtnNewMachStatusMaint.Text = "Maintainence";
+            rbtnNewMachStatusMaint.UseVisualStyleBackColor = true;
             // 
-            // btnTopUp1
+            // rbtnNewMachStatusOutOrder
             // 
-            btnTopUp1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTopUp1.ForeColor = Color.Black;
-            btnTopUp1.Location = new Point(6, 143);
-            btnTopUp1.Name = "btnTopUp1";
-            btnTopUp1.Size = new Size(116, 40);
-            btnTopUp1.TabIndex = 9;
-            btnTopUp1.Text = "Top Up $1";
-            btnTopUp1.UseVisualStyleBackColor = true;
-            btnTopUp1.Click += btnTopUp1_Click;
+            rbtnNewMachStatusOutOrder.AutoSize = true;
+            rbtnNewMachStatusOutOrder.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnNewMachStatusOutOrder.ForeColor = Color.Red;
+            rbtnNewMachStatusOutOrder.Location = new Point(112, 28);
+            rbtnNewMachStatusOutOrder.Name = "rbtnNewMachStatusOutOrder";
+            rbtnNewMachStatusOutOrder.Size = new Size(123, 25);
+            rbtnNewMachStatusOutOrder.TabIndex = 1;
+            rbtnNewMachStatusOutOrder.TabStop = true;
+            rbtnNewMachStatusOutOrder.Text = "Out of Order";
+            rbtnNewMachStatusOutOrder.UseVisualStyleBackColor = true;
             // 
-            // txtbxMoneyOnCard
+            // rbtnNewMachStatusAvail
             // 
-            txtbxMoneyOnCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxMoneyOnCard.Location = new Point(173, 102);
-            txtbxMoneyOnCard.Name = "txtbxMoneyOnCard";
-            txtbxMoneyOnCard.Size = new Size(204, 33);
-            txtbxMoneyOnCard.TabIndex = 6;
-            toolTipEnter.SetToolTip(txtbxMoneyOnCard, "Press Enter after typing in the box to update the machine information.");
-            txtbxMoneyOnCard.KeyDown += txtbxMoneyOnCard_KeyDown;
+            rbtnNewMachStatusAvail.AutoSize = true;
+            rbtnNewMachStatusAvail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnNewMachStatusAvail.ForeColor = Color.GreenYellow;
+            rbtnNewMachStatusAvail.Location = new Point(6, 28);
+            rbtnNewMachStatusAvail.Name = "rbtnNewMachStatusAvail";
+            rbtnNewMachStatusAvail.Size = new Size(100, 25);
+            rbtnNewMachStatusAvail.TabIndex = 0;
+            rbtnNewMachStatusAvail.TabStop = true;
+            rbtnNewMachStatusAvail.Text = "Available";
+            rbtnNewMachStatusAvail.UseVisualStyleBackColor = true;
             // 
-            // gbxCustomerTier
+            // lblNewMachGenre
             // 
-            gbxCustomerTier.Controls.Add(rbtnVIPTier);
-            gbxCustomerTier.Controls.Add(rbtnStdTier);
-            gbxCustomerTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxCustomerTier.ForeColor = Color.White;
-            gbxCustomerTier.Location = new Point(12, 189);
-            gbxCustomerTier.Name = "gbxCustomerTier";
-            gbxCustomerTier.Size = new Size(365, 78);
-            gbxCustomerTier.TabIndex = 5;
-            gbxCustomerTier.TabStop = false;
-            gbxCustomerTier.Text = "Tier";
+            lblNewMachGenre.AutoSize = true;
+            lblNewMachGenre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNewMachGenre.Location = new Point(6, 70);
+            lblNewMachGenre.Name = "lblNewMachGenre";
+            lblNewMachGenre.Size = new Size(59, 21);
+            lblNewMachGenre.TabIndex = 3;
+            lblNewMachGenre.Text = "Genre: ";
             // 
-            // rbtnVIPTier
+            // txtbxNewMachName
             // 
-            rbtnVIPTier.AutoSize = true;
-            rbtnVIPTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnVIPTier.ForeColor = Color.Cyan;
-            rbtnVIPTier.Location = new Point(124, 32);
-            rbtnVIPTier.Name = "rbtnVIPTier";
-            rbtnVIPTier.Size = new Size(61, 29);
-            rbtnVIPTier.TabIndex = 1;
-            rbtnVIPTier.TabStop = true;
-            rbtnVIPTier.Text = "VIP";
-            rbtnVIPTier.UseVisualStyleBackColor = true;
-            rbtnVIPTier.Click += rbtnVIPTier_CheckedChanged;
+            txtbxNewMachName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxNewMachName.Location = new Point(67, 32);
+            txtbxNewMachName.Name = "txtbxNewMachName";
+            txtbxNewMachName.Size = new Size(319, 29);
+            txtbxNewMachName.TabIndex = 1;
             // 
-            // rbtnStdTier
+            // lblNewMachName
             // 
-            rbtnStdTier.AutoSize = true;
-            rbtnStdTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rbtnStdTier.ForeColor = Color.White;
-            rbtnStdTier.Location = new Point(6, 32);
-            rbtnStdTier.Name = "rbtnStdTier";
-            rbtnStdTier.Size = new Size(112, 29);
-            rbtnStdTier.TabIndex = 0;
-            rbtnStdTier.TabStop = true;
-            rbtnStdTier.Text = "Standard";
-            rbtnStdTier.UseVisualStyleBackColor = true;
-            rbtnStdTier.Click += rbtnStdTier_CheckedChanged;
+            lblNewMachName.AutoSize = true;
+            lblNewMachName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNewMachName.Location = new Point(6, 35);
+            lblNewMachName.Name = "lblNewMachName";
+            lblNewMachName.Size = new Size(55, 21);
+            lblNewMachName.TabIndex = 0;
+            lblNewMachName.Text = "Name:";
+            // 
+            // gbxMachInfo
+            // 
+            gbxMachInfo.Controls.Add(lblMachDiscount);
+            gbxMachInfo.Controls.Add(txtbxMachDiscount);
+            gbxMachInfo.Controls.Add(label1);
+            gbxMachInfo.Controls.Add(txtbxMachPlayCost);
+            gbxMachInfo.Controls.Add(lblMachPlayCost);
+            gbxMachInfo.Controls.Add(gbxMachStatus);
+            gbxMachInfo.Controls.Add(lblMachGenre);
+            gbxMachInfo.Controls.Add(txtbxMachName);
+            gbxMachInfo.Controls.Add(lblMachName);
+            gbxMachInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxMachInfo.ForeColor = SystemColors.ControlLightLight;
+            gbxMachInfo.Location = new Point(6, 6);
+            gbxMachInfo.Name = "gbxMachInfo";
+            gbxMachInfo.Size = new Size(392, 196);
+            gbxMachInfo.TabIndex = 0;
+            gbxMachInfo.TabStop = false;
+            gbxMachInfo.Text = "Machine Information";
+            // 
+            // lblMachDiscount
+            // 
+            lblMachDiscount.AutoSize = true;
+            lblMachDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMachDiscount.Location = new Point(227, 164);
+            lblMachDiscount.Name = "lblMachDiscount";
+            lblMachDiscount.Size = new Size(74, 21);
+            lblMachDiscount.TabIndex = 9;
+            lblMachDiscount.Text = "Discount:";
+            // 
+            // txtbxMachDiscount
+            // 
+            txtbxMachDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxMachDiscount.Location = new Point(307, 161);
+            txtbxMachDiscount.Name = "txtbxMachDiscount";
+            txtbxMachDiscount.Size = new Size(59, 29);
+            txtbxMachDiscount.TabIndex = 8;
+            txtbxMachDiscount.KeyDown += txtbxDiscount_KeyDown;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(6, 139);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(363, 164);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
-            label1.TabIndex = 4;
+            label1.Size = new Size(23, 21);
+            label1.TabIndex = 7;
+            label1.Text = "%";
             // 
-            // lblMoneyOnCard
+            // txtbxMachPlayCost
             // 
-            lblMoneyOnCard.AutoSize = true;
-            lblMoneyOnCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMoneyOnCard.Location = new Point(6, 105);
-            lblMoneyOnCard.Name = "lblMoneyOnCard";
-            lblMoneyOnCard.Size = new Size(161, 25);
-            lblMoneyOnCard.TabIndex = 3;
-            lblMoneyOnCard.Text = "Money on Card: $";
-            toolTipEnter.SetToolTip(lblMoneyOnCard, "Press Enter after typing in the box to update the machine information.");
+            txtbxMachPlayCost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxMachPlayCost.Location = new Point(93, 161);
+            txtbxMachPlayCost.Name = "txtbxMachPlayCost";
+            txtbxMachPlayCost.Size = new Size(128, 29);
+            txtbxMachPlayCost.TabIndex = 6;
+            txtbxMachPlayCost.KeyDown += txtbxPlayCost_KeyDown;
             // 
-            // lblCardID
+            // lblMachPlayCost
             // 
-            lblCardID.AutoSize = true;
-            lblCardID.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCardID.Location = new Point(6, 68);
-            lblCardID.Name = "lblCardID";
-            lblCardID.Size = new Size(84, 25);
-            lblCardID.TabIndex = 2;
-            lblCardID.Text = "Card ID: ";
+            lblMachPlayCost.AutoSize = true;
+            lblMachPlayCost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMachPlayCost.Location = new Point(6, 164);
+            lblMachPlayCost.Name = "lblMachPlayCost";
+            lblMachPlayCost.Size = new Size(90, 21);
+            lblMachPlayCost.TabIndex = 5;
+            lblMachPlayCost.Text = "Play Cost: $";
             // 
-            // lblCustomerName
+            // gbxMachStatus
             // 
-            lblCustomerName.AutoSize = true;
-            lblCustomerName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCustomerName.Location = new Point(6, 34);
-            lblCustomerName.Name = "lblCustomerName";
-            lblCustomerName.Size = new Size(71, 25);
-            lblCustomerName.TabIndex = 1;
-            lblCustomerName.Text = "Name: ";
+            gbxMachStatus.Controls.Add(rbtnStatusMaint);
+            gbxMachStatus.Controls.Add(rbtnStatusOutOrder);
+            gbxMachStatus.Controls.Add(rbtnStatusAvail);
+            gbxMachStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxMachStatus.ForeColor = SystemColors.ControlLightLight;
+            gbxMachStatus.Location = new Point(6, 94);
+            gbxMachStatus.Name = "gbxMachStatus";
+            gbxMachStatus.Size = new Size(380, 61);
+            gbxMachStatus.TabIndex = 4;
+            gbxMachStatus.TabStop = false;
+            gbxMachStatus.Text = "Status";
+            // 
+            // rbtnStatusMaint
+            // 
+            rbtnStatusMaint.AutoSize = true;
+            rbtnStatusMaint.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnStatusMaint.ForeColor = Color.Orange;
+            rbtnStatusMaint.Location = new Point(241, 28);
+            rbtnStatusMaint.Name = "rbtnStatusMaint";
+            rbtnStatusMaint.Size = new Size(133, 25);
+            rbtnStatusMaint.TabIndex = 2;
+            rbtnStatusMaint.TabStop = true;
+            rbtnStatusMaint.Text = "Maintainence";
+            rbtnStatusMaint.UseVisualStyleBackColor = true;
+            rbtnStatusMaint.Click += rbtnStatusMaintainence_CheckedChanged;
+            // 
+            // rbtnStatusOutOrder
+            // 
+            rbtnStatusOutOrder.AutoSize = true;
+            rbtnStatusOutOrder.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnStatusOutOrder.ForeColor = Color.Red;
+            rbtnStatusOutOrder.Location = new Point(112, 28);
+            rbtnStatusOutOrder.Name = "rbtnStatusOutOrder";
+            rbtnStatusOutOrder.Size = new Size(123, 25);
+            rbtnStatusOutOrder.TabIndex = 1;
+            rbtnStatusOutOrder.TabStop = true;
+            rbtnStatusOutOrder.Text = "Out of Order";
+            rbtnStatusOutOrder.UseVisualStyleBackColor = true;
+            rbtnStatusOutOrder.Click += rbtnStatusOutOfOrder_CheckedChanged;
+            // 
+            // rbtnStatusAvail
+            // 
+            rbtnStatusAvail.AutoSize = true;
+            rbtnStatusAvail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnStatusAvail.ForeColor = Color.GreenYellow;
+            rbtnStatusAvail.Location = new Point(6, 28);
+            rbtnStatusAvail.Name = "rbtnStatusAvail";
+            rbtnStatusAvail.Size = new Size(100, 25);
+            rbtnStatusAvail.TabIndex = 0;
+            rbtnStatusAvail.TabStop = true;
+            rbtnStatusAvail.Text = "Available";
+            rbtnStatusAvail.UseVisualStyleBackColor = true;
+            rbtnStatusAvail.Click += rbtnStatusAvailable_CheckedChanged;
+            // 
+            // lblMachGenre
+            // 
+            lblMachGenre.AutoSize = true;
+            lblMachGenre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMachGenre.Location = new Point(6, 70);
+            lblMachGenre.Name = "lblMachGenre";
+            lblMachGenre.Size = new Size(99, 21);
+            lblMachGenre.TabIndex = 3;
+            lblMachGenre.Text = "Genre: Other";
+            // 
+            // txtbxMachName
+            // 
+            txtbxMachName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxMachName.Location = new Point(67, 32);
+            txtbxMachName.Name = "txtbxMachName";
+            txtbxMachName.Size = new Size(319, 29);
+            txtbxMachName.TabIndex = 1;
+            txtbxMachName.KeyDown += txtbxMachineName_KeyDown;
+            // 
+            // lblMachName
+            // 
+            lblMachName.AutoSize = true;
+            lblMachName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMachName.Location = new Point(6, 35);
+            lblMachName.Name = "lblMachName";
+            lblMachName.Size = new Size(55, 21);
+            lblMachName.TabIndex = 0;
+            lblMachName.Text = "Name:";
+            // 
+            // tabPlayCards
+            // 
+            tabPlayCards.BackColor = Color.Maroon;
+            tabPlayCards.Controls.Add(gbxPlayCards);
+            tabPlayCards.Controls.Add(gbxNewPlayCard);
+            tabPlayCards.Controls.Add(gbxCustInfo);
+            tabPlayCards.Location = new Point(4, 30);
+            tabPlayCards.Name = "tabPlayCards";
+            tabPlayCards.Padding = new Padding(3);
+            tabPlayCards.Size = new Size(768, 452);
+            tabPlayCards.TabIndex = 1;
+            tabPlayCards.Text = "Play Cards";
             // 
             // gbxPlayCards
             // 
-            gbxPlayCards.Controls.Add(lblSortPlayCards);
-            gbxPlayCards.Controls.Add(cmbxSortPlayCards);
-            gbxPlayCards.Controls.Add(btnRemoveCard);
-            gbxPlayCards.Controls.Add(btnAddCard);
+            gbxPlayCards.Controls.Add(cmbxSortCards);
+            gbxPlayCards.Controls.Add(lblSortCards);
             gbxPlayCards.Controls.Add(lbxPlayCards);
-            gbxPlayCards.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxPlayCards.ForeColor = Color.White;
-            gbxPlayCards.Location = new Point(7, 6);
+            gbxPlayCards.Controls.Add(btnAddCard);
+            gbxPlayCards.Controls.Add(btnRemoveCard);
+            gbxPlayCards.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxPlayCards.ForeColor = SystemColors.ControlLightLight;
+            gbxPlayCards.Location = new Point(404, 6);
             gbxPlayCards.Name = "gbxPlayCards";
-            gbxPlayCards.Size = new Size(361, 513);
-            gbxPlayCards.TabIndex = 2;
+            gbxPlayCards.Size = new Size(358, 440);
+            gbxPlayCards.TabIndex = 5;
             gbxPlayCards.TabStop = false;
             gbxPlayCards.Text = "Play Cards";
             // 
-            // lblSortPlayCards
+            // cmbxSortCards
             // 
-            lblSortPlayCards.AutoSize = true;
-            lblSortPlayCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSortPlayCards.Location = new Point(104, 31);
-            lblSortPlayCards.Name = "lblSortPlayCards";
-            lblSortPlayCards.Size = new Size(63, 21);
-            lblSortPlayCards.TabIndex = 7;
-            lblSortPlayCards.Text = "Sort by:";
+            cmbxSortCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbxSortCards.FormattingEnabled = true;
+            cmbxSortCards.Items.AddRange(new object[] { "ID", "Balance (Low to High)", "Balance (High to Low)" });
+            cmbxSortCards.Location = new Point(172, 32);
+            cmbxSortCards.Name = "cmbxSortCards";
+            cmbxSortCards.Size = new Size(180, 29);
+            cmbxSortCards.TabIndex = 16;
+            cmbxSortCards.Text = "ID";
+            cmbxSortCards.SelectedIndexChanged += cmbxSortPlayCards_SelectedIndexChanged;
             // 
-            // cmbxSortPlayCards
+            // lblSortCards
             // 
-            cmbxSortPlayCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbxSortPlayCards.FormattingEnabled = true;
-            cmbxSortPlayCards.Items.AddRange(new object[] { "ID", "Balance (Low to High)", "Balance (High to Low)" });
-            cmbxSortPlayCards.Location = new Point(173, 27);
-            cmbxSortPlayCards.Name = "cmbxSortPlayCards";
-            cmbxSortPlayCards.Size = new Size(182, 29);
-            cmbxSortPlayCards.TabIndex = 6;
-            cmbxSortPlayCards.Text = "ID";
-            cmbxSortPlayCards.SelectedIndexChanged += cmbxSortPlayCards_SelectedIndexChanged;
+            lblSortCards.AutoSize = true;
+            lblSortCards.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSortCards.Location = new Point(103, 35);
+            lblSortCards.Name = "lblSortCards";
+            lblSortCards.Size = new Size(63, 21);
+            lblSortCards.TabIndex = 15;
+            lblSortCards.Text = "Sort by:";
             // 
-            // btnRemoveCard
+            // lbxPlayCards
             // 
-            btnRemoveCard.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRemoveCard.ForeColor = Color.Black;
-            btnRemoveCard.Location = new Point(184, 467);
-            btnRemoveCard.Name = "btnRemoveCard";
-            btnRemoveCard.Size = new Size(171, 40);
-            btnRemoveCard.TabIndex = 5;
-            btnRemoveCard.Text = "Remove Card";
-            btnRemoveCard.UseVisualStyleBackColor = true;
-            btnRemoveCard.Click += btnRemoveCard_Click;
+            lbxPlayCards.FormattingEnabled = true;
+            lbxPlayCards.Location = new Point(6, 67);
+            lbxPlayCards.Name = "lbxPlayCards";
+            lbxPlayCards.Size = new Size(346, 329);
+            lbxPlayCards.TabIndex = 14;
+            lbxPlayCards.SelectedIndexChanged += lbxPlayCards_SelectedIndexChanged;
             // 
             // btnAddCard
             // 
-            btnAddCard.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddCard.ForeColor = Color.Black;
-            btnAddCard.Location = new Point(6, 467);
+            btnAddCard.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddCard.ForeColor = SystemColors.ControlText;
+            btnAddCard.Location = new Point(58, 407);
             btnAddCard.Name = "btnAddCard";
-            btnAddCard.Size = new Size(172, 40);
-            btnAddCard.TabIndex = 4;
+            btnAddCard.Size = new Size(144, 28);
+            btnAddCard.TabIndex = 13;
             btnAddCard.Text = "Add Card";
             btnAddCard.UseVisualStyleBackColor = true;
             btnAddCard.Click += btnAddCard_Click;
             // 
-            // lbxPlayCards
+            // btnRemoveCard
             // 
-            lbxPlayCards.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbxPlayCards.FormattingEnabled = true;
-            lbxPlayCards.Location = new Point(6, 59);
-            lbxPlayCards.Name = "lbxPlayCards";
-            lbxPlayCards.Size = new Size(349, 404);
-            lbxPlayCards.TabIndex = 3;
-            lbxPlayCards.SelectedIndexChanged += lbxPlayCards_SelectedIndexChanged;
+            btnRemoveCard.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRemoveCard.ForeColor = SystemColors.ControlText;
+            btnRemoveCard.Location = new Point(208, 406);
+            btnRemoveCard.Name = "btnRemoveCard";
+            btnRemoveCard.Size = new Size(144, 28);
+            btnRemoveCard.TabIndex = 12;
+            btnRemoveCard.Text = "Remove Card";
+            btnRemoveCard.UseVisualStyleBackColor = true;
+            btnRemoveCard.Click += btnRemoveCard_Click;
+            // 
+            // gbxNewPlayCard
+            // 
+            gbxNewPlayCard.BackColor = Color.IndianRed;
+            gbxNewPlayCard.Controls.Add(txtbxNewCardBalance);
+            gbxNewPlayCard.Controls.Add(lblNewCardBalance);
+            gbxNewPlayCard.Controls.Add(gbxNewCardStatus);
+            gbxNewPlayCard.Controls.Add(txtbxNewCardCustName);
+            gbxNewPlayCard.Controls.Add(lblNewCardCustName);
+            gbxNewPlayCard.Controls.Add(btnNewCardCancel);
+            gbxNewPlayCard.Controls.Add(btnNewCardAdd);
+            gbxNewPlayCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxNewPlayCard.ForeColor = SystemColors.ControlLightLight;
+            gbxNewPlayCard.Location = new Point(6, 243);
+            gbxNewPlayCard.Name = "gbxNewPlayCard";
+            gbxNewPlayCard.Size = new Size(392, 203);
+            gbxNewPlayCard.TabIndex = 4;
+            gbxNewPlayCard.TabStop = false;
+            gbxNewPlayCard.Text = "New Play Card";
+            // 
+            // txtbxNewCardBalance
+            // 
+            txtbxNewCardBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxNewCardBalance.Location = new Point(134, 128);
+            txtbxNewCardBalance.Name = "txtbxNewCardBalance";
+            txtbxNewCardBalance.Size = new Size(252, 29);
+            txtbxNewCardBalance.TabIndex = 16;
+            // 
+            // lblNewCardBalance
+            // 
+            lblNewCardBalance.AutoSize = true;
+            lblNewCardBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNewCardBalance.Location = new Point(6, 131);
+            lblNewCardBalance.Name = "lblNewCardBalance";
+            lblNewCardBalance.Size = new Size(133, 21);
+            lblNewCardBalance.TabIndex = 15;
+            lblNewCardBalance.Text = "Money on Card: $";
+            // 
+            // gbxNewCardStatus
+            // 
+            gbxNewCardStatus.Controls.Add(rbtnNewCardStatusVIP);
+            gbxNewCardStatus.Controls.Add(rbtnNewCardStatusStd);
+            gbxNewCardStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxNewCardStatus.ForeColor = SystemColors.ControlLightLight;
+            gbxNewCardStatus.Location = new Point(6, 61);
+            gbxNewCardStatus.Name = "gbxNewCardStatus";
+            gbxNewCardStatus.Size = new Size(380, 61);
+            gbxNewCardStatus.TabIndex = 14;
+            gbxNewCardStatus.TabStop = false;
+            gbxNewCardStatus.Text = "Status";
+            // 
+            // rbtnNewCardStatusVIP
+            // 
+            rbtnNewCardStatusVIP.AutoSize = true;
+            rbtnNewCardStatusVIP.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnNewCardStatusVIP.ForeColor = Color.SkyBlue;
+            rbtnNewCardStatusVIP.Location = new Point(112, 28);
+            rbtnNewCardStatusVIP.Name = "rbtnNewCardStatusVIP";
+            rbtnNewCardStatusVIP.Size = new Size(54, 25);
+            rbtnNewCardStatusVIP.TabIndex = 1;
+            rbtnNewCardStatusVIP.TabStop = true;
+            rbtnNewCardStatusVIP.Text = "VIP";
+            rbtnNewCardStatusVIP.UseVisualStyleBackColor = true;
+            // 
+            // rbtnNewCardStatusStd
+            // 
+            rbtnNewCardStatusStd.AutoSize = true;
+            rbtnNewCardStatusStd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnNewCardStatusStd.ForeColor = SystemColors.ControlLightLight;
+            rbtnNewCardStatusStd.Location = new Point(6, 28);
+            rbtnNewCardStatusStd.Name = "rbtnNewCardStatusStd";
+            rbtnNewCardStatusStd.Size = new Size(97, 25);
+            rbtnNewCardStatusStd.TabIndex = 0;
+            rbtnNewCardStatusStd.TabStop = true;
+            rbtnNewCardStatusStd.Text = "Standard";
+            rbtnNewCardStatusStd.UseVisualStyleBackColor = true;
+            // 
+            // txtbxNewCardCustName
+            // 
+            txtbxNewCardCustName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxNewCardCustName.Location = new Point(139, 26);
+            txtbxNewCardCustName.Name = "txtbxNewCardCustName";
+            txtbxNewCardCustName.Size = new Size(247, 29);
+            txtbxNewCardCustName.TabIndex = 13;
+            // 
+            // lblNewCardCustName
+            // 
+            lblNewCardCustName.AutoSize = true;
+            lblNewCardCustName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNewCardCustName.Location = new Point(6, 29);
+            lblNewCardCustName.Name = "lblNewCardCustName";
+            lblNewCardCustName.Size = new Size(127, 21);
+            lblNewCardCustName.TabIndex = 12;
+            lblNewCardCustName.Text = "Customer Name:";
+            // 
+            // btnNewCardCancel
+            // 
+            btnNewCardCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewCardCancel.ForeColor = SystemColors.ControlText;
+            btnNewCardCancel.Location = new Point(311, 169);
+            btnNewCardCancel.Name = "btnNewCardCancel";
+            btnNewCardCancel.Size = new Size(75, 28);
+            btnNewCardCancel.TabIndex = 11;
+            btnNewCardCancel.Text = "Cancel";
+            btnNewCardCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnNewCardAdd
+            // 
+            btnNewCardAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewCardAdd.ForeColor = SystemColors.ControlText;
+            btnNewCardAdd.Location = new Point(230, 170);
+            btnNewCardAdd.Name = "btnNewCardAdd";
+            btnNewCardAdd.Size = new Size(75, 28);
+            btnNewCardAdd.TabIndex = 10;
+            btnNewCardAdd.Text = "Add";
+            btnNewCardAdd.UseVisualStyleBackColor = true;
+            // 
+            // gbxCustInfo
+            // 
+            gbxCustInfo.Controls.Add(btnTopUp5);
+            gbxCustInfo.Controls.Add(btnTopUp1);
+            gbxCustInfo.Controls.Add(btnTopUp10);
+            gbxCustInfo.Controls.Add(lblCustID);
+            gbxCustInfo.Controls.Add(txtbxCustBalance);
+            gbxCustInfo.Controls.Add(lblCustBalance);
+            gbxCustInfo.Controls.Add(groupBox5);
+            gbxCustInfo.Controls.Add(txtbxCustName);
+            gbxCustInfo.Controls.Add(lblCustName);
+            gbxCustInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxCustInfo.ForeColor = SystemColors.ControlLightLight;
+            gbxCustInfo.Location = new Point(6, 6);
+            gbxCustInfo.Name = "gbxCustInfo";
+            gbxCustInfo.Size = new Size(392, 203);
+            gbxCustInfo.TabIndex = 3;
+            gbxCustInfo.TabStop = false;
+            gbxCustInfo.Text = "Customer Information";
+            // 
+            // btnTopUp5
+            // 
+            btnTopUp5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp5.ForeColor = SystemColors.ControlText;
+            btnTopUp5.Location = new Point(134, 169);
+            btnTopUp5.Name = "btnTopUp5";
+            btnTopUp5.Size = new Size(122, 28);
+            btnTopUp5.TabIndex = 13;
+            btnTopUp5.Text = "Top Up $5";
+            btnTopUp5.UseVisualStyleBackColor = true;
+            // 
+            // btnTopUp1
+            // 
+            btnTopUp1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp1.ForeColor = SystemColors.ControlText;
+            btnTopUp1.Location = new Point(6, 169);
+            btnTopUp1.Name = "btnTopUp1";
+            btnTopUp1.Size = new Size(122, 28);
+            btnTopUp1.TabIndex = 12;
+            btnTopUp1.Text = "Top Up $1";
+            btnTopUp1.UseVisualStyleBackColor = true;
+            // 
+            // btnTopUp10
+            // 
+            btnTopUp10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTopUp10.ForeColor = SystemColors.ControlText;
+            btnTopUp10.Location = new Point(262, 169);
+            btnTopUp10.Name = "btnTopUp10";
+            btnTopUp10.Size = new Size(122, 28);
+            btnTopUp10.TabIndex = 11;
+            btnTopUp10.Text = "Top Up $10";
+            btnTopUp10.UseVisualStyleBackColor = true;
+            // 
+            // lblCustID
+            // 
+            lblCustID.AutoSize = true;
+            lblCustID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustID.Location = new Point(6, 35);
+            lblCustID.Name = "lblCustID";
+            lblCustID.Size = new Size(95, 21);
+            lblCustID.TabIndex = 10;
+            lblCustID.Text = "ID: 0000000";
+            // 
+            // txtbxCustBalance
+            // 
+            txtbxCustBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxCustBalance.Location = new Point(134, 134);
+            txtbxCustBalance.Name = "txtbxCustBalance";
+            txtbxCustBalance.Size = new Size(252, 29);
+            txtbxCustBalance.TabIndex = 6;
+            // 
+            // lblCustBalance
+            // 
+            lblCustBalance.AutoSize = true;
+            lblCustBalance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustBalance.Location = new Point(6, 137);
+            lblCustBalance.Name = "lblCustBalance";
+            lblCustBalance.Size = new Size(133, 21);
+            lblCustBalance.TabIndex = 5;
+            lblCustBalance.Text = "Money on Card: $";
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(rbtnCustStatusVIP);
+            groupBox5.Controls.Add(rbtnCustStatusStd);
+            groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox5.ForeColor = SystemColors.ControlLightLight;
+            groupBox5.Location = new Point(6, 67);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(380, 61);
+            groupBox5.TabIndex = 4;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Status";
+            // 
+            // rbtnCustStatusVIP
+            // 
+            rbtnCustStatusVIP.AutoSize = true;
+            rbtnCustStatusVIP.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnCustStatusVIP.ForeColor = Color.SkyBlue;
+            rbtnCustStatusVIP.Location = new Point(112, 28);
+            rbtnCustStatusVIP.Name = "rbtnCustStatusVIP";
+            rbtnCustStatusVIP.Size = new Size(54, 25);
+            rbtnCustStatusVIP.TabIndex = 1;
+            rbtnCustStatusVIP.TabStop = true;
+            rbtnCustStatusVIP.Text = "VIP";
+            rbtnCustStatusVIP.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCustStatusStd
+            // 
+            rbtnCustStatusStd.AutoSize = true;
+            rbtnCustStatusStd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbtnCustStatusStd.ForeColor = SystemColors.ControlLightLight;
+            rbtnCustStatusStd.Location = new Point(6, 28);
+            rbtnCustStatusStd.Name = "rbtnCustStatusStd";
+            rbtnCustStatusStd.Size = new Size(97, 25);
+            rbtnCustStatusStd.TabIndex = 0;
+            rbtnCustStatusStd.TabStop = true;
+            rbtnCustStatusStd.Text = "Standard";
+            rbtnCustStatusStd.UseVisualStyleBackColor = true;
+            // 
+            // txtbxCustName
+            // 
+            txtbxCustName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtbxCustName.Location = new Point(168, 32);
+            txtbxCustName.Name = "txtbxCustName";
+            txtbxCustName.Size = new Size(218, 29);
+            txtbxCustName.TabIndex = 1;
+            txtbxCustName.KeyDown += txtbxCustName_KeyDown;
+            // 
+            // lblCustName
+            // 
+            lblCustName.AutoSize = true;
+            lblCustName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustName.Location = new Point(107, 35);
+            lblCustName.Name = "lblCustName";
+            lblCustName.Size = new Size(55, 21);
+            lblCustName.TabIndex = 0;
+            lblCustName.Text = "Name:";
             // 
             // tabSimPlay
             // 
             tabSimPlay.BackColor = SystemColors.WindowFrame;
-            tabSimPlay.Controls.Add(btnSimPlay);
-            tabSimPlay.Controls.Add(gbxChooseCard);
-            tabSimPlay.Controls.Add(gbxChooseMachine);
-            tabSimPlay.Location = new Point(4, 24);
+            tabSimPlay.Controls.Add(btnSwipeCard);
+            tabSimPlay.Controls.Add(gbxSimPlayCard);
+            tabSimPlay.Controls.Add(gbxSimPlayMachine);
+            tabSimPlay.Location = new Point(4, 30);
             tabSimPlay.Name = "tabSimPlay";
-            tabSimPlay.Size = new Size(763, 525);
+            tabSimPlay.Size = new Size(768, 452);
             tabSimPlay.TabIndex = 2;
             tabSimPlay.Text = "Simulate Play";
-            tabSimPlay.Enter += tabSimPlay_Enter;
             // 
-            // btnSimPlay
+            // btnSwipeCard
             // 
-            btnSimPlay.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSimPlay.Location = new Point(265, 319);
-            btnSimPlay.Name = "btnSimPlay";
-            btnSimPlay.Size = new Size(237, 50);
-            btnSimPlay.TabIndex = 4;
-            btnSimPlay.Text = "Swipe Card";
-            btnSimPlay.UseVisualStyleBackColor = true;
-            btnSimPlay.Click += btnSimPlay_Click;
+            btnSwipeCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSwipeCard.Location = new Point(309, 254);
+            btnSwipeCard.Name = "btnSwipeCard";
+            btnSwipeCard.Size = new Size(150, 50);
+            btnSwipeCard.TabIndex = 2;
+            btnSwipeCard.Text = "Swipe Card";
+            btnSwipeCard.UseVisualStyleBackColor = true;
             // 
-            // gbxChooseCard
+            // gbxSimPlayCard
             // 
-            gbxChooseCard.BackColor = Color.Maroon;
-            gbxChooseCard.Controls.Add(lblSimPlayVIP);
-            gbxChooseCard.Controls.Add(lblSimPlayMoneyOnCard);
-            gbxChooseCard.Controls.Add(cmbxPlayCards);
-            gbxChooseCard.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxChooseCard.ForeColor = Color.White;
-            gbxChooseCard.Location = new Point(385, 151);
-            gbxChooseCard.Name = "gbxChooseCard";
-            gbxChooseCard.Size = new Size(362, 162);
-            gbxChooseCard.TabIndex = 3;
-            gbxChooseCard.TabStop = false;
-            gbxChooseCard.Text = "Choose Play Card";
+            gbxSimPlayCard.BackColor = Color.Maroon;
+            gbxSimPlayCard.Controls.Add(lblSimPlayCustStatus);
+            gbxSimPlayCard.Controls.Add(lblSimPlayMoneyOnCard);
+            gbxSimPlayCard.Controls.Add(cmbxSimPlayCards);
+            gbxSimPlayCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxSimPlayCard.ForeColor = SystemColors.ControlLightLight;
+            gbxSimPlayCard.Location = new Point(388, 136);
+            gbxSimPlayCard.Name = "gbxSimPlayCard";
+            gbxSimPlayCard.Size = new Size(377, 112);
+            gbxSimPlayCard.TabIndex = 1;
+            gbxSimPlayCard.TabStop = false;
+            gbxSimPlayCard.Text = "Play Card";
             // 
-            // lblSimPlayVIP
+            // lblSimPlayCustStatus
             // 
-            lblSimPlayVIP.AutoSize = true;
-            lblSimPlayVIP.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSimPlayVIP.Location = new Point(6, 125);
-            lblSimPlayVIP.Name = "lblSimPlayVIP";
-            lblSimPlayVIP.Size = new Size(49, 25);
-            lblSimPlayVIP.TabIndex = 9;
-            lblSimPlayVIP.Text = "VIP: ";
+            lblSimPlayCustStatus.AutoSize = true;
+            lblSimPlayCustStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayCustStatus.Location = new Point(308, 78);
+            lblSimPlayCustStatus.Name = "lblSimPlayCustStatus";
+            lblSimPlayCustStatus.Size = new Size(63, 21);
+            lblSimPlayCustStatus.TabIndex = 4;
+            lblSimPlayCustStatus.Text = "VIP: Yes";
             // 
             // lblSimPlayMoneyOnCard
             // 
             lblSimPlayMoneyOnCard.AutoSize = true;
-            lblSimPlayMoneyOnCard.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSimPlayMoneyOnCard.Location = new Point(6, 90);
+            lblSimPlayMoneyOnCard.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayMoneyOnCard.Location = new Point(6, 78);
             lblSimPlayMoneyOnCard.Name = "lblSimPlayMoneyOnCard";
-            lblSimPlayMoneyOnCard.Size = new Size(161, 25);
-            lblSimPlayMoneyOnCard.TabIndex = 8;
-            lblSimPlayMoneyOnCard.Text = "Money on Card: $";
+            lblSimPlayMoneyOnCard.Size = new Size(163, 21);
+            lblSimPlayMoneyOnCard.TabIndex = 3;
+            lblSimPlayMoneyOnCard.Text = "Money on Card: $0.00";
             // 
-            // cmbxPlayCards
+            // cmbxSimPlayCards
             // 
-            cmbxPlayCards.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbxPlayCards.FormattingEnabled = true;
-            cmbxPlayCards.Location = new Point(6, 44);
-            cmbxPlayCards.Name = "cmbxPlayCards";
-            cmbxPlayCards.Size = new Size(350, 33);
-            cmbxPlayCards.TabIndex = 7;
-            cmbxPlayCards.SelectedIndexChanged += cmbxPlayCards_SelectedIndexChanged;
+            cmbxSimPlayCards.FormattingEnabled = true;
+            cmbxSimPlayCards.Location = new Point(6, 32);
+            cmbxSimPlayCards.Name = "cmbxSimPlayCards";
+            cmbxSimPlayCards.Size = new Size(365, 33);
+            cmbxSimPlayCards.TabIndex = 1;
             // 
-            // gbxChooseMachine
+            // gbxSimPlayMachine
             // 
-            gbxChooseMachine.BackColor = Color.MidnightBlue;
-            gbxChooseMachine.Controls.Add(cmbxMachines);
-            gbxChooseMachine.Controls.Add(lblSimPlayPlayCost3);
-            gbxChooseMachine.Controls.Add(lblSimPlayPlayCost2);
-            gbxChooseMachine.Controls.Add(lblSimPlayPlayCost1);
-            gbxChooseMachine.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbxChooseMachine.ForeColor = Color.White;
-            gbxChooseMachine.Location = new Point(15, 151);
-            gbxChooseMachine.Name = "gbxChooseMachine";
-            gbxChooseMachine.Size = new Size(362, 162);
-            gbxChooseMachine.TabIndex = 2;
-            gbxChooseMachine.TabStop = false;
-            gbxChooseMachine.Text = "Choose Machine";
-            // 
-            // cmbxMachines
-            // 
-            cmbxMachines.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbxMachines.FormattingEnabled = true;
-            cmbxMachines.Location = new Point(6, 44);
-            cmbxMachines.Name = "cmbxMachines";
-            cmbxMachines.Size = new Size(350, 33);
-            cmbxMachines.TabIndex = 8;
-            cmbxMachines.SelectedIndexChanged += cmbxMachines_SelectedIndexChanged;
-            // 
-            // lblSimPlayPlayCost3
-            // 
-            lblSimPlayPlayCost3.AutoSize = true;
-            lblSimPlayPlayCost3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSimPlayPlayCost3.Location = new Point(16, 125);
-            lblSimPlayPlayCost3.Name = "lblSimPlayPlayCost3";
-            lblSimPlayPlayCost3.Size = new Size(179, 25);
-            lblSimPlayPlayCost3.TabIndex = 7;
-            lblSimPlayPlayCost3.Text = "with VIP Discount: $";
+            gbxSimPlayMachine.BackColor = Color.MidnightBlue;
+            gbxSimPlayMachine.Controls.Add(lblSimPlayPlayCost2);
+            gbxSimPlayMachine.Controls.Add(lblSimPlayPlayCostVIP);
+            gbxSimPlayMachine.Controls.Add(lblSimPlayPlayCost);
+            gbxSimPlayMachine.Controls.Add(cmbxSimPlayMachines);
+            gbxSimPlayMachine.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbxSimPlayMachine.ForeColor = SystemColors.ControlLightLight;
+            gbxSimPlayMachine.Location = new Point(3, 136);
+            gbxSimPlayMachine.Name = "gbxSimPlayMachine";
+            gbxSimPlayMachine.Size = new Size(377, 112);
+            gbxSimPlayMachine.TabIndex = 0;
+            gbxSimPlayMachine.TabStop = false;
+            gbxSimPlayMachine.Text = "Machine";
             // 
             // lblSimPlayPlayCost2
             // 
             lblSimPlayPlayCost2.AutoSize = true;
-            lblSimPlayPlayCost2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSimPlayPlayCost2.Location = new Point(110, 90);
+            lblSimPlayPlayCost2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCost2.Location = new Point(80, 78);
             lblSimPlayPlayCost2.Name = "lblSimPlayPlayCost2";
-            lblSimPlayPlayCost2.Size = new Size(46, 25);
-            lblSimPlayPlayCost2.TabIndex = 6;
-            lblSimPlayPlayCost2.Text = "0.00";
+            lblSimPlayPlayCost2.Size = new Size(49, 21);
+            lblSimPlayPlayCost2.TabIndex = 3;
+            lblSimPlayPlayCost2.Text = "$0.00";
             // 
-            // lblSimPlayPlayCost1
+            // lblSimPlayPlayCostVIP
             // 
-            lblSimPlayPlayCost1.AutoSize = true;
-            lblSimPlayPlayCost1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSimPlayPlayCost1.Location = new Point(6, 90);
-            lblSimPlayPlayCost1.Name = "lblSimPlayPlayCost1";
-            lblSimPlayPlayCost1.Size = new Size(108, 25);
-            lblSimPlayPlayCost1.TabIndex = 5;
-            lblSimPlayPlayCost1.Text = "Play Cost: $";
+            lblSimPlayPlayCostVIP.AutoSize = true;
+            lblSimPlayPlayCostVIP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCostVIP.Location = new Point(177, 78);
+            lblSimPlayPlayCostVIP.Name = "lblSimPlayPlayCostVIP";
+            lblSimPlayPlayCostVIP.Size = new Size(176, 21);
+            lblSimPlayPlayCostVIP.TabIndex = 2;
+            lblSimPlayPlayCostVIP.Text = "with VIP discount: $0.00";
             // 
-            // cmbxMachineGenre
+            // lblSimPlayPlayCost
             // 
-            cmbxMachineGenre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbxMachineGenre.FormattingEnabled = true;
-            cmbxMachineGenre.Location = new Point(78, 76);
-            cmbxMachineGenre.Name = "cmbxMachineGenre";
-            cmbxMachineGenre.Size = new Size(353, 33);
-            cmbxMachineGenre.TabIndex = 12;
+            lblSimPlayPlayCost.AutoSize = true;
+            lblSimPlayPlayCost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSimPlayPlayCost.Location = new Point(6, 78);
+            lblSimPlayPlayCost.Name = "lblSimPlayPlayCost";
+            lblSimPlayPlayCost.Size = new Size(77, 21);
+            lblSimPlayPlayCost.TabIndex = 1;
+            lblSimPlayPlayCost.Text = "Play Cost:";
+            // 
+            // cmbxSimPlayMachines
+            // 
+            cmbxSimPlayMachines.FormattingEnabled = true;
+            cmbxSimPlayMachines.Location = new Point(6, 32);
+            cmbxSimPlayMachines.Name = "cmbxSimPlayMachines";
+            cmbxSimPlayMachines.Size = new Size(365, 33);
+            cmbxSimPlayMachines.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(794, 592);
+            ClientSize = new Size(800, 525);
             Controls.Add(tabControl1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -945,29 +1077,33 @@ namespace arcade_manager {
             Text = "Arcade Manager";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            gbxArcadeFloor.ResumeLayout(false);
-            gbxMachineInfo.ResumeLayout(false);
-            gbxMachineInfo.PerformLayout();
-            gbxStatus.ResumeLayout(false);
-            gbxStatus.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabMachines.ResumeLayout(false);
-            tabCustomers.ResumeLayout(false);
-            gbxNewCard.ResumeLayout(false);
-            gbxNewCard.PerformLayout();
-            gbxNewCardTier.ResumeLayout(false);
-            gbxNewCardTier.PerformLayout();
-            gbxCustomerInfo.ResumeLayout(false);
-            gbxCustomerInfo.PerformLayout();
-            gbxCustomerTier.ResumeLayout(false);
-            gbxCustomerTier.PerformLayout();
+            gbxArcadeFloor.ResumeLayout(false);
+            gbxNewMach.ResumeLayout(false);
+            gbxNewMach.PerformLayout();
+            gbxNewMachStatus.ResumeLayout(false);
+            gbxNewMachStatus.PerformLayout();
+            gbxMachInfo.ResumeLayout(false);
+            gbxMachInfo.PerformLayout();
+            gbxMachStatus.ResumeLayout(false);
+            gbxMachStatus.PerformLayout();
+            tabPlayCards.ResumeLayout(false);
             gbxPlayCards.ResumeLayout(false);
             gbxPlayCards.PerformLayout();
+            gbxNewPlayCard.ResumeLayout(false);
+            gbxNewPlayCard.PerformLayout();
+            gbxNewCardStatus.ResumeLayout(false);
+            gbxNewCardStatus.PerformLayout();
+            gbxCustInfo.ResumeLayout(false);
+            gbxCustInfo.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             tabSimPlay.ResumeLayout(false);
-            gbxChooseCard.ResumeLayout(false);
-            gbxChooseCard.PerformLayout();
-            gbxChooseMachine.ResumeLayout(false);
-            gbxChooseMachine.PerformLayout();
+            gbxSimPlayCard.ResumeLayout(false);
+            gbxSimPlayCard.PerformLayout();
+            gbxSimPlayMachine.ResumeLayout(false);
+            gbxSimPlayMachine.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -975,78 +1111,90 @@ namespace arcade_manager {
         #endregion
 
         private MenuStrip menuStrip1;
-        private GroupBox gbxArcadeFloor;
-        private GroupBox gbxMachineInfo;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private GroupBox gbxStatus;
-        private RadioButton rbtnStatusMaintainence;
-        private RadioButton rbtnStatusOutOfOrder;
-        private RadioButton rbtnStatusAvailable;
-        private Label lblMachineName;
-        private TextBox txtbxPlayCost;
-        private Label lblPlayCost;
-        private ToolStripMenuItem saveCustomersToolStripMenuItem;
-        private ToolStripMenuItem saveMachinesToolStripMenuItem;
-        private ToolStripMenuItem loadCustomersToolStripMenuItem;
         private ToolStripMenuItem loadMachinesToolStripMenuItem;
+        private ToolStripMenuItem loadCustomersToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem saveMachinesToolStripMenuItem;
+        private ToolStripMenuItem saveCustomersToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
         private TabControl tabControl1;
         private TabPage tabMachines;
-        private TabPage tabCustomers;
+        private TabPage tabPlayCards;
+        private GroupBox gbxMachInfo;
+        private Label lblMachGenre;
+        private TextBox txtbxMachName;
+        private Label lblMachName;
+        private TabPage tabSimPlay;
+        private GroupBox gbxMachStatus;
+        private RadioButton rbtnStatusMaint;
+        private RadioButton rbtnStatusOutOrder;
+        private RadioButton rbtnStatusAvail;
+        private Label lblMachDiscount;
+        private TextBox txtbxMachDiscount;
+        private Label label1;
+        private TextBox txtbxMachPlayCost;
+        private Label lblMachPlayCost;
+        private GroupBox gbxNewMach;
+        private Button btnNewMachCancel;
+        private Button btnNewMachAdd;
+        private Label lblNewMachDiscount;
+        private TextBox txtbxNewMachDiscount;
+        private Label label4;
+        private TextBox txtbxNewMachPlayCost;
+        private Label lblNewMachPlayCost;
+        private GroupBox gbxNewMachStatus;
+        private RadioButton rbtnNewMachStatusMaint;
+        private RadioButton rbtnNewMachStatusOutOrder;
+        private RadioButton rbtnNewMachStatusAvail;
+        private Label lblNewMachGenre;
+        private TextBox txtbxNewMachName;
+        private Label lblNewMachName;
+        private ComboBox cmbxNewMachGenre;
+        private GroupBox gbxArcadeFloor;
+        private ListBox lbxFloorMachines;
+        private Button btnAddMach;
+        private Button btnRemoveMach;
         private GroupBox gbxPlayCards;
         private ListBox lbxPlayCards;
         private Button btnAddCard;
-        private GroupBox gbxCustomerInfo;
         private Button btnRemoveCard;
-        private Label lblMoneyOnCard;
-        private Label lblCardID;
-        private Label lblCustomerName;
-        private GroupBox gbxCustomerTier;
-        private RadioButton rbtnVIPTier;
-        private RadioButton rbtnStdTier;
-        private Label label1;
-        private TextBox txtbxMoneyOnCard;
-        private GroupBox gbxNewCard;
-        private TextBox txtbxNewCardMoney;
-        private GroupBox gbxNewCardTier;
-        private RadioButton rbtnNewCardVIPTier;
-        private RadioButton rbtnNewCardStdTier;
-        private Label label2;
-        private Label lblNewCardMoney;
-        private Label lblNewCardName;
+        private GroupBox gbxNewPlayCard;
         private Button btnNewCardCancel;
         private Button btnNewCardAdd;
-        private TextBox txtbxNewCardName;
-        private ComboBox cmbxSortPlayCards;
-        private Label lblSortPlayCards;
-        private Label lblDiscount;
-        private TextBox txtbxDiscount;
-        private Label label3;
-        private TabPage tabSimPlay;
-        private GroupBox gbxChooseMachine;
-        private Label lblSimPlayPlayCost3;
-        private Label lblSimPlayPlayCost2;
-        private Label lblSimPlayPlayCost1;
-        private GroupBox gbxChooseCard;
-        private Label lblSimPlayVIP;
-        private Label lblSimPlayMoneyOnCard;
-        private ComboBox cmbxPlayCards;
-        private ComboBox cmbxMachines;
-        private Button btnSimPlay;
-        private TextBox txtbxMachineName;
-        private ToolTip toolTipEnter;
-        private ToolStripMenuItem aboutArcadeManagerToolStripMenuItem;
+        private GroupBox gbxCustInfo;
+        private TextBox txtbxCustBalance;
+        private Label lblCustBalance;
+        private GroupBox groupBox5;
+        private RadioButton rbtnCustStatusVIP;
+        private RadioButton rbtnCustStatusStd;
+        private TextBox txtbxCustName;
+        private Label lblCustName;
         private Button btnTopUp10;
+        private Label lblCustID;
         private Button btnTopUp5;
         private Button btnTopUp1;
-        private Button button1;
-        private Button button2;
-        private ListBox listBox1;
-        private Label lblMachineGenre;
-        private Button btnNewMachCancel;
-        private Button btnNewMachAdd;
-        private ComboBox cmbxMachineGenre;
+        private TextBox txtbxNewCardBalance;
+        private Label lblNewCardBalance;
+        private GroupBox gbxNewCardStatus;
+        private RadioButton rbtnNewCardStatusVIP;
+        private RadioButton rbtnNewCardStatusStd;
+        private TextBox txtbxNewCardCustName;
+        private Label lblNewCardCustName;
+        private Label lblSortCards;
+        private ComboBox cmbxSortCards;
+        private GroupBox gbxSimPlayCard;
+        private GroupBox gbxSimPlayMachine;
+        private ComboBox cmbxSimPlayCards;
+        private Label lblSimPlayPlayCostVIP;
+        private Label lblSimPlayPlayCost;
+        private ComboBox cmbxSimPlayMachines;
+        private Label lblSimPlayCustStatus;
+        private Label lblSimPlayMoneyOnCard;
+        private Button btnSwipeCard;
+        private Label lblSimPlayPlayCost2;
     }
 }
