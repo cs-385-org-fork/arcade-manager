@@ -205,6 +205,8 @@ namespace arcade_manager
             {
                 for (int i = 0; i < floorMachines.Count(); i++)
                 {
+                    if (floorMachines[i] is FightingGame) { mach.WriteLine("Fighting"); }
+                    else if (floorMachines[i] is RacingSim) { mach.WriteLine("Racing"); }
                     mach.WriteLine(floorMachines[i].MachineName);
                     mach.WriteLine(floorMachines[i].BaseMachinePrice);
                     mach.WriteLine(floorMachines[i].MachineStatus);
