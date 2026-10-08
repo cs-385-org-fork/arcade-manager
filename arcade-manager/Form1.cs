@@ -1,14 +1,16 @@
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
+using System.Text;
 using static System.Windows.Forms.LinkLabel;
 
 namespace arcade_manager {
     public partial class Form1 : Form {
         List<Machine> floorMachines = new List<Machine> {
-            new Machine("Machine1", 0.00m, "Available")
+            new Machine("Machine1", 0.25m, "Available"),
+            new Shooter("Machine2", 0.24m, "Available")
         };
         List<PlayCard> customers = new List<PlayCard> {
-            new PlayCard(1, 5.00m, "John Doe", false)
+            new PlayCard(1, 1.00m, "John Doe", false)
         };
         List<int> sortedCustomers = new List<int> { }; // parallel list of indexes of sorted customers (how theyre displayed in GUI)
         FileIO fileIO = new FileIO();
@@ -66,7 +68,7 @@ namespace arcade_manager {
 
             // put sorted cards into listbox
             for (int i = 0; i < sortedCustomers.Count(); i++) {
-                lbxPlayCards.Items.Add(customers[sortedCustomers[i]].CardID + "\t\t$" + customers[sortedCustomers[i]].MoneyOnCard);
+                lbxPlayCards.Items.Add(customers[sortedCustomers[i]].CardID + " [$" + customers[sortedCustomers[i]].MoneyOnCard + "]");
             }
         }
         public void updateCustomerInfo(int customer) {
@@ -88,7 +90,7 @@ namespace arcade_manager {
             lbxFloorMachines.Items.Clear();
 
             for (int i = 0; i < floorMachines.Count(); i++) {
-                lbxFloorMachines.Items.Add(floorMachines[i].MachineName + "\t\t" + floorMachines[i].MachineStatus);
+                lbxFloorMachines.Items.Add(floorMachines[i].MachineName + " [" + floorMachines[i].MachineStatus + "]");
             }
         }
 
@@ -96,6 +98,8 @@ namespace arcade_manager {
             selectedMachine = machine;
 
             txtbxMachName.Text = floorMachines[machine].MachineName;
+
+            lblMachGenre.Text = ("Genre: " + floorMachines[machine].GameGenre);
 
             rbtnStatusAvail.Checked = false;
             rbtnStatusMaint.Checked = false;
@@ -153,6 +157,12 @@ namespace arcade_manager {
 
         public Form1() {
             InitializeComponent();
+
+            updateMachines();
+            updatePlayCardsListBox();
+
+            gbxNewMach.Visible = false;
+            gbxNewPlayCard.Visible = false;
         }
 
 
@@ -207,11 +217,10 @@ namespace arcade_manager {
         private void btnRemoveMach_Click(object sender, EventArgs e) {
             floorMachines.RemoveAt(selectedMachine);
             selectedMachine = 0;
+            updateMachines();
+            updateMachineInfo(selectedMachine);
         }
         private void btnNewMachAdd_Click(object sender, EventArgs e) {
-
-        }
-        private void btnNewMachCancel_Click(object sender, EventArgs e) {
             decimal.TryParse(txtbxNewMachPlayCost.Text, out decimal parsedCost);
 
             bool newMachSale;
@@ -225,9 +234,46 @@ namespace arcade_manager {
             }
 
             string machStatus;
+            if (rbtnNewMachStatusAvail.Checked) {
+                machStatus = "Available";
+            }
+            else if (rbtnNewMachStatusMaint.Checked) {
+                machStatus = "Maintainence";
+            }
+            else { // Out of Order
+                machStatus = "Out of Order";
+            }
 
-            floorMachines.Add(new Machine(txtbxNewMachName.Text, parsedCost, "Available"));
+            // machine category
+            if (cmbxNewMachGenre.Text == "Fighting Game") {
+                floorMachines.Add(new FightingGame(txtbxNewMachName.Text, parsedCost, machStatus));
+            }
+            else if (cmbxNewMachGenre.Text == "Racing Sim") {
+                floorMachines.Add(new RacingSim(txtbxNewMachName.Text, parsedCost, machStatus));
+            }
+            else if (cmbxNewMachGenre.Text == "Shooter") {
+                floorMachines.Add(new Shooter(txtbxNewMachName.Text, parsedCost, machStatus));
+            }
+            else { // Other
+                floorMachines.Add(new Machine(txtbxNewMachName.Text, parsedCost, machStatus));
+            }
+            selectedMachine = floorMachines.Count() - 1;
+
+            if (txtbxNewMachDiscount.Text == "N/A" || txtbxNewMachDiscount.Text == "n/a" || txtbxNewMachDiscount.Text == "" || txtbxNewMachDiscount.Text == "0") {
+                floorMachines[selectedMachine].OnSale = false;
+            }
+            else {
+                floorMachines[selectedMachine].OnSale = true;
+                double.TryParse(txtbxNewMachDiscount.Text, out double parsedAmount);
+                floorMachines[selectedMachine].Discount = Math.Round((parsedAmount / 100.0), 2);
+            }
+
             updateMachines();
+            updateMachineInfo(selectedMachine);
+
+            gbxNewMach.Visible = false;
+        }
+        private void btnNewMachCancel_Click(object sender, EventArgs e) {
             gbxNewMach.Visible = false;
         }
 

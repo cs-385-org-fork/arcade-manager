@@ -149,12 +149,14 @@
             loadMachinesToolStripMenuItem.Name = "loadMachinesToolStripMenuItem";
             loadMachinesToolStripMenuItem.Size = new Size(160, 22);
             loadMachinesToolStripMenuItem.Text = "Load Machines";
+            loadMachinesToolStripMenuItem.Click += loadMachinesToolStripMenuItem_Click;
             // 
             // loadCustomersToolStripMenuItem
             // 
             loadCustomersToolStripMenuItem.Name = "loadCustomersToolStripMenuItem";
             loadCustomersToolStripMenuItem.Size = new Size(160, 22);
             loadCustomersToolStripMenuItem.Text = "Load Customers";
+            loadCustomersToolStripMenuItem.Click += loadCustomersToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -166,12 +168,14 @@
             saveMachinesToolStripMenuItem.Name = "saveMachinesToolStripMenuItem";
             saveMachinesToolStripMenuItem.Size = new Size(160, 22);
             saveMachinesToolStripMenuItem.Text = "Save Machines";
+            saveMachinesToolStripMenuItem.Click += saveMachinesToolStripMenuItem_Click;
             // 
             // saveCustomersToolStripMenuItem
             // 
             saveCustomersToolStripMenuItem.Name = "saveCustomersToolStripMenuItem";
             saveCustomersToolStripMenuItem.Size = new Size(160, 22);
             saveCustomersToolStripMenuItem.Text = "Save Customers";
+            saveCustomersToolStripMenuItem.Click += saveCustomersToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
@@ -183,6 +187,7 @@
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(160, 22);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -196,6 +201,7 @@
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             aboutToolStripMenuItem.Size = new Size(107, 22);
             aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutArcadeManagerToolStripMenuItem_Click;
             // 
             // tabControl1
             // 
@@ -297,10 +303,12 @@
             // 
             cmbxNewMachGenre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbxNewMachGenre.FormattingEnabled = true;
+            cmbxNewMachGenre.Items.AddRange(new object[] { "Fighting Game", "Racing Sim", "Shooter", "Other" });
             cmbxNewMachGenre.Location = new Point(67, 67);
             cmbxNewMachGenre.Name = "cmbxNewMachGenre";
             cmbxNewMachGenre.Size = new Size(319, 29);
             cmbxNewMachGenre.TabIndex = 12;
+            cmbxNewMachGenre.Text = "Other";
             // 
             // btnNewMachCancel
             // 
@@ -794,6 +802,7 @@
             btnNewCardCancel.TabIndex = 11;
             btnNewCardCancel.Text = "Cancel";
             btnNewCardCancel.UseVisualStyleBackColor = true;
+            btnNewCardCancel.Click += btnNewCardCancel_Click;
             // 
             // btnNewCardAdd
             // 
@@ -805,6 +814,7 @@
             btnNewCardAdd.TabIndex = 10;
             btnNewCardAdd.Text = "Add";
             btnNewCardAdd.UseVisualStyleBackColor = true;
+            btnNewCardAdd.Click += btnNewCardAdd_Click;
             // 
             // gbxCustInfo
             // 
@@ -956,6 +966,7 @@
             tabSimPlay.Size = new Size(768, 452);
             tabSimPlay.TabIndex = 2;
             tabSimPlay.Text = "Simulate Play";
+            tabSimPlay.Enter += tabSimPlay_Enter;
             // 
             // btnSwipeCard
             // 
@@ -966,6 +977,7 @@
             btnSwipeCard.TabIndex = 2;
             btnSwipeCard.Text = "Swipe Card";
             btnSwipeCard.UseVisualStyleBackColor = true;
+            btnSwipeCard.Click += btnSimPlay_Click;
             // 
             // gbxSimPlayCard
             // 

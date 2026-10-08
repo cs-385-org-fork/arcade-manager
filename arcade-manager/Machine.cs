@@ -12,6 +12,7 @@ namespace arcade_manager
         private string machineStatus = "";
         private bool onSale = false;
         private double discount = 0.85;
+        private string gameGenre = "Other";
 
         public string MachineName
         {
@@ -45,6 +46,10 @@ namespace arcade_manager
         {
             get { return (1.0 - discount); } // return how much the price is discounted
             set { discount = (1.0 - value); }
+        }
+        public string GameGenre {
+            get { return gameGenre;  }
+            set { gameGenre = value; }
         }
 
         public Machine() { } // base constructor

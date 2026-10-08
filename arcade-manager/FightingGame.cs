@@ -18,4 +18,14 @@ internal class FightingGame : Machine
     }
     private double Fighting_GameDiscount = 0.80;
 
+    public FightingGame() { } // base constructor
+
+    public FightingGame(string name, decimal price, string status) {
+        MachineName = name;
+        BaseMachinePrice = price;
+        CurrentMachinePrice = price;
+        MachineStatus = status;
+        GameGenre = "Fighting Game";
+    }
+
 }
