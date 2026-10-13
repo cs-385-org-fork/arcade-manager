@@ -127,13 +127,13 @@ namespace arcade_manager
             {
                 currentLine = sr.ReadLine();
                 if (currentLine == "Fighting")
-                    floorMachines.Add(new FightingGame());
+                { floorMachines.Add(new FightingGame()); floorMachines[machine].GameGenre = "Fighting Game"; }
                 else if (currentLine == "Racing")
-                    floorMachines.Add(new RacingSim());
+                { floorMachines.Add(new RacingSim()); floorMachines[machine].GameGenre = "Racing Sim"; }
                 else if (currentLine == "Shooter")
-                    floorMachines.Add(new Shooter());
+                { floorMachines.Add(new Shooter()); floorMachines[machine].GameGenre = "Shooter"; }
                 else
-                    floorMachines.Add(new Machine()); // create new machine
+                { floorMachines.Add(new Machine()); } // create new machine
                 int item = 1;
                 while (currentLine != null)
                 {
