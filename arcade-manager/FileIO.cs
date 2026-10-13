@@ -125,7 +125,15 @@ namespace arcade_manager
 
             for (int machine = 0; machine < activeMachines; machine++)
             {
-                floorMachines.Add(new Machine()); // create new machine
+                currentLine = sr.ReadLine();
+                if (currentLine == "Fighting")
+                    floorMachines.Add(new FightingGame());
+                else if (currentLine == "Racing")
+                    floorMachines.Add(new RacingSim());
+                else if (currentLine == "Shooter")
+                    floorMachines.Add(new Shooter());
+                else
+                    floorMachines.Add(new Machine()); // create new machine
                 int item = 1;
                 while (currentLine != null)
                 {
