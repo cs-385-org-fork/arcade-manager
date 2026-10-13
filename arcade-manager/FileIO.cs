@@ -113,14 +113,20 @@ namespace arcade_manager
             }
 
             StreamReader sr = new StreamReader(filePath);
+            string currentLine = sr.ReadLine();
+            //First line is amount of customers with active cards
+            if (int.TryParse(currentLine, out int activeMachines)) { }
+            else
+            {
+                return;
+            }
 
             floorMachines = new List<Machine> { }; //Create a list of arcade machines
 
-            for (int machine = 0; machine < 6; machine++)
+            for (int machine = 0; machine < activeMachines; machine++)
             {
                 floorMachines.Add(new Machine()); // create new machine
                 int item = 1;
-                string currentLine = " ";
                 while (currentLine != null)
                 {
                     //Read the next line
@@ -203,10 +209,13 @@ namespace arcade_manager
 
             using (StreamWriter mach = new StreamWriter(filePath))
             {
+                mach.WriteLine(floorMachines.Count());
                 for (int i = 0; i < floorMachines.Count(); i++)
                 {
                     if (floorMachines[i] is FightingGame) { mach.WriteLine("Fighting"); }
                     else if (floorMachines[i] is RacingSim) { mach.WriteLine("Racing"); }
+                    else if (floorMachines[i] is Shooter) { mach.WriteLine("Shooter"); }
+                    else { mach.WriteLine("Other"); }
                     mach.WriteLine(floorMachines[i].MachineName);
                     mach.WriteLine(floorMachines[i].BaseMachinePrice);
                     mach.WriteLine(floorMachines[i].MachineStatus);
