@@ -64,11 +64,11 @@ namespace arcade_manager
                 //VIP
                 if (item == 4)
                 {
-                    if (currentLine == "true")
+                    if (currentLine == "True")
                     {
                         customers[card].VIP = true;
                     }
-                    else if (currentLine == "false")
+                    else if (currentLine == "False")
                     {
                         customers[card].VIP = false;
                     }
@@ -76,11 +76,11 @@ namespace arcade_manager
                 //isActive
                 if (item == 5)
                 {
-                    if (currentLine == "true")
+                    if (currentLine == "True")
                     {
                         customers[card].IsActive = true;
                     }
-                    else if (currentLine == "false")
+                    else if (currentLine == "False")
                     {
                         customers[card].IsActive = false;
                     }

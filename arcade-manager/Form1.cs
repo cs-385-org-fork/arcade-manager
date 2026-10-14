@@ -6,8 +6,7 @@ using static System.Windows.Forms.LinkLabel;
 namespace arcade_manager {
     public partial class Form1 : Form {
         List<Machine> floorMachines = new List<Machine> {
-            new Machine("Machine1", 0.25m, "Available"),
-            new Shooter("Machine2", 0.24m, "Available")
+            new Machine("Machine1", 0.25m, "Available")
         };
         List<PlayCard> customers = new List<PlayCard> {
             new PlayCard(1, 1.00m, "John Doe", false)
@@ -72,12 +71,12 @@ namespace arcade_manager {
             }
         }
         public void updateCustomerInfo(int customer) {
-            lblCustName.Text = ("Name: " + customers[customer].CustomerName);
+            txtbxCustName.Text = (customers[customer].CustomerName);
             lblCustID.Text = ("Card ID: " + customers[customer].CardID);
             txtbxCustBalance.Text = ("" + customers[customer].MoneyOnCard);
 
-            rbtnCustStatusVIP.Checked = false;
-            rbtnCustStatusStd.Checked = false;
+            //rbtnCustStatusVIP.Checked = false;
+            //rbtnCustStatusStd.Checked = false;
             if (customers[customer].VIP) {
                 rbtnCustStatusVIP.Checked = true;
             }
@@ -163,6 +162,8 @@ namespace arcade_manager {
 
             gbxNewMach.Visible = false;
             gbxNewPlayCard.Visible = false;
+
+            lblSimPlayPlayCostVIP.Visible = false;
         }
 
 
@@ -381,6 +382,10 @@ namespace arcade_manager {
             }
         }
 
+        private void tabPlayCards_Enter(object sender, EventArgs e) {
+            updatePlayCardsListBox();
+        }
+
         private void tabSimPlay_Enter(object sender, EventArgs e) {
             updateSimPlayMachines();
             updateSimPlayCards();
@@ -417,6 +422,21 @@ namespace arcade_manager {
             }
             else {
                 lblSimPlayCustStatus.Text = "VIP: No";
+            }
+
+            if (cmbxSimPlayMachines.Text != "") {
+                lblSimPlayPlayCost2.Font = new Font(lblSimPlayPlayCost2.Font, FontStyle.Regular);
+                lblSimPlayPlayCostVIP.Visible = false;
+
+                floorMachines[cmbxSimPlayMachines.SelectedIndex].CurrentMachinePrice = 0;
+                lblSimPlayPlayCost2.Text = ("" + floorMachines[cmbxSimPlayMachines.SelectedIndex].CurrentMachinePrice);
+                //MessageBox.Show("DEBUG: " + floorMachines[cmbxMachines.SelectedIndex].CurrentMachinePrice);
+
+                if (customers[Int32.Parse(cmbxSimPlayCards.Text) - 1].VIP) {
+                    lblSimPlayPlayCost2.Font = new Font(lblSimPlayPlayCost2.Font, FontStyle.Strikeout);
+                    lblSimPlayPlayCostVIP.Visible = true;
+                    lblSimPlayPlayCostVIP.Text = ("with VIP Discount: $" + Math.Round((floorMachines[cmbxSimPlayCards.SelectedIndex].CurrentMachinePrice * (decimal)0.75), 2));
+                }
             }
         }
 

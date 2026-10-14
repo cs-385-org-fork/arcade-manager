@@ -626,6 +626,7 @@
             tabPlayCards.Size = new Size(768, 452);
             tabPlayCards.TabIndex = 1;
             tabPlayCards.Text = "Play Cards";
+            tabPlayCards.Enter += tabPlayCards_Enter;
             // 
             // gbxPlayCards
             // 
@@ -875,9 +876,9 @@
             lblCustID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCustID.Location = new Point(6, 35);
             lblCustID.Name = "lblCustID";
-            lblCustID.Size = new Size(95, 21);
+            lblCustID.Size = new Size(69, 21);
             lblCustID.TabIndex = 10;
-            lblCustID.Text = "ID: 0000000";
+            lblCustID.Text = "Card ID: ";
             // 
             // txtbxCustBalance
             // 
@@ -922,6 +923,7 @@
             rbtnCustStatusVIP.TabStop = true;
             rbtnCustStatusVIP.Text = "VIP";
             rbtnCustStatusVIP.UseVisualStyleBackColor = true;
+            rbtnCustStatusVIP.Click += rbtnVIPTier_CheckedChanged;
             // 
             // rbtnCustStatusStd
             // 
@@ -935,6 +937,7 @@
             rbtnCustStatusStd.TabStop = true;
             rbtnCustStatusStd.Text = "Standard";
             rbtnCustStatusStd.UseVisualStyleBackColor = true;
+            rbtnCustStatusStd.Click += rbtnStdTier_CheckedChanged;
             // 
             // txtbxCustName
             // 
@@ -1021,6 +1024,7 @@
             cmbxSimPlayCards.Name = "cmbxSimPlayCards";
             cmbxSimPlayCards.Size = new Size(365, 33);
             cmbxSimPlayCards.TabIndex = 1;
+            cmbxSimPlayCards.SelectedIndexChanged += cmbxPlayCards_SelectedIndexChanged;
             // 
             // gbxSimPlayMachine
             // 
@@ -1075,6 +1079,7 @@
             cmbxSimPlayMachines.Name = "cmbxSimPlayMachines";
             cmbxSimPlayMachines.Size = new Size(365, 33);
             cmbxSimPlayMachines.TabIndex = 0;
+            cmbxSimPlayMachines.SelectedIndexChanged += cmbxMachines_SelectedIndexChanged;
             // 
             // Form1
             // 
