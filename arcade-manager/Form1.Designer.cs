@@ -23,6 +23,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             loadMachinesToolStripMenuItem = new ToolStripMenuItem();
@@ -109,6 +110,8 @@
             lblSimPlayPlayCostVIP = new Label();
             lblSimPlayPlayCost = new Label();
             cmbxSimPlayMachines = new ComboBox();
+            toolTipPlayCards = new ToolTip(components);
+            toolTipMachines = new ToolTip(components);
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabMachines.SuspendLayout();
@@ -498,6 +501,7 @@
             txtbxMachDiscount.Name = "txtbxMachDiscount";
             txtbxMachDiscount.Size = new Size(59, 29);
             txtbxMachDiscount.TabIndex = 8;
+            toolTipMachines.SetToolTip(txtbxMachDiscount, "Press Enter after changing the value in the box to update the machine's information.");
             txtbxMachDiscount.KeyDown += txtbxDiscount_KeyDown;
             // 
             // label1
@@ -517,6 +521,7 @@
             txtbxMachPlayCost.Name = "txtbxMachPlayCost";
             txtbxMachPlayCost.Size = new Size(128, 29);
             txtbxMachPlayCost.TabIndex = 6;
+            toolTipMachines.SetToolTip(txtbxMachPlayCost, "Press Enter after changing the value in the box to update the machine's information.");
             txtbxMachPlayCost.KeyDown += txtbxPlayCost_KeyDown;
             // 
             // lblMachPlayCost
@@ -602,6 +607,7 @@
             txtbxMachName.Name = "txtbxMachName";
             txtbxMachName.Size = new Size(319, 29);
             txtbxMachName.TabIndex = 1;
+            toolTipMachines.SetToolTip(txtbxMachName, "Press Enter after changing the value in the box to update the machine's information.");
             txtbxMachName.KeyDown += txtbxMachineName_KeyDown;
             // 
             // lblMachName
@@ -847,6 +853,7 @@
             btnTopUp5.TabIndex = 13;
             btnTopUp5.Text = "Top Up $5";
             btnTopUp5.UseVisualStyleBackColor = true;
+            btnTopUp5.Click += btnTopUp5_Click;
             // 
             // btnTopUp1
             // 
@@ -858,6 +865,7 @@
             btnTopUp1.TabIndex = 12;
             btnTopUp1.Text = "Top Up $1";
             btnTopUp1.UseVisualStyleBackColor = true;
+            btnTopUp1.Click += btnTopUp1_Click;
             // 
             // btnTopUp10
             // 
@@ -869,6 +877,7 @@
             btnTopUp10.TabIndex = 11;
             btnTopUp10.Text = "Top Up $10";
             btnTopUp10.UseVisualStyleBackColor = true;
+            btnTopUp10.Click += btnTopUp10_Click;
             // 
             // lblCustID
             // 
@@ -887,6 +896,8 @@
             txtbxCustBalance.Name = "txtbxCustBalance";
             txtbxCustBalance.Size = new Size(252, 29);
             txtbxCustBalance.TabIndex = 6;
+            toolTipPlayCards.SetToolTip(txtbxCustBalance, "Press Enter after changing the value in the box to update the card's information.");
+            txtbxCustBalance.KeyDown += txtbxMoneyOnCard_KeyDown;
             // 
             // lblCustBalance
             // 
@@ -946,6 +957,7 @@
             txtbxCustName.Name = "txtbxCustName";
             txtbxCustName.Size = new Size(218, 29);
             txtbxCustName.TabIndex = 1;
+            toolTipPlayCards.SetToolTip(txtbxCustName, "Press Enter after changing the value in the box to update the card's information.");
             txtbxCustName.KeyDown += txtbxCustName_KeyDown;
             // 
             // lblCustName
@@ -1213,5 +1225,7 @@
         private Label lblSimPlayMoneyOnCard;
         private Button btnSwipeCard;
         private Label lblSimPlayPlayCost2;
+        private ToolTip toolTipMachines;
+        private ToolTip toolTipPlayCards;
     }
 }
